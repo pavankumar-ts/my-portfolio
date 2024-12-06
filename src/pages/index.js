@@ -11,14 +11,14 @@ export default function Home() {
     <>
       <Head>
         <title>Pavan Kumar | Software Developer</title>
-        <meta name="description" content="Frontend Developer specializing in React, Next.js, and modern web technologies. Creating responsive and performant web applications with a focus on user experience." />
+        <meta name="description" content="Software Developer specializing in React, Next.js, and modern web technologies. Creating responsive and performant web applications with a focus on user experience." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="Pavan Kumar | Frontend Developer" />
-        <meta property="og:description" content="Frontend Developer specializing in React, Next.js, and modern web technologies. Creating responsive and performant web applications with a focus on user experience." />
+        <meta property="og:title" content="Pavan Kumar | Software Developer" />
+        <meta property="og:description" content="Software Developer specializing in React, Next.js, and modern web technologies. Creating responsive and performant web applications with a focus on user experience." />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Pavan Kumar | Frontend Developer" />
-        <meta name="twitter:description" content="Frontend Developer specializing in React, Next.js, and modern web technologies. Creating responsive and performant web applications with a focus on user experience." />
+        <meta name="twitter:title" content="Pavan Kumar | Software Developer" />
+        <meta name="twitter:description" content="Software Developer specializing in React, Next.js, and modern web technologies. Creating responsive and performant web applications with a focus on user experience." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
