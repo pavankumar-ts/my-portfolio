@@ -1,6 +1,7 @@
 import { Github } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const HeroSection = () => {
     const featuredClients = [
@@ -39,35 +40,69 @@ const HeroSection = () => {
     return (
         <div className="container pt-32">
             {/* Greeting */}
-            <h1 className="text-center text-2xl mb-8">
+            <motion.h1 
+                className="text-center text-2xl mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+            >
                 Hello, I'm Pavan Kumar
-            </h1>
+            </motion.h1>
 
             {/* Main Title */}
             <div className="text-left mb-16 overflow-hidden">
-                <h2 className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[140px] font-bold tracking-tight leading-none">
+                <motion.h2 
+                    className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[140px] font-bold tracking-tight leading-none"
+                    initial={{ opacity: 0, x: -100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                >
                     SOFTWARE
-                </h2>
-                <h2 className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[140px] ml-[20%] font-bold tracking-tight leading-none">
+                </motion.h2>
+                <motion.h2 
+                    className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[140px] ml-[20%] font-bold tracking-tight leading-none"
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                >
                     DEVELOPER
-                </h2>
+                </motion.h2>
             </div>
 
             {/* Content Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center ">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                 {/* Left Description */}
-                <div className="md:col-span-1">
+                <motion.div 
+                    className="md:col-span-1"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                >
                     <p className="text-primary/60 leading-relaxed mb-8">
                         A visionary Art Director from Brooklyn, showcases a portfolio of visually stunning campaigns that blend artistry and innovation. His work spans multiple mediums, from print to digital, and demonstrates a keen eye for bold typography, striking imagery, and compelling storytelling.
                     </p>
-                    <button className="px-6 py-3 bg-primary text-secondary font-medium inline-flex items-center gap-2 hover:bg-primary/90 transition-colors">
+                    <motion.button 
+                        className="px-6 py-3 bg-primary text-secondary font-medium inline-flex items-center gap-2 hover:bg-primary/90 transition-colors"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
                         Contact Now
-                        <span>→</span>
-                    </button>
-                </div>
+                        <motion.span
+                            animate={{ x: [0, 5, 0] }}
+                            transition={{ duration: 1.5, repeat: Infinity }}
+                        >
+                            →
+                        </motion.span>
+                    </motion.button>
+                </motion.div>
 
                 {/* Center Image */}
-                <div className="md:col-span-1 flex justify-center">
+                <motion.div 
+                    className="md:col-span-1 flex justify-center"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                >
                     <Image
                         src="/assets/DP.png"
                         alt="Professional portrait"
@@ -75,29 +110,34 @@ const HeroSection = () => {
                         width={3000}
                         height={3000}
                     />
-                </div>
+                </motion.div>
 
                 {/* Right Client List */}
-                <div className="md:col-span-1">
+                <motion.div 
+                    className="md:col-span-1"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.8 }}
+                >
                     <h3 className="text-sm font-medium mb-6">
                         FEATURED CLIENTS
                     </h3>
-                    <div className="grid grid-cols-2 gap-x-1 gap-y-4 ">
-                        {featuredClients.map((client) => (
-                            <div key={client.id} className="flex  gap-4">
-                                {/* <Image
-                                    src={client.icon}
-                                    alt={`${client.name} logo`}
-                                    width={24}
-                                    height={24}
-                                    className="w-6 h-6 object-contain"
-                                /> */}
+                    <div className="grid grid-cols-2 gap-x-1 gap-y-4">
+                        {featuredClients.map((client, index) => (
+                            <motion.div 
+                                key={client.id} 
+                                className="flex gap-4"
+                                initial={{ opacity: 0, x: 20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
+                                whileHover={{ x: 10 }}
+                            >
                                 <Github className="w-6 h-6 object-contain" />
                                 <span className="text-primary/60">{client.name}</span>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     );
