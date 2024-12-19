@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +24,11 @@ const Navbar = () => {
                 <div className="flex justify-between items-center">
                     {/* Logo */}
                     <Link href="/" className="text-2xl font-bold text-primary">
-                        Pavan
+                        <Image src='/assets/logo.svg'
+                            alt='Pavan'
+                            width={1000} height={1000}
+                            className='h-[30px] w-auto object-contain'
+                        />
                     </Link>
 
                     {/* Desktop Navigation */}
