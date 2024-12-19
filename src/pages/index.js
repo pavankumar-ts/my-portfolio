@@ -5,6 +5,9 @@ import ProjectsSection from "@/components/home/ProjectsSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import WhyChooseSection from "@/components/home/WhyChooseSection";
 import NumbersSection from "@/components/home/NumbersSection";
+import ProcessSection from "@/components/home/ProcessSection";
+import FAQSection from "@/components/common/FAQSection";
+import ContactCTA from "@/components/common/ContactCTA";
 
 export default function Home() {
   return (
@@ -40,6 +43,9 @@ export default function Home() {
         <WhyChooseSection />
         <ExperienceSection />
         <NumbersSection />
+        <ProcessSection />
+        <FAQSection />
+        <ContactCTA />
       </main>
     </>
   );

@@ -80,7 +80,7 @@ export const projects = [
 ];
 
 export const projectCategories = [
-    'All',
+    'All projects',
     'UI/UX Design',
     'Web Application',
     'E-Commerce',
@@ -94,6 +94,6 @@ export const getProjectBySlug = (slug) => {
 };
 
 export const getProjectsByCategory = (category) => {
-    if (category === 'All') return projects;
+    if (category === 'All projects') return projects;
     return projects.filter(project => project.category === category);
 };

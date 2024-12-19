@@ -44,6 +44,17 @@ const HeroSection = () => {
     ];
 
     useEffect(() => {
+        // Reset GSAP animations
+        gsap.set([
+            '.greeting',
+            mainTitleRef.current,
+            subTitleRef.current,
+            descriptionRef.current,
+            imageRef.current,
+            '.clients-heading',
+            '.client-item',
+        ], { clearProps: 'all' });
+
         // Main timeline for initial animations
         const tl = gsap.timeline({ 
             defaults: { ease: 'power3.out' }
