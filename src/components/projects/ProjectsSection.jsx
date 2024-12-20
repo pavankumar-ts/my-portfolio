@@ -72,10 +72,10 @@ const ProjectsSection = () => {
                         <div className="space-y-4">
                             <div className="flex justify-between items-center">
                                 <h2 className="text-2xl font-semibold">{project.title}</h2>
-                                <div className="flex gap-2">
+                                <div className="flex gap-2 items-center">
                                     {project.technologies.slice(0, 3).map((tech, index) => (
                                         <React.Fragment key={tech}>
-                                            <span className="text-primary/60 text-sm">{tech}</span>
+                                            <span className="text-primary/60 text-sm ">{tech}</span>
                                             {index !== project.technologies.slice(0, 3).length - 1 && (
                                                 <span className="text-primary/60">•</span>
                                             )}
@@ -88,9 +88,9 @@ const ProjectsSection = () => {
                                 {project.description}
                             </p>
 
-                            <Link 
+                            <Link
                                 href={project.link}
-                                className="inline-flex items-center gap-2 border border-primary/20 px-4 py-2 text-primary hover:bg-primary hover:text-secondary  transition-colors duration-300"
+                                className="inline-flex font-medium items-center gap-2 border border-primary/20 px-4 py-2 text-primary hover:bg-primary hover:text-secondary  transition-colors duration-300"
                             >
                                 View Project
                                 <span>→</span>
