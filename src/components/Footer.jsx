@@ -1,14 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
+import { socialLinks } from '@/data/socialLinks';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/pavankumar-ts' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/pavan-kumar-ts/' },
-    { name: 'Twitter', url: 'https://x.com/pavankumarts26' }
-  ];
 
   return (
     <footer className="border-t border-primary/10">
