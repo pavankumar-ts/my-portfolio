@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
-import { useInView } from 'react-intersection-observer';
+import AnimatedSection from '@/components/common/AnimatedSection';
 
 const FAQSection = () => {
-    const { ref, inView } = useInView({
-        triggerOnce: true,
-        threshold: 0.1,
-    });
-
     const faqs = [
         {
             id: 1,
@@ -52,7 +47,7 @@ const FAQSection = () => {
     };
 
     return (
-        <div ref={ref} className="container flex flex-col md:flex-row">
+        <div className="container flex flex-col md:flex-row">
             <div className="md:w-[50%] pb-12 md:pb-0">
                 <div className="sticky top-32">
                     <h1 className="heading-xl">
@@ -63,29 +58,27 @@ const FAQSection = () => {
 
             <div className="md:w-[50%] space-y-6">
                 {faqs.map((faq, index) => (
-                    <div
-                        key={faq.id}
-                        className={`border-b border-primary/10 transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                        style={{ transitionDelay: `${index * 200}ms` }}
-                    >
-                        <button
-                            className="w-full py-6 flex items-center justify-between text-left"
-                            onClick={() => toggleFaq(faq.id)}
-                        >
-                            <span className="text-xl font-medium">{faq.question}</span>
-                            <span className="text-2xl">
-                                {openId === faq.id ? '−' : '+'}
-                            </span>
-                        </button>
+                    <AnimatedSection key={faq.id} delayMultiplier={index * 200}>
+                        <div className="border-b border-primary/10">
+                            <button
+                                className="w-full py-6 flex items-center justify-between text-left"
+                                onClick={() => toggleFaq(faq.id)}
+                            >
+                                <span className="text-xl font-medium">{faq.question}</span>
+                                <span className="text-2xl">
+                                    {openId === faq.id ? '−' : '+'}
+                                </span>
+                            </button>
 
-                        <div
-                            className={`overflow-hidden transition-all duration-500 ${openId === faq.id ? 'max-h-screen' : 'max-h-0'}`}
-                        >
-                            <p className="text-primary/60 pb-8 leading-relaxed">
-                                {faq.answer}
-                            </p>
+                            <div
+                                className={`overflow-hidden transition-all duration-500 ${openId === faq.id ? 'max-h-screen' : 'max-h-0'}`}
+                            >
+                                <p className="text-primary/60 pb-8 leading-relaxed">
+                                    {faq.answer}
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    </AnimatedSection>
                 ))}
             </div>
         </div>

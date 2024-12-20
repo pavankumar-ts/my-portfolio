@@ -2,6 +2,7 @@
 import { experience } from '@/data/experience';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
+import AnimatedSection from '@/components/common/AnimatedSection';
 
 const ExperienceSection = () => {
     const { ref, inView } = useInView({
@@ -23,36 +24,34 @@ const ExperienceSection = () => {
 
             <div className="md:w-[50%] space-y-12">
                 {professionalExperience.items.map((item, index) => (
-                    <div
-                        key={index}
-                        className={`border-b border-primary/10 pb-12 transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                        style={{ transitionDelay: `${index * 200}ms` }}
-                    >
-                        <div className="flex justify-between items-start mb-8">
-                            <h2 className="text-2xl font-semibold">
-                                {item.title}
-                            </h2>
-                            <span className="text-primary/60 text-right">
-                                {item.period}
-                            </span>
-                        </div>
+                    <AnimatedSection key={index} delayMultiplier={index * 200}>
+                        <div className="border-b border-primary/10 pb-12">
+                            <div className="flex justify-between items-start mb-8">
+                                <h2 className="text-2xl font-semibold">
+                                    {item.title}
+                                </h2>
+                                <span className="text-primary/60 text-right">
+                                    {item.period}
+                                </span>
+                            </div>
 
-                        <div className="flex flex-col gap-2 mb-6">
-                            <div className="flex items-center gap-2">
-                                <span className="font-medium">{item.institution}</span>
-                                <span className="text-primary/60">•</span>
-                                <span className="text-primary/60">{item.location}</span>
+                            <div className="flex flex-col gap-2 mb-6">
+                                <div className="flex items-center gap-2">
+                                    <span className="font-medium">{item.institution}</span>
+                                    <span className="text-primary/60">•</span>
+                                    <span className="text-primary/60">{item.location}</span>
+                                </div>
+                            </div>
+
+                            <div className="text-primary/60 space-y-2">
+                                {item.achievements.map((achievement, i) => (
+                                    <p key={i} className="leading-relaxed">
+                                        {achievement}
+                                    </p>
+                                ))}
                             </div>
                         </div>
-
-                        <div className="text-primary/60 space-y-2">
-                            {item.achievements.map((achievement, i) => (
-                                <p key={i} className="leading-relaxed">
-                                    {achievement}
-                                </p>
-                            ))}
-                        </div>
-                    </div>
+                    </AnimatedSection>
                 ))}
             </div>
         </div>

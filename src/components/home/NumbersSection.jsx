@@ -1,12 +1,7 @@
 import React from 'react';
-import { useInView } from 'react-intersection-observer';
+import AnimatedSection from '@/components/common/AnimatedSection';
 
 const NumbersSection = () => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   const statistics = [
     {
       number: '25+',
@@ -41,7 +36,7 @@ const NumbersSection = () => {
   ];
 
   return (
-    <div ref={ref} className="container flex flex-col md:flex-row">
+    <div className="container flex flex-col md:flex-row">
       <div className="md:w-[50%] pb-12 md:pb-0">
         <div className="sticky top-32">
           <h1 className="heading-xl whitespace-pre-line">
@@ -52,23 +47,21 @@ const NumbersSection = () => {
 
       <div className="md:w-[50%] grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
         {statistics.map((stat, index) => (
-          <div
-            key={index}
-            className={`border-b border-primary/10 pb-8 transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-            style={{ transitionDelay: `${index * 200}ms` }}
-          >
-            <div className="flex flex-col gap-2">
-              <span className="text-6xl font-bold">
-                {stat.number}
-              </span>
-              <h2 className="text-xl font-semibold">
-                {stat.label}
-              </h2>
-              <p className="text-primary/60 leading-relaxed">
-                {stat.description}
-              </p>
+          <AnimatedSection key={index} delayMultiplier={index * 200}>
+            <div className="border-b border-primary/10 pb-8">
+              <div className="flex flex-col gap-2">
+                <span className="text-6xl font-bold">
+                  {stat.number}
+                </span>
+                <h2 className="text-xl font-semibold">
+                  {stat.label}
+                </h2>
+                <p className="text-primary/60 leading-relaxed">
+                  {stat.description}
+                </p>
+              </div>
             </div>
-          </div>
+          </AnimatedSection>
         ))}
       </div>
     </div>

@@ -1,12 +1,7 @@
 import React from 'react';
-import { useInView } from 'react-intersection-observer';
+import AnimatedSection from '@/components/common/AnimatedSection';
 
 const WhyChooseSection = () => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   const reasons = [
     {
       id: '01',
@@ -31,7 +26,7 @@ const WhyChooseSection = () => {
   ];
 
   return (
-    <div ref={ref} className="container flex flex-col md:flex-row">
+    <div className="container flex flex-col md:flex-row">
       <div className="md:w-[50%] pb-12 md:pb-0">
         <div className="sticky top-32">
           <h1 className="heading-xl whitespace-pre-line">
@@ -42,25 +37,23 @@ const WhyChooseSection = () => {
 
       <div className="md:w-[50%] space-y-12">
         {reasons.map((reason, index) => (
-          <div
-            key={reason.id}
-            className={`border-b border-primary/10 pb-12 transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-            style={{ transitionDelay: `${index * 200}ms` }}
-          >
-            <div className="flex flex-col gap-4">
-              <div className="flex items-start justify-between">
-                <span className="text-sm font-medium text-primary/60">[{reason.id}]</span>
-                <div className="flex-1 ml-8">
-                  <h2 className="text-2xl font-semibold mb-4">
-                    {reason.title}
-                  </h2>
-                  <p className="text-primary/60 leading-relaxed">
-                    {reason.description}
-                  </p>
+          <AnimatedSection key={reason.id} delayMultiplier={index * 200}>
+            <div className="border-b border-primary/10 pb-12">
+              <div className="flex flex-col gap-4">
+                <div className="flex items-start justify-between">
+                  <span className="text-sm font-medium text-primary/60">[{reason.id}]</span>
+                  <div className="flex-1 ml-8">
+                    <h2 className="text-2xl font-semibold mb-4">
+                      {reason.title}
+                    </h2>
+                    <p className="text-primary/60 leading-relaxed">
+                      {reason.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </AnimatedSection>
         ))}
       </div>
     </div>

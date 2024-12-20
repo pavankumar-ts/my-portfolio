@@ -1,5 +1,6 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
+import AnimatedSection from '@/components/common/AnimatedSection';
 
 const ProcessSection = () => {
     const { ref, inView } = useInView({
@@ -42,27 +43,25 @@ const ProcessSection = () => {
 
             <div className="md:w-[50%] space-y-24">
                 {steps.map((step, index) => (
-                    <div
-                        key={step.id}
-                        className={`border-b border-primary/10 pb-12 transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                        style={{ transitionDelay: `${index * 200}ms` }}
-                    >
-                        <div className="flex flex-col gap-4">
-                            <div className="flex items-start justify-between">
-                                <span className="text-sm font-medium text-primary">
-                                    [STEP-{step.id}]
-                                </span>
-                                <div className="flex-1 ml-8">
-                                    <h2 className="text-2xl font-semibold mb-4">
-                                        {step.title}
-                                    </h2>
-                                    <p className="text-primary/60 leading-relaxed">
-                                        {step.description}
-                                    </p>
+                    <AnimatedSection key={step.id} delayMultiplier={index * 200}>
+                        <div className="border-b border-primary/10 pb-12">
+                            <div className="flex flex-col gap-4">
+                                <div className="flex items-start justify-between">
+                                    <span className="text-sm font-medium text-primary">
+                                        [STEP-{step.id}]
+                                    </span>
+                                    <div className="flex-1 ml-8">
+                                        <h2 className="text-2xl font-semibold mb-4">
+                                            {step.title}
+                                        </h2>
+                                        <p className="text-primary/60 leading-relaxed">
+                                            {step.description}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </AnimatedSection>
                 ))}
             </div>
         </div>
