@@ -1,10 +1,16 @@
 // components/about/AboutExperience.jsx
 import { experience } from '@/data/experience';
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const AboutExperience = () => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    });
+
     return (
-        <div className="container flex flex-col md:flex-row pt-32 pb-32">
+        <div ref={ref} className="container flex flex-col md:flex-row pt-32 pb-32">
             <div className="md:w-[50%] pb-12 md:pb-0">
                 <div className="sticky top-32">
                     <h2 className="heading-xl whitespace-pre-line">
@@ -23,7 +29,11 @@ const AboutExperience = () => {
 
                         <div className="space-y-16">
                             {section.items.map((item, index) => (
-                                <div key={index} className="border-b border-primary/10 pb-16 ml-16">
+                                <div
+                                    key={index}
+                                    className={`border-b border-primary/10 pb-16 ml-16 transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                                    style={{ transitionDelay: `${index * 200}ms` }}
+                                >
                                     <div className="flex justify-between items-start mb-4">
                                         <div>
                                             <h4 className="text-xl font-semibold mb-2">{item.title}</h4>

@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const FAQSection = () => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    });
+
     const faqs = [
         {
             id: 1,
@@ -39,7 +45,6 @@ const FAQSection = () => {
         }
     ];
 
-
     const [openId, setOpenId] = useState(1);
 
     const toggleFaq = (id) => {
@@ -47,7 +52,7 @@ const FAQSection = () => {
     };
 
     return (
-        <div className="container flex flex-col md:flex-row">
+        <div ref={ref} className="container flex flex-col md:flex-row">
             <div className="md:w-[50%] pb-12 md:pb-0">
                 <div className="sticky top-32">
                     <h1 className="heading-xl">
@@ -57,8 +62,12 @@ const FAQSection = () => {
             </div>
 
             <div className="md:w-[50%] space-y-6">
-                {faqs.map((faq) => (
-                    <div key={faq.id} className="border-b border-primary/10">
+                {faqs.map((faq, index) => (
+                    <div
+                        key={faq.id}
+                        className={`border-b border-primary/10 transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                        style={{ transitionDelay: `${index * 200}ms` }}
+                    >
                         <button
                             className="w-full py-6 flex items-center justify-between text-left"
                             onClick={() => toggleFaq(faq.id)}
@@ -69,11 +78,13 @@ const FAQSection = () => {
                             </span>
                         </button>
 
-                        {openId === faq.id && (
+                        <div
+                            className={`overflow-hidden transition-all duration-500 ${openId === faq.id ? 'max-h-screen' : 'max-h-0'}`}
+                        >
                             <p className="text-primary/60 pb-8 leading-relaxed">
                                 {faq.answer}
                             </p>
-                        )}
+                        </div>
                     </div>
                 ))}
             </div>

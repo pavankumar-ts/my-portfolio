@@ -2,10 +2,16 @@
 import { services } from '@/data/services';
 import Link from 'next/link';
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const ServicesSection = () => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    });
+
     return (
-        <div className="container flex flex-col md:flex-row">
+        <div ref={ref} className="container flex flex-col md:flex-row">
             {/* Left Section - Added sticky */}
             <div className="md:w-[50%] pb-12 md:pb-0">
                 <div className="md:sticky md:top-32">
@@ -27,8 +33,12 @@ const ServicesSection = () => {
 
             {/* Right Section */}
             <div className="md:w-[50%] md:pl-8 space-y-16">
-                {services.map((service) => (
-                    <div key={service.id} className="border-b border-primary/10 pb-16">
+                {services.map((service, index) => (
+                    <div
+                        key={service.id}
+                        className={`border-b border-primary/10 pb-16 transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                        style={{ transitionDelay: `${index * 200}ms` }}
+                    >
                         <div className="flex flex-col items-start justify-between mb-4">
                             <div className="flex items-center gap-6">
                                 <span className="text-sm font-medium text-primary/60">

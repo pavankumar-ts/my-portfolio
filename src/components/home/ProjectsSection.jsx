@@ -2,17 +2,27 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { projects } from '@/data/projects';
+import { useInView } from 'react-intersection-observer';
 
 const ProjectsSection = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <div className="container">
+    <div ref={ref} className="container">
       <h1 className="heading-xl mb-20">
         PROJECTS
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-20">
-        {projects.map((project) => (
-          <div key={project.id} className="group">
+        {projects.map((project, index) => (
+          <div
+            key={project.id}
+            className={`group transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+            style={{ transitionDelay: `${index * 200}ms` }}
+          >
             <div className="relative aspect-square mb-6 h-[300px] w-full bg-gray-100 overflow-hidden">
               <Image
                 src={project.image}

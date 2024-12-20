@@ -1,6 +1,12 @@
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const ProcessSection = () => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    });
+
     const steps = [
         {
             id: '01',
@@ -25,7 +31,7 @@ const ProcessSection = () => {
     ];
 
     return (
-        <div className="container flex flex-col md:flex-row">
+        <div ref={ref} className="container flex flex-col md:flex-row">
             <div className="md:w-[50%] pb-12 md:pb-0">
                 <div className="sticky top-32">
                     <h1 className="heading-xl whitespace-pre-line">
@@ -35,10 +41,11 @@ const ProcessSection = () => {
             </div>
 
             <div className="md:w-[50%] space-y-24">
-                {steps.map((step) => (
+                {steps.map((step, index) => (
                     <div
                         key={step.id}
-                        className="border-b border-primary/10 pb-12"
+                        className={`border-b border-primary/10 pb-12 transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                        style={{ transitionDelay: `${index * 200}ms` }}
                     >
                         <div className="flex flex-col gap-4">
                             <div className="flex items-start justify-between">

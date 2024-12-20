@@ -1,12 +1,18 @@
 // components/about/ExperienceSection.jsx
 import { experience } from '@/data/experience';
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const ExperienceSection = () => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    });
+
     const professionalExperience = experience.find((exp) => exp.type === 'Professional Experience');
 
     return (
-        <div className="container flex flex-col md:flex-row">
+        <div ref={ref} className="container flex flex-col md:flex-row">
             <div className="md:w-[50%] pb-12 md:pb-0">
                 <div className="sticky top-32">
                     <h1 className="heading-xl whitespace-pre-line">
@@ -17,7 +23,11 @@ const ExperienceSection = () => {
 
             <div className="md:w-[50%] space-y-12">
                 {professionalExperience.items.map((item, index) => (
-                    <div key={index} className="border-b border-primary/10 pb-12">
+                    <div
+                        key={index}
+                        className={`border-b border-primary/10 pb-12 transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                        style={{ transitionDelay: `${index * 200}ms` }}
+                    >
                         <div className="flex justify-between items-start mb-8">
                             <h2 className="text-2xl font-semibold">
                                 {item.title}

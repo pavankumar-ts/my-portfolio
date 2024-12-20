@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const router = useRouter();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -37,7 +39,7 @@ const Navbar = () => {
                             <Link
                                 key={item.name}
                                 href={item.path}
-                                className="text-primary hover:text-primary transition-colors font-medium"
+                                className={`text-primary hover:text-primary transition-colors font-medium ${router.pathname === item.path ? 'border-b-[1px] border-black' : ''}`}
                             >
                                 {item.name}
                             </Link>
@@ -70,7 +72,7 @@ const Navbar = () => {
                                 <Link
                                     key={item.name}
                                     href={item.path}
-                                    className="text-primary/60 hover:text-primary transition-colors font-medium"
+                                    className={`text-primary/60 hover:text-primary transition-colors font-medium ${router.pathname === item.path ? 'font-bold' : ''}`}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     {item.name}
