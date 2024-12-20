@@ -65,30 +65,44 @@ const Navbar = () => {
                 </div>
 
                 {/* Mobile Navigation */}
-                {isMenuOpen && (
-                    <div className="md:hidden mt-4 py-4 border-t border-primary/10">
-                        <div className="flex flex-col space-y-4">
-                            {navigationItems.map((item) => (
-                                <Link
-                                    key={item.name}
-                                    href={item.path}
-                                    className={`text-primary/60 hover:text-primary transition-colors font-medium ${router.pathname === item.path ? 'font-bold' : ''}`}
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    {item.name}
-                                </Link>
-                            ))}
+                <div className={`md:hidden fixed top-0 left-0 w-full h-[100vh] bg-secondary  z-40 transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300`}>
+                    <div className="flex justify-between items-center p-4 border-b border-primary/10">
+                        <Link href="/" className="text-2xl font-bold text-primary">
+                            <Image src='/assets/logo.svg'
+                                alt='Pavan'
+                                width={1000} height={1000}
+                                className='h-[30px] w-auto object-contain'
+                            />
+                        </Link>
+                        <button
+                            onClick={toggleMenu}
+                            className="text-primary/60 hover:text-primary"
+                            aria-label="Close menu"
+                        >
+                            <X size={24} />
+                        </button>
+                    </div>
+                    <div className="flex flex-col space-y-10 p-4 pt-10">
+                        {navigationItems.map((item) => (
                             <Link
-                                href="/contact"
-                                className="px-4 py-2 border border-primary rounded hover:bg-primary hover:text-secondary transition-colors inline-flex items-center w-fit font-medium"
+                                key={item.name}
+                                href={item.path}
+                                className={`text-primary text-2xl hover:text-primary transition-colors font-medium ${router.pathname === item.path ? 'font-bold' : ''}`}
                                 onClick={() => setIsMenuOpen(false)}
                             >
-                                Contact
-                                <span className="ml-2">→</span>
+                                {item.name}
                             </Link>
-                        </div>
+                        ))}
+                        <Link
+                            href="/contact"
+                            className="text-2xl px-4 py-2 border border-primary rounded hover:bg-primary hover:text-secondary transition-colors inline-flex items-center w-fit font-medium"
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            Contact
+                            <span className="ml-2">→</span>
+                        </Link>
                     </div>
-                )}
+                </div>
             </div>
         </nav>
     );
