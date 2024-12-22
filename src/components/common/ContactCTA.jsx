@@ -1,7 +1,7 @@
 // components/services/ServiceCTA.jsx
 import React from 'react';
-import Link from 'next/link';
 import AnimatedSection from '@/components/common/AnimatedSection';
+import Button from './Button';
 
 const ContactCTA = () => {
   return (
@@ -10,13 +10,7 @@ const ContactCTA = () => {
         <h2 className="text-2xl font-semibold mb-8">
           Ready to start your project?
         </h2>
-        <Link 
-          href="/contact"
-          className="px-8 py-3 bg-primary text-secondary font-medium inline-flex items-center gap-2 hover:bg-primary/90 transition-colors"
-        >
-          Let's Talk
-          <span>→</span>
-        </Link>
+        <Button href='/contact' > Let's Talk</Button>
       </AnimatedSection>
     </div>
   );

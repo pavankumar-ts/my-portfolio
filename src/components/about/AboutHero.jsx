@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
+import Button from '../common/Button';
 
 const AboutHero = () => {
     const { ref, inView } = useInView({
@@ -23,13 +24,7 @@ const AboutHero = () => {
                 <p className="text-primary/60 text-xl leading-relaxed mb-8">
                     I'm a frontend developer specializing in building exceptional digital experiences. Currently focused on creating responsive web applications while working with modern technologies like React, Next.js, and TailwindCSS.
                 </p>
-                <Link 
-                    href="/contact"
-                    className="px-6 py-3 bg-primary text-secondary font-medium inline-flex items-center gap-2 hover:bg-primary/90 transition-colors"
-                >
-                    Let's Talk
-                    <span>→</span>
-                </Link>
+                <Button href='/contact' > Let's Talk</Button>
             </div>
         </div>
     );

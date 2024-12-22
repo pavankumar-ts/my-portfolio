@@ -10,8 +10,8 @@ const ProjectCard = ({ project, inView, categoryChanged, index }) => {
         >
             <div className="relative aspect-square mb-6 h-[300px] w-full bg-gray-100 overflow-hidden">
                 <Image
-                    src={project.image}
-                    alt={project.title}
+                    src={project.screenshots[0].url}
+                    alt={project.screenshots[0].caption}
                     fill
                     className="object-cover h-[200px] transition-transform duration-500 group-hover:scale-105"
                 />
@@ -37,7 +37,7 @@ const ProjectCard = ({ project, inView, categoryChanged, index }) => {
                 </p>
 
                 <Link
-                    href={project.link}
+                    href={`/projects/${project.slug}`}
                     className="inline-flex font-medium items-center gap-2 border border-primary/20 px-4 py-2 text-primary hover:bg-primary hover:text-secondary  transition-colors duration-300"
                 >
                     View Project

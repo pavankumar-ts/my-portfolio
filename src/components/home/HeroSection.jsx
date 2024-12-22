@@ -2,6 +2,8 @@ import { Github } from 'lucide-react';
 import Image from 'next/image';
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import Button from '@/components/common/Button';
+import Head from 'next/head';
 
 const HeroSection = () => {
     // Refs for GSAP animations
@@ -123,72 +125,79 @@ const HeroSection = () => {
     }, []);
 
     return (
-        <div className="container pt-32">
-            {/* Greeting */}
-            <h1 className="text-center text-2xl mb-8 greeting">
-                Hello, I'm Pavan Kumar
-            </h1>
+        <>
+            <Head>
+                <title>Home | Pavan Kumar</title>
+                <meta name="description" content="Welcome to the portfolio of Pavan Kumar, a passionate Software Developer specializing in creating modern and responsive web applications." />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            </Head>
 
-            {/* Main Title */}
-            <div className="text-left mb-16 overflow-hidden">
-                <h2 
-                    ref={mainTitleRef}
-                    className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[140px] font-bold tracking-tight leading-none"
-                >
-                    SOFTWARE
-                </h2>
-                <h2 
-                    ref={subTitleRef}
-                    className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[140px] ml-[20%] font-bold tracking-tight leading-none"
-                >
-                    DEVELOPER
-                </h2>
-            </div>
+            <div className="container pt-32">
+                {/* Greeting */}
+                <h1 className="text-center text-2xl mb-8 greeting">
+                    Hello, I'm Pavan Kumar
+                </h1>
 
-            {/* Content Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                {/* Left Description */}
-                <div ref={descriptionRef} className="md:col-span-1">
-                    <p className="text-primary/60 leading-relaxed mb-8">
-                        A passionate Software Developer specializing in creating modern and responsive web applications. Experienced in developing scalable solutions with a focus on clean code, optimal user experience, and cutting-edge technologies.
-                    </p>
-                    <button className="px-6 py-3 bg-primary text-secondary font-medium inline-flex items-center gap-2 hover:bg-primary/90 transition-all hover:translate-x-1">
-                        Contact Now
-                        <span className="arrow">→</span>
-                    </button>
+                {/* Main Title */}
+                <div className="text-left mb-16 overflow-hidden">
+                    <h2 
+                        ref={mainTitleRef}
+                        className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[140px] font-bold tracking-tight leading-none"
+                    >
+                        SOFTWARE
+                    </h2>
+                    <h2 
+                        ref={subTitleRef}
+                        className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[140px] ml-[20%] font-bold tracking-tight leading-none"
+                    >
+                        DEVELOPER
+                    </h2>
                 </div>
 
-                {/* Center Image */}
-                <div ref={imageRef} className="md:col-span-1 flex justify-center">
-                    <Image
-                        src="/assets/DP.png"
-                        alt="Professional portrait"
-                        className="w-full max-w-[400px] bg-gray-100"
-                        width={3000}
-                        height={3000}
-                        priority
-                    />
-                </div>
+                {/* Content Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    {/* Left Description */}
+                    <div ref={descriptionRef} className="md:col-span-1">
+                        <p className="text-primary/60 leading-relaxed mb-8">
+                            A passionate Software Developer specializing in creating modern and responsive web applications. Experienced in developing scalable solutions with a focus on clean code, optimal user experience, and cutting-edge technologies.
+                        </p>
+                        <Button href="/contact">
+                            Contact Now
+                        </Button>
+                    </div>
 
-                {/* Right Client List */}
-                <div className="md:col-span-1">
-                    <h3 className="text-sm font-medium mb-6 clients-heading">
-                        FEATURED CLIENTS
-                    </h3>
-                    <div className="grid grid-cols-2 gap-x-1 gap-y-4">
-                        {featuredClients.map((client) => (
-                            <div 
-                                key={client.id} 
-                                className="flex gap-4 client-item hover:translate-x-2 transition-transform duration-300"
-                            >
-                                <Github className="w-6 h-6 object-contain" />
-                                <span className="text-primary/60">{client.name}</span>
-                            </div>
-                        ))}
+                    {/* Center Image */}
+                    <div ref={imageRef} className="md:col-span-1 flex justify-center">
+                        <Image
+                            src="/assets/DP.png"
+                            alt="Professional portrait"
+                            className="w-full max-w-[400px] bg-gray-100"
+                            width={3000}
+                            height={3000}
+                            priority
+                        />
+                    </div>
+
+                    {/* Right Client List */}
+                    <div className="md:col-span-1">
+                        <h3 className="text-sm font-medium mb-6 clients-heading">
+                            FEATURED CLIENTS
+                        </h3>
+                        <div className="grid grid-cols-2 gap-x-1 gap-y-4">
+                            {featuredClients.map((client) => (
+                                <div 
+                                    key={client.id} 
+                                    className="flex gap-4 client-item hover:translate-x-2 transition-transform duration-300"
+                                >
+                                    <Github className="w-6 h-6 object-contain" />
+                                    <span className="text-primary/60">{client.name}</span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

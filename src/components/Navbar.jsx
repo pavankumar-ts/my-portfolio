@@ -33,10 +33,10 @@ const Navbar = () => {
 
     return (
         <nav className="w-full py-4 bg-secondary sticky top-0 z-50">
-            <div className="max-w-[1200px] mx-auto md:px-[3rem] px-[1rem]">
+            <div className="max-w-[1400px] mx-auto md:px-[3rem] px-[1rem]">
                 <div className="flex justify-between items-center">
                     {/* Logo */}
-                    <Link href="/" className="text-2xl font-bold text-primary">
+                    <Link href="/" >
                         <Image src='/assets/logo.svg'
                             alt='Pavan'
                             width={1000} height={1000}
@@ -76,7 +76,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Mobile Navigation */}
-                <div 
+                <div
                     className={`md:hidden fixed top-0 left-0 w-full h-[100vh] bg-secondary transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 z-40`}
                 >
                     <div className="flex justify-between items-center p-4 border-b border-primary/10">

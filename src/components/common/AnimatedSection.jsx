@@ -8,7 +8,7 @@ const AnimatedSection = ({ children, className = '', delayMultiplier = 200 }) =>
   });
 
   return (
-    <div ref={ref} className={`transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${className}`} style={{ transitionDelay: `${delayMultiplier}ms` }}>
+    <div ref={ref} className={`transition-all duration-500 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${className}`} style={{ transitionDelay: `${delayMultiplier}ms` }}>
       {children}
     </div>
   );

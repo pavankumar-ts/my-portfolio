@@ -3,6 +3,7 @@ import { services } from '@/data/services';
 import Link from 'next/link';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
+import Button from '../common/Button';
 
 const ServicesSection = () => {
     const { ref, inView } = useInView({
@@ -21,13 +22,7 @@ const ServicesSection = () => {
                     <p className="text-primary/60 text-lg leading-relaxed mb-8 max-w-lg">
                         As a dedicated UI/UX designer and Webflow developer, I specialize in creating visually stunning and user-friendly websites. My passion lies in crafting seamless digital experiences that blend innovative design with intuitive functionality.
                     </p>
-                    <Link
-                        href="/contact"
-                        className="px-6 py-3 bg-primary text-secondary font-medium inline-flex items-center gap-2 hover:bg-primary/90 transition-colors"
-                    >
-                        Contact Now
-                        <span>→</span>
-                    </Link>
+                    <Button href='/contact' >Contact Now</Button>
                 </div>
             </div>
 
@@ -60,16 +55,16 @@ const ServicesSection = () => {
                             </div>
                         </div>
                         <div className="flex flex-col items-start">
-                            <p className="text-primary/60 leading-relaxed mb-6">
+                            <p className="text-primary/60 leading-relaxed mb-0">
                                 {service.description}
                             </p>
-                            <Link
+                            {/* <Link
                                 href={`/services/${service.id}`}
                                 className="inline-flex items-center gap-2 border border-primary px-4 py-2 hover:bg-primary hover:text-secondary transition-colors"
                             >
                                 View More
                                 <span>→</span>
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                 ))}
