@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import Image from 'next/image';
 import gsap from 'gsap';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(false);
     const router = useRouter();
 
     useEffect(() => {
@@ -18,10 +19,24 @@ const Navbar = () => {
             yoyo: true,
             ease: 'power1.inOut'
         });
+
+        // Set initial theme based on local storage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setIsDarkMode(savedTheme === 'dark');
+            document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+        }
     }, []);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+    };
+
+    const toggleTheme = () => {
+        const newTheme = isDarkMode ? 'light' : 'dark';
+        setIsDarkMode(!isDarkMode);
+        document.documentElement.classList.toggle('dark', !isDarkMode);
+        localStorage.setItem('theme', newTheme);
     };
 
     const navigationItems = [
@@ -32,7 +47,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="w-full py-4 bg-secondary sticky top-0 z-50">
+        <nav className="navbar w-full py-4 sticky top-0 z-50 bg-bgColor">
             <div className="max-w-[1400px] mx-auto md:px-[3rem] px-[1rem]">
                 <div className="flex justify-between items-center">
                     {/* Logo */}
@@ -50,29 +65,36 @@ const Navbar = () => {
                             <Link
                                 key={item.name}
                                 href={item.path}
-                                className={`text-primary hover:text-primary transition-colors font-medium ${router.pathname === item.path ? 'border-b-[1px] border-black' : ''}`}
+                                className={`link hover:text-primary transition-colors font-medium ${router.pathname === item.path ? 'border-b-[1px] border-primary' : ''}`}
                             >
                                 {item.name}
                             </Link>
                         ))}
                     </div>
 
-                    <Link
-                        href="/contact"
-                        className="px-4 py-2 border border-primary hover:bg-primary hover:text-secondary transition-colors hidden md:flex items-center font-medium"
-                    >
-                        Contact
-                        <span className="ml-2 arrow">→</span>
-                    </Link>
-
-                    {/* Mobile Menu Button */}
-                    <button
-                        onClick={toggleMenu}
-                        className="md:hidden text-primary/60 hover:text-primary"
-                        aria-label="Toggle menu"
-                    >
-                        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                    </button>
+                    <div className="flex items-center space-x-4">
+                        <button
+                            onClick={toggleTheme}
+                            className="text-primary/60 hover:text-primary"
+                            aria-label="Toggle theme"
+                        >
+                            {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}
+                        </button>
+                        <Link
+                            href="/contact"
+                            className="button px-4 py-2 border hover:bg-primary hover:text-secondary transition-colors hidden md:flex items-center font-medium"
+                        >
+                            Contact
+                            <span className="ml-2 arrow">→</span>
+                        </Link>
+                        <button
+                            onClick={toggleMenu}
+                            className="md:hidden text-primary/60 hover:text-primary"
+                            aria-label="Toggle menu"
+                        >
+                            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                        </button>
+                    </div>
                 </div>
 
                 {/* Mobile Navigation */}
@@ -100,7 +122,7 @@ const Navbar = () => {
                             <Link
                                 key={item.name}
                                 href={item.path}
-                                className={`text-primary text-2xl hover:text-primary transition-colors font-medium ${router.pathname === item.path ? 'font-bold' : ''}`}
+                                className={`link text-2xl hover:text-primary transition-colors font-medium ${router.pathname === item.path ? 'font-bold' : ''}`}
                                 onClick={toggleMenu}
                             >
                                 {item.name}
@@ -108,7 +130,7 @@ const Navbar = () => {
                         ))}
                         <Link
                             href="/contact"
-                            className="text-2xl px-4 py-2 border border-primary rounded hover:bg-primary hover:text-secondary transition-colors inline-flex items-center w-fit font-medium"
+                            className="button text-2xl px-4 py-2 border rounded hover:bg-primary hover:text-secondary transition-colors inline-flex items-center w-fit font-medium"
                             onClick={toggleMenu}
                         >
                             Contact

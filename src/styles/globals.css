@@ -3,9 +3,26 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --primary-color: #000;
+    --secondary-color: #fff;
+    --bg-color: #fff;
+    --text-color: #000;
+    --border-color: #ccc;
+}
+
+.dark {
+    --primary-color: #fff;
+    --secondary-color: #000;
+    --bg-color: #121212;
+    --text-color: #fff;
+    --border-color: #444;
+}
 
 body {
-  font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .container {
@@ -25,3 +42,4 @@ body {
     margin-bottom: 6rem;
   }
 }
+
