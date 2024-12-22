@@ -5,7 +5,7 @@ import { Menu, X, Sun, Moon } from 'lucide-react';
 import Image from 'next/image';
 import gsap from 'gsap';
 
-const Navbar = () => {
+const Navbar = ({ onThemeToggle }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(false);
     const router = useRouter();
@@ -37,6 +37,7 @@ const Navbar = () => {
         setIsDarkMode(!isDarkMode);
         document.documentElement.classList.toggle('dark', !isDarkMode);
         localStorage.setItem('theme', newTheme);
+        onThemeToggle(!isDarkMode);
     };
 
     const navigationItems = [

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function App({ Component, pageProps }) {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,14 +15,31 @@ export default function App({ Component, pageProps }) {
       setScrollPosition(scrollPercent);
     };
 
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setIsDarkMode(savedTheme === 'dark');
+      document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+    }
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', isDarkMode);
+  }, [isDarkMode]);
+
+  const handleThemeToggle = (isDark) => {
+    setIsDarkMode(isDark);
+  };
+
   return (
     <>
-      <Navbar />
-      <div className="fixed top-0 left-0 w-full h-1 bg-black z-50" style={{ width: `${scrollPosition}%` }} />
+      <Navbar onThemeToggle={handleThemeToggle} />
+      <div
+        className={`fixed top-0 left-0 w-full h-1 z-50 ${isDarkMode ? 'bg-white' : 'bg-black'}`}
+        style={{ width: `${scrollPosition}%` }}
+      />
       <Component {...pageProps} />
       <Footer />
     </>

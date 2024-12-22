@@ -139,7 +139,7 @@ const HeroSection = () => {
                 </h1>
 
                 {/* Main Title */}
-                <div className="text-left mb-16 overflow-hidden">
+                <div className="text-left mb-16 ">
                     <h2 
                         ref={mainTitleRef}
                         className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[140px] font-bold tracking-tight leading-none"
