@@ -45,12 +45,28 @@ export default function ProjectPage({ project }) {
                 {/* Screenshots Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 mb-16 md:mb-32">
                     {project.screenshots.map((screenshot, index) => (
-                        <div key={index} className="relative aspect-[4/3] w-full overflow-hidden rounded-sm">
+                        <div
+                            key={index}
+                            className={`relative w-full rounded-sm overflow-hidden h-auto ${index === 0 ? 'col-span-1 sm:col-span-2' : ''
+                                }`}
+                        >
+                            <style jsx global>{`
+            .screenshot-image {
+              object-position: top;
+                        }
+            .screenshot-image:hover {
+              object-position: bottom;
+              transition: object-position 15000ms ease-out !important;
+            }
+          `}</style>
                             <Image
                                 src={screenshot.url}
                                 alt={screenshot.caption}
-                                fill
-                                className="object-cover hover:scale-105 transition-transform duration-500"
+                                layout="responsive"
+                                width={2000}
+                                height={7000}
+                                className={`screenshot-image object-cover w-full ${index === 0 ? 'max-h-[540px]' : 'h-auto'
+                                    }`}
                                 priority={index === 0}
                             />
                         </div>
@@ -94,10 +110,10 @@ export default function ProjectPage({ project }) {
                     </div>
 
                     {/* Right Section - Project Content */}
-                    <div className="w-full lg:w-[60%] space-y-12 md:space-y-24">
+                    <div className="w-full lg:w-[60%] space-y-12 md:space-y-12">
                         {/* Challenge, Solution, Results sections */}
                         {['Challenge', 'Solution', 'Results'].map((section, index) => (
-                            <div key={section} className="border-b border-primary/10 pb-12 md:pb-24">
+                            <div key={section} className="border-b border-primary/10 pb-12 md:pb-12">
                                 <div className="flex items-start">
                                     <span className="text-sm font-medium text-primary/60">
                                         [{String(index + 1).padStart(2, '0')}]

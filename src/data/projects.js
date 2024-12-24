@@ -13,6 +13,7 @@ export const projects = [
         year: '2023',
         client: 'Bricstal Tech',
         role: 'Frontend Developer',
+        mainImg: '/assets/projects/bricstaltech02.webp',
         features: [
             'Server-side rendering with Next.js',
             'Responsive design implementation',
@@ -36,21 +37,17 @@ export const projects = [
             • Developing industry-specific solution pages with detailed insights`,
         screenshots: [
             {
-                url: '/assets/projects/project01.webp',
+                url: '/assets/projects/bricstaltech01.webp',
                 caption: 'Homepage showcasing key services and industry solutions'
             },
             {
-                url: '/assets/projects/project01.webp',
+                url: '/assets/projects/mockup.png',
                 caption: 'Industry-specific solutions with interactive components'
             },
             {
-                url: '/assets/projects/project01.webp',
+                url: '/assets/projects/mockupPhone.png',
                 caption: 'About page with company insights and expertise'
             },
-            {
-                url: '/assets/projects/project01.webp',
-                caption: 'Contact page with optimized form integration'
-            }
         ],
         results: [
             'Improved website loading speed by 40% through optimized assets and SSR',

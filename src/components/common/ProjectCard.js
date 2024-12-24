@@ -10,8 +10,8 @@ const ProjectCard = ({ project, inView, categoryChanged, index }) => {
         >
             <div className="relative aspect-square mb-6 h-[300px] w-full bg-gray-100 overflow-hidden">
                 <Image
-                    src={project.screenshots[0].url}
-                    alt={project.screenshots[0].caption}
+                    src={project.mainImg}
+                    alt={project.title}
                     fill
                     className="object-cover h-[200px] transition-transform duration-500 group-hover:scale-105"
                 />
