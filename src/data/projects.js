@@ -103,7 +103,7 @@ export const projects = [
         slug: "yuvi-builders",
         title: "Yuvi Builders",
         description: "An advanced web platform for Yuvi Builders, a real estate and construction firm, built with Next.js and integrated with Drupal CMS for content management. The platform includes dynamic product listing with features like filtering, sorting, and categorization to showcase their projects efficiently.",
-        category: "Real Estate Website",
+        category: [2, 5], // Referencing category IDs
         technologies: [1, 2, 3, 4],
         link: "https://www.yuvibuilders.com/",
         year: "2024",
@@ -142,7 +142,7 @@ export const projects = [
             author: "Prakash Shetty",
             role: "CEO, Yuvi Builders"
         }
-    }, 
+    },
     {
         id: 3,
         slug: 'tuff-ppf',
@@ -260,7 +260,7 @@ export const projects = [
         slug: 'harvis-infra',
         title: 'Harvis Infra',
         description: 'A dynamic web platform for Harvis Infra, designed to showcase their expertise in project development and infrastructure solutions through a modern and interactive interface built with Next.js.',
-        category: [2], // Referencing category IDs
+        category: [2, 5], // Referencing category IDs
         technologies: [1, 4, 3], // Referencing technology IDs
         link: 'https://www.harvisinfra.com/',
         year: '2024',
@@ -314,7 +314,7 @@ export const projects = [
         slug: 'snip-dark-salon-spa',
         title: 'Snip Dark Salon Spa',
         description: 'A premium website for Snip Dark Salon Spa, showcasing their luxury spa services, ambiance, and expertise with a sleek design built on WordPress for easy content management and customization.',
-        category: [2], // Referencing category IDs
+        category: [4, 3], // Referencing category IDs
         technologies: [1, 2, 3, 4], // Referencing technology IDs
         link: 'https://snipdark.com/',
         year: '2024',
@@ -368,7 +368,7 @@ export const projects = [
         slug: "neo-leather",
         title: "Neo Leather",
         description: "A modern web platform for Neo Leather, showcasing their personalized leather furniture offerings with a static, high-performance website developed using Next.js to ensure speed, scalability, and SEO optimization.",
-        category: [2],
+        category: [4, 3],
         technologies: [1],
         link: "https://neoleather.in/",
         year: "2024",
@@ -511,8 +511,21 @@ export const getRelatedProjects = (currentProject, limit = 3) => {
     let relatedProjects = projects
         .filter(project =>
             project.id !== currentProject.id &&
+            Array.isArray(project.category) &&
             project.category.some(cat => currentProject.category.includes(cat))
         );
+
+    if (relatedProjects.length === 0) {
+        relatedProjects = projects.filter(project =>
+            project.id !== currentProject.id &&
+            Array.isArray(project.category) &&
+            project.category.includes(currentProject.category[0])
+        );
+    }
+
+    if (relatedProjects.length === 1) {
+        return relatedProjects;
+    }
 
     if (relatedProjects.length === 0) {
         relatedProjects = projects.filter(project => project.id !== currentProject.id);
