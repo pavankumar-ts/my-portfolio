@@ -40,6 +40,10 @@ const Navbar = ({ onThemeToggle }) => {
         onThemeToggle(!isDarkMode);
     };
 
+    const isActive = (path) => {
+        return router.pathname === path || router.pathname.startsWith(`${path}/`);
+    };
+
     const navigationItems = [
         { name: 'Home', path: '/' },
         { name: 'Projects', path: '/projects' },
@@ -66,7 +70,7 @@ const Navbar = ({ onThemeToggle }) => {
                             <Link
                                 key={item.name}
                                 href={item.path}
-                                className={`link hover:text-primary transition-colors font-medium ${router.pathname === item.path ? 'border-b-[1px] border-primary' : ''}`}
+                                className={`link hover:text-primary transition-colors font-medium ${isActive(item.path) ? 'border-b-[1px] border-primary' : ''}`}
                             >
                                 {item.name}
                             </Link>
@@ -123,7 +127,7 @@ const Navbar = ({ onThemeToggle }) => {
                             <Link
                                 key={item.name}
                                 href={item.path}
-                                className={`link text-2xl hover:text-primary transition-colors font-medium ${router.pathname === item.path ? 'font-bold' : ''}`}
+                                className={`link text-2xl hover:text-primary transition-colors font-medium ${isActive(item.path) ? 'font-bold' : ''}`}
                                 onClick={toggleMenu}
                             >
                                 {item.name}

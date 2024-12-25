@@ -1,8 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getTechnologyById } from '@/data/projects';
 
 const ProjectCard = ({ project, inView, categoryChanged, index }) => {
+    const truncateDescription = (description, limit) => {
+        if (description.length <= limit) return description;
+        return description.substring(0, limit) + '...';
+    };
+
     return (
         <div
             className={`group transition-all duration-1000 transform ${inView && !categoryChanged ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
@@ -18,27 +24,30 @@ const ProjectCard = ({ project, inView, categoryChanged, index }) => {
             </div>
 
             <div className="space-y-4">
-                <div className="flex justify-between items-center">
+                <div className="flex flex-col gap-1">
                     <h2 className="text-2xl font-semibold">{project.title}</h2>
                     <div className="flex gap-2 items-center">
-                        {project.technologies.slice(0, 3).map((tech, index) => (
-                            <React.Fragment key={tech}>
-                                <span className="text-primary/60 text-sm ">{tech}</span>
-                                {index !== project.technologies.slice(0, 3).length - 1 && (
-                                    <span className="text-primary/60">•</span>
-                                )}
-                            </React.Fragment>
-                        ))}
+                        {project.technologies.slice(0, 3).map((techId, index) => {
+                            const tech = getTechnologyById(techId);
+                            return (
+                                <React.Fragment key={tech.id}>
+                                    <span className="text-primary/60 text-sm">{tech.name}</span>
+                                    {index !== project.technologies.slice(0, 3).length - 1 && (
+                                        <span className="text-primary/60">•</span>
+                                    )}
+                                </React.Fragment>
+                            );
+                        })}
                     </div>
                 </div>
 
                 <p className="text-primary/60 leading-relaxed">
-                    {project.description}
+                    {truncateDescription(project.description, 150)}
                 </p>
 
                 <Link
                     href={`/projects/${project.slug}`}
-                    className="inline-flex font-medium items-center gap-2 border border-primary/20 px-4 py-2 text-primary hover:bg-primary hover:text-secondary  transition-colors duration-300"
+                    className="inline-flex font-medium items-center gap-2 border border-primary/20 px-4 py-2 text-primary hover:bg-primary hover:text-secondary transition-colors duration-300"
                 >
                     View Project
                     <span>→</span>

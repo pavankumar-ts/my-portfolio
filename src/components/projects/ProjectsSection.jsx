@@ -28,7 +28,7 @@ const ProjectsSection = () => {
         <>
             <div ref={ref} className="container">
                 {/* Section Title */}
-                <div className="text-left mb-16 ">
+                <div className="text-center mb-16 ">
                     <h2 className={`text-[50px] sm:text-[80px] md:text-[100px] lg:text-[140px] font-bold tracking-tight leading-none transition-all duration-1000 transform ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
                         FEATURED
                     </h2>
