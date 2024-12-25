@@ -195,7 +195,6 @@ export default function ProjectPage({ project, relatedProjects }) {
     );
 }
 
-// ... getStaticPaths and getStaticProps remain the same
 
 
 export async function getStaticPaths() {

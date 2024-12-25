@@ -17,13 +17,12 @@ const ProjectsSection = () => {
         PROJECTS
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-20">
-        {projects.map((project, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-20">
+        {projects.slice(0, 6).map((project, index) => (
           <ProjectCard
             key={project.id}
             project={project}
             inView={inView}
-            // categoryChanged={categoryChanged}
             index={index}
           />
         ))}

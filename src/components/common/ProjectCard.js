@@ -10,8 +10,11 @@ const ProjectCard = ({ project, inView, categoryChanged, index }) => {
     };
 
     return (
-        <div
-            className={`group transition-all duration-1000 transform ${inView && !categoryChanged ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        <Link
+        href={`/projects/${project.slug}`}
+            className={`group transition-all duration-1000 transform ${inView && !categoryChanged ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+          
+            `}
             style={{ transitionDelay: `${index * 200}ms` }}
         >
             <div className="relative aspect-square mb-6 h-[300px] w-full bg-gray-100 overflow-hidden">
@@ -45,15 +48,14 @@ const ProjectCard = ({ project, inView, categoryChanged, index }) => {
                     {truncateDescription(project.description, 150)}
                 </p>
 
-                <Link
-                    href={`/projects/${project.slug}`}
+                <div
                     className="inline-flex font-medium items-center gap-2 border border-primary/20 px-4 py-2 text-primary hover:bg-primary hover:text-secondary transition-colors duration-300"
                 >
                     View Project
                     <span>→</span>
-                </Link>
+                </div>
             </div>
-        </div>
+        </Link>
     );
 };
 
