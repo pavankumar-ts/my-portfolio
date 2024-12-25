@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { socialLinks } from '@/data/socialLinks';
 import Image from 'next/image';
 
-const Footer = () => {
+const Footer = ({ isDarkMode }) => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-end  gap-4 md:gap-8">
             {/* Logo */}
             <Link href="/" >
-              <Image src='/assets/logo.svg'
+              <Image src={isDarkMode ? '/assets/logo2_white.svg' : '/assets/logo2.svg'}
                 alt='Pavan'
                 width={1000} height={1000}
                 className='h-[30px] w-auto object-contain'

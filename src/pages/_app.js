@@ -41,7 +41,7 @@ export default function App({ Component, pageProps }) {
         style={{ width: `${scrollPosition}%` }}
       />
       <Component {...pageProps} />
-      <Footer />
+      <Footer isDarkMode={isDarkMode} />
     </>
   );
 }

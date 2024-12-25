@@ -1,9 +1,11 @@
+// src/components/home/HeroSection.jsx
 import { Github } from 'lucide-react';
 import Image from 'next/image';
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import Button from '@/components/common/Button';
 import Head from 'next/head';
+import { technologyLogos } from '@/data/projects';
 
 const HeroSection = () => {
     // Refs for GSAP animations
@@ -11,39 +13,6 @@ const HeroSection = () => {
     const subTitleRef = useRef(null);
     const descriptionRef = useRef(null);
     const imageRef = useRef(null);
-
-    const featuredClients = [
-        {
-            id: 1,
-            name: 'Logoluxe',
-            icon: '/assets/clients/logoluxe.svg'
-        },
-        {
-            id: 2,
-            name: 'Graphicraft',
-            icon: '/assets/clients/graphicraft.svg'
-        },
-        {
-            id: 3,
-            name: 'Auraicons',
-            icon: '/assets/clients/auraicons.svg'
-        },
-        {
-            id: 4,
-            name: 'Logolaze',
-            icon: '/assets/clients/logolaze.svg'
-        },
-        {
-            id: 5,
-            name: 'Designnest',
-            icon: '/assets/clients/designnest.svg'
-        },
-        {
-            id: 6,
-            name: 'Logozen',
-            icon: '/assets/clients/logozen.svg'
-        }
-    ];
 
     useEffect(() => {
         // Reset GSAP animations
@@ -178,19 +147,19 @@ const HeroSection = () => {
                         />
                     </div>
 
-                    {/* Right Client List */}
+                    {/* Right Technology List */}
                     <div className="md:col-span-1">
-                        <h3 className="text-sm font-medium mb-6 clients-heading">
-                            FEATURED CLIENTS
+                        <h3 className="text-sm font-medium mb-4 clients-heading">
+                            TECHNOLOGY
                         </h3>
                         <div className="grid grid-cols-2 gap-x-1 gap-y-4">
-                            {featuredClients.map((client) => (
+                            {technologyLogos.slice(0, 6).map((tech) => (
                                 <div 
-                                    key={client.id} 
+                                    key={tech.id} 
                                     className="flex gap-4 client-item hover:translate-x-2 transition-transform duration-300"
                                 >
-                                    <Github className="w-6 h-6 object-contain" />
-                                    <span className="text-primary/60">{client.name}</span>
+                                    <Image src={tech.url} alt={tech.name} width={24} height={24} />
+                                    <span className="text-primary/60">{tech.name}</span>
                                 </div>
                             ))}
                         </div>

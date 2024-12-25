@@ -1,6 +1,6 @@
 // data/projects.js
 
-const technologyLogos = [
+export const technologyLogos = [
     {
         id: 1,
         name: 'Next.js',
