@@ -66,10 +66,8 @@ const Navbar = ({ onThemeToggle }) => {
                             <Link
                                 key={item.name}
                                 href={item.path}
-                                className={`hover:text-primary ${router.pathname === item.path || (item.path !== '/' && router.pathname.startsWith(item.path))
-                                        ? 'border-b-[1px] border-primary'
-                                        : ''
-                                    }`} >
+                                className={`link hover:text-primary transition-colors font-medium ${router.pathname === item.path ? 'border-b-[1px] border-primary' : ''}`}
+                            >
                                 {item.name}
                             </Link>
                         ))}

@@ -1,5 +1,32 @@
 // data/projects.js
 
+const technologyLogos = [
+    {
+        id: 1,
+        name: 'Next.js',
+        url: '/assets/projects/technology-logos/nextjs.svg'
+    },
+    {
+        id: 2,
+        name: 'React',
+        url: '/assets/projects/technology-logos/react.svg'
+    },
+    {
+        id: 3,
+        name: 'TailwindCSS',
+        url: '/assets/projects/technology-logos/tailwindcss.svg'
+    },
+    {
+        id: 4,
+        name: 'JavaScript ES6+',
+        url: '/assets/projects/technology-logos/javascript.svg'
+    },
+    {
+        id: 5,
+        name: 'CSS Modules',
+        url: '/assets/projects/technology-logos/css.svg'
+    }
+];
 
 export const projects = [
     {
@@ -8,12 +35,11 @@ export const projects = [
         title: 'Bricstal Tech',
         description: 'A comprehensive web application for an IT consulting firm, showcasing industry-specific solutions and innovative technology services.',
         category: 'Web Application',
-        technologies: ['Next.js', 'React', 'TailwindCSS', 'JavaScript ES6+', 'CSS Modules'],
+        technologies: [1, 2, 3, 4, 5], // Referencing technology IDs
         link: 'https://www.bricstaltech.com/',
         year: '2023',
         client: 'Bricstal Tech',
-        role: 'Frontend Developer',
-        mainImg: '/assets/projects/bricstaltech02.webp',
+        mainImg: '/assets/projects/mockup.png',
         features: [
             'Server-side rendering with Next.js',
             'Responsive design implementation',
@@ -36,10 +62,6 @@ export const projects = [
             • Optimizing images and assets for faster load times
             • Developing industry-specific solution pages with detailed insights`,
         screenshots: [
-            {
-                url: '/assets/projects/bricstaltech01.webp',
-                caption: 'Homepage showcasing key services and industry solutions'
-            },
             {
                 url: '/assets/projects/mockup.png',
                 caption: 'Industry-specific solutions with interactive components'
@@ -89,7 +111,6 @@ export const projectCategories = [
     'E-Commerce'
 ];
 
-
 export const getProjectsByCategory = (category) => {
     if (category === 'All Projects') return projects;
     return projects.filter(project => project.category === category);
@@ -98,9 +119,14 @@ export const getProjectsByCategory = (category) => {
 // New helper function for getting related projects
 export const getRelatedProjects = (currentProject, limit = 3) => {
     return projects
-        .filter(project => 
-            project.id !== currentProject.id && 
+        .filter(project =>
+            project.id !== currentProject.id &&
             project.category === currentProject.category
         )
         .slice(0, limit);
+};
+
+// Helper function to get technology details by ID
+export const getTechnologyById = (id) => {
+    return technologyLogos.find(tech => tech.id === id);
 };

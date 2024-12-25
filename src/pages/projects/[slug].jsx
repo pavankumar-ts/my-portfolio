@@ -2,12 +2,12 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
-import { projects } from '@/data/projects';
+import { projects, getRelatedProjects, getTechnologyById } from '@/data/projects';
 import Link from 'next/link';
 import Head from 'next/head';
 import ContactCTA from '@/components/common/ContactCTA';
 
-export default function ProjectPage({ project }) {
+export default function ProjectPage({ project, relatedProjects }) {
     const { ref, inView } = useInView({
         triggerOnce: true,
         threshold: 0.1,
@@ -47,8 +47,7 @@ export default function ProjectPage({ project }) {
                     {project.screenshots.map((screenshot, index) => (
                         <div
                             key={index}
-                            className={`relative w-full rounded-sm overflow-hidden h-auto ${index === 0 ? 'col-span-1 sm:col-span-2' : ''
-                                }`}
+                            className={`relative w-full rounded-sm overflow-hidden h-auto`}
                         >
                             <style jsx global>{`
             .screenshot-image {
@@ -65,8 +64,7 @@ export default function ProjectPage({ project }) {
                                 layout="responsive"
                                 width={2000}
                                 height={7000}
-                                className={`screenshot-image object-cover w-full ${index === 0 ? 'max-h-[540px]' : 'h-auto'
-                                    }`}
+                                className={`screenshot-image object-cover w-fullh-auto`}
                                 priority={index === 0}
                             />
                         </div>
@@ -77,32 +75,33 @@ export default function ProjectPage({ project }) {
                 <div className="flex flex-col lg:flex-row gap-12 md:gap-20 ">
                     {/* Left Section - Project Info */}
                     <div className="w-full lg:w-[40%]">
-                        <div className="lg:sticky lg:top-32 space-y-8 md:space-y-16">
-                            <div className="border-l-2 border-primary/10 pl-4 md:pl-6">
-                                <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">Overview</h3>
-                                <p className="text-primary/60 text-sm md:text-base">{project.overview}</p>
-                            </div>
+                        <div className="lg:sticky lg:top-32 space-y-12">
 
-                            <div className="border-l-2 border-primary/10 pl-4 md:pl-6">
-                                <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">Project Info</h3>
-                                <div className="space-y-4">
-                                    {['Year', 'Client', 'Role'].map((item) => (
-                                        <div key={item}>
-                                            <p className="text-base md:text-lg text-primary">{item}</p>
-                                            <p className="text-primary/60 text-sm md:text-base">
+                            {/* Project Details Section */}
+                            <div className="border-l-2 border-primary/10 pl-6 transition-all hover:border-primary">
+                                <h3 className="text-2xl font-semibold mb-6">Project Info</h3>
+                                <div className="space-y-8">
+                                    {['Year', 'Client'].map((item) => (
+                                        <div key={item} className="group">
+                                            <p className="text-lg mb-2">{item}</p>
+                                            <p className="text-primary/60 group-hover:text-primary/80 transition-colors">
                                                 {project[item.toLowerCase()]}
                                             </p>
                                         </div>
                                     ))}
                                     <div>
-                                        <p className="text-base md:text-lg text-primary">Technologies</p>
-                                        <ul className="pl-2 space-y-1">
-                                            {project.technologies.map((tech) => (
-                                                <li key={tech} className="text-primary/60 text-sm md:text-base">
-                                                    • {tech}
-                                                </li>
-                                            ))}
-                                        </ul>
+                                        <p className="text-lg mb-3">Technologies</p>
+                                        <div className="flex flex-wrap gap-x-10 gap-y-6">
+                                            {project.technologies.map((techId) => {
+                                                const tech = getTechnologyById(techId);
+                                                return (
+                                                    <div key={tech.id} className="flex items-center gap-2">
+                                                        <Image src={tech.url} alt={tech.name} width={24} height={24} />
+                                                        <span className="text-primary/60">{tech.name}</span>
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -110,59 +109,86 @@ export default function ProjectPage({ project }) {
                     </div>
 
                     {/* Right Section - Project Content */}
-                    <div className="w-full lg:w-[60%] space-y-12 md:space-y-12">
-                        {/* Challenge, Solution, Results sections */}
-                        {['Challenge', 'Solution', 'Results'].map((section, index) => (
-                            <div key={section} className="border-b border-primary/10 pb-12 md:pb-12">
-                                <div className="flex items-start">
-                                    <span className="text-sm font-medium text-primary/60">
+                    <div className="w-full lg:w-[60%] space-y-12">
+                        {['Overview', 'Challenge', 'Solution', 'Results'].map((section, index) => (
+                            < div
+                                key={section}
+                                className="group border-b border-primary/10 pb-12 hover:border-primary transition-all"
+                            >
+                                <div className="flex items-start gap-6">
+                                    <span className="text-sm font-medium text-primary/40 group-hover:text-primary/60 transition-colors">
                                         [{String(index + 1).padStart(2, '0')}]
                                     </span>
-                                    <div className="ml-4 md:ml-8">
-                                        <h3 className="text-xl md:text-2xl font-semibold mb-4">
+                                    <div className="space-y-4">
+                                        <h3 className="text-2xl font-semibold">
                                             The {section}
                                         </h3>
+
                                         {section === 'Results' ? (
-                                            <ul className="space-y-2">
+                                            // Updated Results Section with consistent styling
+                                            <div className="text-primary/60 leading-relaxed space-y-4 group-hover:text-primary/80 transition-colors">
                                                 {project.results.map((result, idx) => (
-                                                    <li key={idx} className="text-primary/60 flex items-start gap-2 text-sm md:text-base">
-                                                        <span className="w-1.5 h-1.5 bg-primary/60 rounded-full mt-2"></span>
-                                                        {result}
-                                                    </li>
+                                                    <div
+                                                        key={idx}
+                                                        className="flex items-start gap-3 pl-4 border-l border-primary/10"
+                                                    >
+                                                        <span>{result}</span>
+                                                    </div>
                                                 ))}
-                                            </ul>
+                                            </div>
                                         ) : (
-                                            <p className="text-primary/60 whitespace-pre-line text-sm md:text-base">
-                                                {project[section.toLowerCase()]}
-                                            </p>
+                                            <div className="text-primary/60 leading-relaxed space-y-4 group-hover:text-primary/80 transition-colors">
+                                                {project[section.toLowerCase()].split('•').map((point, idx) => (
+                                                    <p key={idx} className="pl-4 border-l border-primary/10">
+                                                        {point.trim()}
+                                                    </p>
+                                                ))}
+                                            </div>
                                         )}
                                     </div>
                                 </div>
                             </div>
                         ))}
 
-                        {/* Testimonial Section */}
-                        {project.testimonial && (
-                            <div className="border-b border-primary/10 pb-12 md:pb-24">
-                                <div className="flex items-start">
-                                    <span className="text-sm font-medium text-primary/60">[04]</span>
-                                    <div className="ml-4 md:ml-8">
-                                        <h3 className="text-xl md:text-2xl font-semibold mb-4">Client Feedback</h3>
-                                        <blockquote className="text-primary/60 text-sm md:text-base">
+                        {/* Testimonial Section - Updated */}
+                        {/* {project.testimonial && (
+                            <div className="bg-primary/5 p-8 rounded-lg">
+                                <div className="flex items-start gap-6">
+                                    <span className="text-sm font-medium text-primary/40">
+                                        [04]
+                                    </span>
+                                    <div>
+                                        <h3 className="text-2xl font-semibold mb-6">Client Feedback</h3>
+                                        <blockquote className="text-primary/60 italic">
                                             "{project.testimonial.text}"
-                                            <footer className="mt-4">
-                                                <p className="font-medium text-primary">{project.testimonial.author}</p>
+                                            <footer className="mt-6 not-italic">
+                                                <p className="font-semibold text-primary">{project.testimonial.author}</p>
                                                 <p className="text-sm text-primary/60">{project.testimonial.role}</p>
                                             </footer>
                                         </blockquote>
                                     </div>
                                 </div>
                             </div>
-                        )}
+                        )} */}
                     </div>
                 </div>
-            </div>
+            </div >
             <ContactCTA />
+            {/* Related Projects Section */}
+            <div className="container mt-16">
+                <h2 className="text-3xl font-semibold mb-8">Related Projects</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {relatedProjects.map((relatedProject) => (
+                        <div key={relatedProject.id} className="border p-4 rounded-lg">
+                            <h3 className="text-xl font-semibold mb-2">{relatedProject.title}</h3>
+                            <p className="text-primary/60 mb-4">{relatedProject.description}</p>
+                            <Link href={`/projects/${relatedProject.slug}`}>
+                                <a className="text-primary hover:underline">View Project</a>
+                            </Link>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </>
     );
 }
@@ -188,9 +214,12 @@ export async function getStaticProps({ params }) {
         };
     }
 
+    const relatedProjects = getRelatedProjects(project);
+
     return {
         props: {
-            project
+            project,
+            relatedProjects
         }
     };
 }
