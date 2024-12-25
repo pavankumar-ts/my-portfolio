@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import ProjectCard from '../common/ProjectCard';
 
 const ProjectsSection = () => {
-    const [selectedCategory, setSelectedCategory] = useState('All Projects');
+    const [selectedCategory, setSelectedCategory] = useState(1); // Default to 'All Projects'
     const { ref, inView, entry } = useInView({
         triggerOnce: true,
         threshold: 0.1,
@@ -20,9 +20,9 @@ const ProjectsSection = () => {
         }
     }, [selectedCategory, entry]);
 
-    const filteredProjects = selectedCategory === 'All Projects'
+    const filteredProjects = selectedCategory === 1
         ? projects
-        : projects.filter(project => project.category === selectedCategory);
+        : projects.filter(project => project.category.includes(selectedCategory));
 
     return (
         <>
@@ -41,14 +41,14 @@ const ProjectsSection = () => {
                 <div className="flex flex-wrap justify-center gap-4 mb-16">
                     {projectCategories.map((category) => (
                         <button
-                            key={category}
-                            onClick={() => setSelectedCategory(category)}
-                            className={`px-6 py-2 border ${selectedCategory === category
+                            key={category.id}
+                            onClick={() => setSelectedCategory(category.id)}
+                            className={`px-6 py-2 border ${selectedCategory === category.id
                                 ? 'bg-primary text-secondary'
                                 : 'border-primary/10 hover:border-primary/50'
                                 } transition-colors`}
                         >
-                            {category}
+                            {category.name}
                         </button>
                     ))}
                 </div>
