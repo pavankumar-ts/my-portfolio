@@ -163,7 +163,7 @@ export const projects = [
         link: 'https://bangalore-gastro-centre.vercel.app/',
         year: '2024',
         client: 'Bangalore Gastro Centre',
-        mainImg: '/assets/projects/bgc.png',
+        mainImg: '/assets/projects/bgc_phone.png',
         features: [
             'Comprehensive content management using Drupal CMS',
             'Information about specialities and list of doctors',
