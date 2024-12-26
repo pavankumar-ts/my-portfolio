@@ -11,10 +11,12 @@ const ProjectCard = ({ project, inView, categoryChanged, index }) => {
 
     return (
         <Link
-        href={`/projects/${project.slug}`}
-            className={`group transition-all duration-1000 transform ${inView && !categoryChanged ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-          
-            `}
+            href={`/projects/${project.slug}`}
+            className={`group transition-all duration-1000 transform ${
+                inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            } ${
+                categoryChanged ? 'opacity-0 scale-95' : ''
+            }`}
             style={{ transitionDelay: `${index * 200}ms` }}
         >
             <div className="relative aspect-square mb-6 h-[300px] w-full bg-gray-100 overflow-hidden">

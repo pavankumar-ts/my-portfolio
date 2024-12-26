@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { projects } from '@/data/projects';
 import { useInView } from 'react-intersection-observer';
 import ProjectCard from '../common/ProjectCard';
+import Button from '../common/Button';
 
 const ProjectsSection = () => {
   const { ref, inView } = useInView({
@@ -26,6 +27,12 @@ const ProjectsSection = () => {
             index={index}
           />
         ))}
+      </div>
+
+      <div className="flex justify-center mt-12">
+        <Button href="/projects">
+          View All Projects
+        </Button>
       </div>
     </div>
   );

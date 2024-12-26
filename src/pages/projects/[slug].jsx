@@ -45,7 +45,7 @@ export default function ProjectPage({ project, relatedProjects }) {
                             rel="noopener noreferrer"
                             className="group px-4 md:px-6 py-2 md:py-3 bg-primary text-secondary font-medium inline-flex items-center gap-2 hover:bg-primary/90 transition-all hover:translate-x-1"
                         >
-                            Visit Website
+                           {project.btnText ? project.btnText : 'Visit Website'}
                             <span className="arrow">→</span>
                         </Link>
                     </div>
@@ -107,7 +107,7 @@ export default function ProjectPage({ project, relatedProjects }) {
                                                 const tech = getTechnologyById(techId);
                                                 return (
                                                     <div key={tech.id} className="flex items-center gap-2">
-                                                        <Image src={tech.url} alt={tech.name} width={24} height={24} />
+                                                        <Image src={tech.url} alt={tech.name} width={36} height={36} className={`${tech.isDark ? 'bg-white' : ''} p-1`}/>
                                                         <span className="text-primary/60">{tech.name}</span>
                                                     </div>
                                                 );

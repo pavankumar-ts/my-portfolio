@@ -12,6 +12,7 @@ module.exports = {
         primary: "var(--primary-color)",
         secondary: "var(--secondary-color)",
         bgColor: "var(--bg-color)",
+        logoColor: "var(--logo-color)",
       },
     },
   },

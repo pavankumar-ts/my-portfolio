@@ -27,7 +27,7 @@ const HeroSection = () => {
         ], { clearProps: 'all' });
 
         // Main timeline for initial animations
-        const tl = gsap.timeline({ 
+        const tl = gsap.timeline({
             defaults: { ease: 'power3.out' }
         });
 
@@ -37,31 +37,31 @@ const HeroSection = () => {
             opacity: 0,
             duration: 1
         })
-        .from(mainTitleRef.current, {
-            x: -100,
-            opacity: 0,
-            duration: 1
-        }, '-=0.5')
-        .from(subTitleRef.current, {
-            x: 100,
-            opacity: 0,
-            duration: 1
-        }, '-=0.7')
-        .from(descriptionRef.current, {
-            y: 30,
-            opacity: 0,
-            duration: 1
-        }, '-=0.5')
-        .from(imageRef.current, {
-            scale: 0.8,
-            opacity: 0,
-            duration: 1
-        }, '-=0.8');
+            .from(mainTitleRef.current, {
+                x: -100,
+                opacity: 0,
+                duration: 1
+            }, '-=0.5')
+            .from(subTitleRef.current, {
+                x: 100,
+                opacity: 0,
+                duration: 1
+            }, '-=0.7')
+            .from(descriptionRef.current, {
+                y: 30,
+                opacity: 0,
+                duration: 1
+            }, '-=0.5')
+            .from(imageRef.current, {
+                scale: 0.8,
+                opacity: 0,
+                duration: 1
+            }, '-=0.8');
 
         // Separate timeline for clients section
-        const clientsTl = gsap.timeline({ 
+        const clientsTl = gsap.timeline({
             defaults: { ease: 'power2.out' },
-            delay: 0.5 
+            delay: 0.5
         });
 
         // Animate clients section
@@ -70,12 +70,12 @@ const HeroSection = () => {
             opacity: 0,
             duration: 0.6
         })
-        .from('.client-item', {
-            y: 15,
-            opacity: 0,
-            duration: 0.4,
-            stagger: 0.1
-        }, '-=0.2');
+            .from('.client-item', {
+                y: 15,
+                opacity: 0,
+                duration: 0.4,
+                stagger: 0.1
+            }, '-=0.2');
 
         // Continuous arrow animation
         gsap.to('.arrow', {
@@ -109,13 +109,13 @@ const HeroSection = () => {
 
                 {/* Main Title */}
                 <div className="text-left mb-16 ">
-                    <h2 
+                    <h2
                         ref={mainTitleRef}
                         className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[140px] font-bold tracking-tight leading-none"
                     >
                         SOFTWARE
                     </h2>
-                    <h2 
+                    <h2
                         ref={subTitleRef}
                         className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[140px] ml-[20%] font-bold tracking-tight leading-none"
                     >
@@ -153,12 +153,12 @@ const HeroSection = () => {
                             TECHNOLOGY
                         </h3>
                         <div className="grid grid-cols-2 gap-x-1 gap-y-4">
-                            {technologyLogos.slice(0, 6).map((tech) => (
-                                <div 
-                                    key={tech.id} 
-                                    className="flex gap-4 client-item hover:translate-x-2 transition-transform duration-300"
+                            {technologyLogos.slice(0, 8).map((tech) => (
+                                <div
+                                    key={tech.id}
+                                    className="flex items-center gap-4 client-item hover:translate-x-2 transition-transform duration-300"
                                 >
-                                    <Image src={tech.url} alt={tech.name} width={24} height={24} />
+                                    <Image src={tech.url} alt={tech.name} width={40} height={40} className={`${tech.isDark ? 'bg-white' : ''} p-1`} />
                                     <span className="text-primary/60">{tech.name}</span>
                                 </div>
                             ))}

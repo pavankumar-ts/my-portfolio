@@ -1,44 +1,89 @@
 // data/projects.js
-
 export const technologyLogos = [
     {
         id: 1,
         name: 'Next.js',
-        url: '/assets/projects/technology-logos/nextjs.svg'
+        url: '/assets/projects/technology-logos/nextjs.svg',
+        isDark: true
     },
     {
         id: 2,
+        name: 'Android Studio',
+        url: '/assets/projects/technology-logos/android_studio.svg'
+    },
+    {
+        id: 3,
+        name: 'Firebase',
+        url: '/assets/projects/technology-logos/firebase.svg'
+    },
+    {
+        id: 4,
+        name: 'Framer',
+        url: '/assets/projects/technology-logos/framer.svg'
+    },
+    {
+        id: 5,
+        name: 'WordPress',
+        url: '/assets/projects/technology-logos/wordpress.svg',
+        isDark: true
+    },
+    {
+        id: 6,
         name: 'React',
         url: '/assets/projects/technology-logos/react.svg'
     },
     {
-        id: 3,
+        id: 7,
         name: 'TailwindCSS',
         url: '/assets/projects/technology-logos/tailwindcss.svg'
     },
     {
-        id: 4,
-        name: 'JavaScript ES6+',
+        id: 8,
+        name: 'Shopify',
+        url: '/assets/projects/technology-logos/shopify.svg'
+    },
+    {
+        id: 9,
+        name: 'Elementor',
+        url: '/assets/projects/technology-logos/elementor.svg'
+    },
+    {
+        id: 10,
+        name: 'Java',
+        url: '/assets/projects/technology-logos/java.svg'
+    },
+    {
+        id: 11,
+        name: 'JavaScript',
         url: '/assets/projects/technology-logos/javascript.svg'
     },
     {
-        id: 5,
-        name: 'CSS Modules',
+        id: 12,
+        name: 'Drupal',
+        url: '/assets/projects/technology-logos/drupal.svg'
+    },
+    {
+        id: 13,
+        name: 'Supabase',
+        url: '/assets/projects/technology-logos/supabase.svg'
+    },
+    {
+        id: 14,
+        name: 'CSS',
         url: '/assets/projects/technology-logos/css.svg'
     },
     {
-        id: 6,
-        name: 'Drupal CMS',
-        url: '/assets/projects/technology-logos/drupal.svg'
-    },
+        id: 15,
+        name: 'Webflow',
+        url: '/assets/projects/technology-logos/webflow.svg'
+    }
 ];
 
 export const projectCategories = [
     { id: 1, name: 'All Projects' },
-    { id: 2, name: 'Web Application' },
-    { id: 3, name: 'Frontend Development' },
-    { id: 4, name: 'UI/UX Design' },
-    { id: 5, name: 'E-Commerce' }
+    { id: 2, name: 'Website' },
+    { id: 3, name: 'Web Application' },
+    { id: 4, name: 'Mobile App' },
 ];
 
 export const projects = [
@@ -47,8 +92,8 @@ export const projects = [
         slug: 'bricstal-tech',
         title: 'Bricstal Tech',
         description: 'A comprehensive web application for an IT consulting firm, showcasing industry-specific solutions and innovative technology services.',
-        category: [2, 5], // Referencing category IDs
-        technologies: [1, 2, 3, 4, 5, 6],
+        category: [2],
+        technologies: [1, 6, 14],
         link: 'https://www.bricstaltech.com/',
         year: '2023',
         client: 'Bricstal Tech',
@@ -103,8 +148,8 @@ export const projects = [
         slug: "yuvi-builders",
         title: "Yuvi Builders",
         description: "An advanced web platform for Yuvi Builders, a real estate and construction firm, built with Next.js and integrated with Drupal CMS for content management. The platform includes dynamic product listing with features like filtering, sorting, and categorization to showcase their projects efficiently.",
-        category: [2, 5], // Referencing category IDs
-        technologies: [1, 2, 3, 4],
+        category: [3],
+        technologies: [1, 6, 12, 14],
         link: "https://www.yuvibuilders.com/",
         year: "2024",
         client: "Yuvi Builders",
@@ -148,8 +193,8 @@ export const projects = [
         slug: 'tuff-ppf',
         title: 'TUFF PPF',
         description: 'A feature-rich corporate website for TUFF PPF, a leading manufacturer of Paint Protection Films, showcasing their products, technical expertise, and commitment to quality.',
-        category: [2, 4], // Referencing category IDs
-        technologies: [1, 2, 3, 4, 5, 6],
+        category: [2],
+        technologies: [5, 9, 14],
         link: 'https://tuffppf.com/',
         year: '2024',
         client: 'TUFF PPF',
@@ -203,8 +248,8 @@ export const projects = [
         slug: 'bangalore-gastro-centre',
         title: 'Bangalore Gastro Centre',
         description: 'A comprehensive website for the Bangalore Gastro Centre, featuring information about the center, specialities, doctors, appointment booking, blogs, courses, media & events, awards, outreach programs, careers, and research. The team has access to edit the content via Drupal CMS, which reflects on the website.',
-        category: [2, 5], // Referencing category IDs
-        technologies: [1, 6], // Referencing technology IDs
+        category: [3],
+        technologies: [1, 6, 12, 14],
         link: 'https://bangalore-gastro-centre.vercel.app/',
         year: '2024',
         client: 'Bangalore Gastro Centre',
@@ -260,8 +305,8 @@ export const projects = [
         slug: 'harvis-infra',
         title: 'Harvis Infra',
         description: 'A dynamic web platform for Harvis Infra, designed to showcase their expertise in project development and infrastructure solutions through a modern and interactive interface built with Next.js.',
-        category: [2, 5], // Referencing category IDs
-        technologies: [1, 4, 3], // Referencing technology IDs
+        category: [2],
+        technologies: [1, 6, 14],
         link: 'https://www.harvisinfra.com/',
         year: '2024',
         client: 'Harvis Infra',
@@ -314,8 +359,8 @@ export const projects = [
         slug: 'snip-dark-salon-spa',
         title: 'Snip Dark Salon Spa',
         description: 'A premium website for Snip Dark Salon Spa, showcasing their luxury spa services, ambiance, and expertise with a sleek design built on WordPress for easy content management and customization.',
-        category: [4, 3], // Referencing category IDs
-        technologies: [1, 2, 3, 4], // Referencing technology IDs
+        category: [2],
+        technologies: [5, 9, 14],
         link: 'https://snipdark.com/',
         year: '2024',
         client: 'Snip Dark Salon Spa',
@@ -368,8 +413,8 @@ export const projects = [
         slug: "neo-leather",
         title: "Neo Leather",
         description: "A modern web platform for Neo Leather, showcasing their personalized leather furniture offerings with a static, high-performance website developed using Next.js to ensure speed, scalability, and SEO optimization.",
-        category: [4, 3],
-        technologies: [1],
+        category: [3],
+        technologies: [1, 6, 14],
         link: "https://neoleather.in/",
         year: "2024",
         client: "Neo Leather",
@@ -413,8 +458,8 @@ export const projects = [
         slug: "charge-infra",
         title: "Charge Infra",
         description: "A cutting-edge web platform for Charge Infra, designed to showcase their construction and infrastructure development services with a focus on performance and scalability using Next.js.",
-        category: [2], // Referencing category IDs
-        technologies: [1, 4, 3], // Referencing technology IDs
+        category: [2],
+        technologies: [1, 6, 14],
         link: "https://www.chargeinfra.com/",
         year: "2024",
         client: "Charge Infra",
@@ -458,8 +503,8 @@ export const projects = [
         slug: "neo-heights",
         title: "Neo Heights",
         description: "A modern and high-performance website for Neo Heights, a construction company specializing in industrial and commercial projects. Built with Next.js and exported to static pages for speed and SEO optimization, with Drupal CMS for efficient content management.",
-        category: [2], // Referencing category IDs
-        technologies: [1, 4, 3], // Referencing technology IDs
+        category: [3],
+        technologies: [1, 6, 12, 14],
         link: "https://neoheights.com/",
         year: "2024",
         client: "Neo Heights",
@@ -498,7 +543,53 @@ export const projects = [
             role: "Managing Director, Neo Heights"
         }
     },
-
+    {
+        id: 11,
+        slug: "socialize",
+        title: "Socialize - Social Media App",
+        description: "A social media Android application developed as a college project, similar to Instagram. Built using Java in Android Studio, with Firebase for real-time database management and secure user authentication.",
+        category: [4],
+        technologies: [2, 3, 10],
+        link: "https://github.com/pavankumar-ts/Social-Media-app-android-",
+        btnText: 'View on GitHub',
+        year: "2022",
+        client: "College Project",
+        mainImg: "/assets/projects/socialize01.png",
+        features: [
+            "User authentication using Firebase Authentication for secure access",
+            "Post creation and sharing with image upload functionality",
+            "Real-time feed displaying posts from all users",
+            "User profile pages showcasing posts and user details",
+            "Follow/unfollow functionality to connect with other users",
+            "Likes and comments for engaging with posts",
+            "Push notifications for likes, comments, and new followers"
+        ],
+        overview: "Socialize was developed as a college project to mimic the functionality of Instagram. The app aimed to provide a seamless user experience for social interaction, including sharing posts, following users, and engaging with content. Firebase was used for backend services to ensure scalability and real-time data synchronization.",
+        challenge: "The main challenges included: \n        • Implementing a real-time database to handle posts, likes, and comments efficiently, \n        • Designing an intuitive and responsive UI for engaging user experience, \n        • Ensuring secure user authentication and data privacy, \n        • Managing image uploads and optimizing storage",
+        solution: "The solution focused on leveraging Firebase and Android development best practices: \n        • Using Firebase Realtime Database for real-time data updates and synchronization, \n        • Implementing Firebase Authentication for secure user sign-in and registration, \n        • Designing a clean and responsive UI in Android Studio, \n        • Optimizing image uploads using Firebase Storage for efficient handling of media files, \n        • Incorporating features like likes, comments, and notifications to boost engagement",
+        screenshots: [
+            {
+                url: "/assets/projects/socialize01.png",
+                caption: "Real-time feed displaying posts from all users"
+            },
+            {
+                url: "/assets/projects/socialize02.png",
+                caption: "User profile page showcasing posts and user details"
+            }
+        ],
+        results: [
+            "Successfully implemented a fully functional social media app as a college project",
+            "Learned and applied core Android development and Firebase integration techniques",
+            "Built a scalable real-time database for posts, likes, and comments",
+            "Enhanced understanding of user interface design and user experience principles",
+            "Received positive feedback from professors and peers for functionality and design"
+        ],
+        testimonial: {
+            text: "Socialize was a great learning experience and a significant milestone in my journey as a developer. It gave me hands-on experience with Android development and Firebase integration.",
+            author: "Pavan",
+            role: "Developer, College Project"
+        }
+    },
 ];
 
 export const getProjectsByCategory = (category) => {

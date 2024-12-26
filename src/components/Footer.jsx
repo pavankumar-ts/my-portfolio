@@ -10,7 +10,7 @@ const Footer = ({ isDarkMode }) => {
     <footer className="border-t border-primary/10">
       <div className="max-w-[1200px] mx-auto py-12 md:px-[3rem] px-[1rem] ">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="flex flex-col md:flex-row items-end  gap-4 md:gap-8">
+          <div className="flex flex-col md:flex-row md:items-end items-center  gap-4 md:gap-8">
             {/* Logo */}
             <Link href="/" >
               <Image src={isDarkMode ? '/assets/logo2_white.svg' : '/assets/logo2.svg'}
@@ -26,7 +26,7 @@ const Footer = ({ isDarkMode }) => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary/60 hover:text-primary transition-colors"
+                  className="text-primary/60 hover:text-primary transition-colors "
                 >
                   {link.name}
                 </Link>
