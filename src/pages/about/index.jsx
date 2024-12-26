@@ -11,6 +11,8 @@ const AboutPage = () => {
         <>
         <Head>
             <title>About</title>
+            <meta name="description" content="Learn more about me, my skills, values, and experience." />
+            <meta name="keywords" content="about, skills, values, experience, portfolio" />
         </Head>
             <AboutHero />
             <AboutSkills />

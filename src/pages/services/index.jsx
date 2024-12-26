@@ -11,6 +11,7 @@ const ServicePage = () => {
             <Head>
                 <title>Services | Your Name</title>
                 <meta name="description" content="Comprehensive web development and design services" />
+                <meta name="keywords" content="services, web development, web design, portfolio" />
             </Head>
             <ServiceHero />
             <ServicesSection />
