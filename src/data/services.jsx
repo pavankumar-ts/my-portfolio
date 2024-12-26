@@ -35,5 +35,11 @@ export const services = [
         title: 'Performance & SEO',
         tags: ['Speed Optimization', 'Analytics', 'Technical SEO'],
         description: 'Optimizing web applications for peak performance and search engine visibility. Implementing technical SEO best practices, performance monitoring, and analytics to drive meaningful business results.'
+    },
+    {
+        id: '07',
+        title: 'Mobile App Development',
+        tags: ['Android', 'React Native'],
+        description: 'Creating high-quality mobile applications for Android and iOS platforms. Specializing in native and cross-platform development to deliver seamless user experiences and robust functionality.'
     }
 ];

@@ -89,6 +89,7 @@ export const projectCategories = [
 export const projects = [
     {
         id: 1,
+        home: true,
         slug: 'bricstal-tech',
         title: 'Bricstal Tech',
         description: 'A comprehensive web application for an IT consulting firm, showcasing industry-specific solutions and innovative technology services.',
@@ -157,14 +158,23 @@ export const projects = [
         features: [
             "Dynamic product listing with filtering and sorting options for projects",
             "Integration with Drupal CMS for centralized content management",
-            "Static Site Generation (SSG) for enhanced performance and SEO optimization",
             "Responsive design ensuring seamless user experience across all devices",
             "Optimized images and assets for faster load times",
-            "Intuitive navigation for easy access to project details and categories"
+            "Intuitive navigation for easy access to project details and categories",
+            "Interactive and modular architecture for future scalability"
         ],
-        overview: "Yuvi Builders required a modern and feature-rich website to showcase their real estate and construction projects. The platform was developed using Next.js with a focus on performance and SEO, while Drupal CMS enabled easy content updates. A robust product listing feature with filtering and sorting ensures users can explore projects effortlessly.",
-        challenge: "The main challenges included: \n        • Developing a fast-loading, SEO-optimized platform with dynamic product listing features, \n        • Integrating Drupal CMS for efficient content management and updates, \n        • Designing a responsive and user-friendly interface to enhance user engagement, \n        • Implementing filtering and sorting functionality for easy navigation of projects, \n        • Ensuring scalability to accommodate future additions and updates",
-        solution: "The solution focused on leveraging Next.js and Drupal CMS to deliver: \n        • A high-performance platform with Static Site Generation (SSG) for speed and SEO, \n        • Dynamic project listing with advanced filtering, sorting, and categorization options, \n        • A visually appealing, responsive design built with Tailwind CSS, \n        • Drupal CMS integration for centralized content updates and management, \n        • Modular and reusable components for scalability and future enhancements",
+        overview: "Yuvi Builders required a modern and feature-rich website to showcase their real estate and construction projects. The platform was developed using Next.js with a focus on dynamic content delivery and SEO optimization. Drupal CMS enabled seamless content updates, while robust product listing features with filtering and sorting ensured effortless project exploration for users.",
+        challenge: `The main challenges included: 
+        • Developing a fast-loading, SEO-optimized platform with dynamic product listing features,
+        • Integrating Drupal CMS for efficient content management and updates,
+        • Designing a responsive and user-friendly interface to enhance user engagement,
+        • Implementing filtering and sorting functionality for easy navigation of projects,
+        • Ensuring scalability to accommodate future additions and updates`,
+        solution: `The solution focused on leveraging Next.js and Drupal CMS to deliver:
+        • A high-performance platform for dynamic content delivery and SEO optimization,
+        • Dynamic project listing with advanced filtering, sorting, and categorization options,
+        • Drupal CMS integration for centralized content updates and management,
+        • Modular and reusable components for scalability and future enhancements`,
         screenshots: [
             {
                 url: "/assets/projects/yuvibuilders.png",
@@ -177,7 +187,6 @@ export const projects = [
         ],
         results: [
             "Improved user experience with dynamic filtering and sorting for project exploration",
-            "Faster page loads and better SEO performance using Static Site Generation",
             "Streamlined content management through Drupal CMS, enabling quick updates",
             "Enhanced user engagement with a responsive and intuitive interface",
             "Positive client feedback on functionality and aesthetics"
@@ -203,7 +212,6 @@ export const projects = [
             'Customized design built with Elementor for flexible, user-friendly page layouts',
             'Advanced on-page SEO optimization using Yoast SEO',
             'Seamless navigation with mega menu integration',
-            'Engaging product sliders created using Slider Revolution',
             'Interactive contact and inquiry forms with Contact Form 7',
             'Plugin-based optimizations for faster loading times'
         ],
@@ -317,7 +325,7 @@ export const projects = [
             'Custom-built layouts tailored to highlight Harvis Infra’s services and projects',
             'Optimized image loading for faster performance using Next.js Image component',
             'Intuitive navigation structure for easy access to information',
-            'Modern UI/UX design implemented with Tailwind CSS'
+            'Modern UI/UX design implemented with CSS'
         ],
         overview: 'Harvis Infra required a modern website to highlight their project development capabilities and infrastructure expertise. Built using Next.js, the platform emphasizes performance, scalability, and user engagement while ensuring a sleek and professional design.',
         challenge: `The main challenges included:
@@ -327,7 +335,7 @@ export const projects = [
             • Implementing a modern and clean design that aligns with the company’s brand identity`,
         solution: `The solution was developed using Next.js for its robust performance and SEO capabilities, with a focus on:
             • Leveraging Server-Side Rendering (SSR) to ensure optimal loading times and SEO ranking
-            • Designing responsive layouts with Tailwind CSS for a consistent user experience across devices
+            • Designing responsive layouts with  CSS for a consistent user experience across devices
             • Using the Next.js Image component to optimize images for faster loading
             • Creating modular and reusable components for scalability and maintainability
             • Implementing a professional design to enhance user engagement`,
@@ -367,7 +375,6 @@ export const projects = [
         mainImg: '/assets/projects/snipdark_phone.png',
         features: [
             'Customized layouts using Elementor for flexible and visually stunning page designs',
-            'Integrated WooCommerce for managing spa product sales and bookings',
             'Advanced SEO optimization using Yoast SEO for better visibility',
             'Responsive design for seamless browsing across mobile, tablet, and desktop devices',
             'Engaging gallery and service pages highlighting the spa\'s luxurious ambiance and offerings',
@@ -375,16 +382,15 @@ export const projects = [
         ],
         overview: 'Snip Dark Salon Spa required a website that reflects its premium services and sophisticated ambiance. Built on WordPress, the platform is designed to enhance online presence, facilitate bookings, and promote spa products with a user-friendly interface and seamless functionality.',
         challenge: `The main challenges included:
-            • Creating a visually stunning website that reflects the spa's luxury and sophistication
-            • Ensuring easy navigation and responsive design for all devices
-            • Integrating a booking system for spa services and an e-commerce solution for products
-            • Optimizing the site for SEO to attract more organic traffic`,
-        solution: `The solution was developed using WordPress with Elementor and WooCommerce, focusing on:
-            • Crafting custom layouts with Elementor to align with the spa’s brand identity
-            • Setting up WooCommerce for managing product sales and online bookings
-            • Optimizing site content and metadata with Yoast SEO for higher search engine rankings
-            • Ensuring responsive design and smooth navigation for an enhanced user experience
-            • Integrating visually engaging elements to showcase the spa's ambiance and offerings`,
+        • Creating a visually stunning website that reflects the spa's luxury and sophistication
+        • Ensuring easy navigation and responsive design for all devices
+        • Integrating a booking system for spa services
+        • Optimizing the site for SEO to attract more organic traffic`,
+        solution: `The solution was developed using WordPress with Elementor, focusing on:
+        • Crafting custom layouts with Elementor to align with the spa’s brand identity
+        • Optimizing site content and metadata with Yoast SEO for higher search engine rankings
+        • Ensuring responsive design and smooth navigation for an enhanced user experience
+        • Integrating visually engaging elements to showcase the spa's ambiance and offerings`,
         screenshots: [
             {
                 url: '/assets/projects/snipdark.png',
@@ -398,7 +404,7 @@ export const projects = [
         results: [
             'Increased website traffic and visibility with advanced SEO techniques',
             'Enhanced customer engagement through a visually appealing and responsive design',
-            'Streamlined service bookings and product sales via WooCommerce',
+            'Streamlined service bookings',
             'Positive feedback from clients on the site’s elegance and functionality',
             'Improved brand presence as a luxury spa destination'
         ],
@@ -465,16 +471,15 @@ export const projects = [
         client: "Charge Infra",
         mainImg: "/assets/projects/chargeinfra.png",
         features: [
-            "Static Site Generation (SSG) for faster load times and improved SEO",
             "Responsive and modern design for an optimal user experience across devices",
             "Tailored sections for highlighting services, projects, and client testimonials",
             "Optimized images using Next.js Image component for enhanced performance",
             "Intuitive navigation structure for seamless information access",
             "Modular and reusable components for easy maintenance and scalability"
         ],
-        overview: "Charge Infra required a high-performance, scalable website to highlight their expertise in construction and infrastructure development. The platform was built with Next.js, leveraging Static Site Generation (SSG) for optimal performance and an engaging user experience.",
+        overview: "Charge Infra required a high-performance, scalable website to highlight their expertise in construction and infrastructure development. The platform was built with Next.js, leveraging its capabilities for optimal performance and an engaging user experience.",
         challenge: "The main challenges included: \n        • Developing a fast and SEO-friendly website to showcase their services and projects, \n        • Ensuring seamless performance and responsiveness across devices, \n        • Designing a layout that effectively communicates their expertise and industry credibility, \n        • Creating reusable components for scalable future enhancements",
-        solution: "The solution was developed using Next.js, focusing on: \n        • Implementing Static Site Generation (SSG) to deliver fast-loading pages and better SEO rankings, \n        • Crafting a responsive, mobile-first design with Tailwind CSS, \n        • Building modular and reusable components to streamline development and maintenance, \n        • Utilizing the Next.js Image component for optimized image loading, \n        • Structuring content to emphasize Charge Infra's expertise and project success stories",
+        solution: "The solution was developed using Next.js, focusing on: \n        • Crafting a responsive, mobile-first design with CSS, \n        • Building modular and reusable components to streamline development and maintenance, \n        • Utilizing the Next.js Image component for optimized image loading, \n        • Structuring content to emphasize Charge Infra's expertise and project success stories",
         screenshots: [
             {
                 url: "/assets/projects/chargeinfra.png",
@@ -486,7 +491,7 @@ export const projects = [
             }
         ],
         results: [
-            "Improved website performance with faster load times through SSG",
+            "Improved website performance with faster load times",
             "Enhanced user experience with a responsive and modern design",
             "Increased brand visibility and credibility with optimized SEO structure",
             "Streamlined project showcase with a clean and professional layout",
@@ -628,4 +633,8 @@ export const getRelatedProjects = (currentProject, limit = 3) => {
 // Helper function to get technology details by ID
 export const getTechnologyById = (id) => {
     return technologyLogos.find(tech => tech.id === id);
+};
+
+export const getProjectsForHome = () => {
+    return projects.filter(project => project.home === true);
 };
