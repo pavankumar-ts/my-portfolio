@@ -4,12 +4,34 @@ import { socialLinks } from '@/data/socialLinks';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import Head from 'next/head';
+import emailjs from 'emailjs-com';
 
 const ContactPage = () => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const [buttonText, setButtonText] = React.useState('Send it over');
+  const [isSending, setIsSending] = React.useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSending(true);
+    setButtonText('Sending...');
+
+    emailjs.sendForm('my_portfolio', 'my_portfolio_template', e.target, 'envDnIzt4XmWq_8T9')
+      .then((result) => {
+          console.log(result.text);
+          setButtonText('Sent');
+      }, (error) => {
+          console.log(error.text);
+          setButtonText('Send it over');
+      })
+      .finally(() => {
+        setIsSending(false);
+      });
+  };
 
   return (
     <>
@@ -70,38 +92,46 @@ const ContactPage = () => {
 
           {/* Right Section - Form */}
           <div className="md:w-[60%]">
-            <form className="space-y-8">
+            <form className="space-y-8" onSubmit={sendEmail}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <input
                   type="text"
-                  placeholder="Enter your name"
+                  name="name"
+                  placeholder="Enter your name *"
                   className="bg-transparent border-b border-primary/10 py-4 focus:outline-none focus:border-primary transition-colors"
+                  required
                 />
                 <input
                   type="email"
-                  placeholder="Email address"
+                  name="email"
+                  placeholder="Email address *"
                   className="bg-transparent border-b border-primary/10 py-4 focus:outline-none focus:border-primary transition-colors"
+                  required
                 />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <input
                   type="text"
+                  name="company"
                   placeholder="Company Name"
                   className="bg-transparent border-b border-primary/10 py-4 focus:outline-none focus:border-primary transition-colors"
                 />
                 <input
                   type="text"
+                  name="website"
                   placeholder="www.example.com"
                   className="bg-transparent border-b border-primary/10 py-4 focus:outline-none focus:border-primary transition-colors"
                 />
               </div>
 
               <select
+                name="service"
                 className="w-full bg-transparent border-b border-primary/10 py-4 focus:outline-none focus:border-primary transition-colors"
                 defaultValue=""
+                required
               >
-                <option value="" disabled>Select your services</option>
+                <option value="" disabled>Select your services *</option>
                 {services.map((service) => (
                   <option key={service.id} value={service.title} className="text-primary bg-secondary">
                     {service.title}
@@ -110,16 +140,19 @@ const ContactPage = () => {
               </select>
 
               <textarea
+                name="message"
                 placeholder="Project Description"
                 rows={4}
                 className="w-full bg-transparent border-b border-primary/10 py-4 focus:outline-none focus:border-primary transition-colors resize-none"
+                
               />
 
               <button
                 type="submit"
                 className="px-6 py-3 bg-primary text-secondary font-medium inline-flex items-center gap-2 hover:bg-primary/90 transition-colors"
+                disabled={isSending}
               >
-                Send it over
+                {buttonText}
                 <span>→</span>
               </button>
             </form>

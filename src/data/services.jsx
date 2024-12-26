@@ -2,7 +2,7 @@
 export const services = [
     {
         id: '01',
-        title: 'Frontend Development',
+        title: 'Web Application',
         tags: ['React.js', 'Next.js', 'TailwindCSS'],
         description: 'Delivering high-performance web applications with modern React frameworks. Specializing in server-side rendering, responsive layouts, and maintainable component architecture to create exceptional user experiences.'
     },
