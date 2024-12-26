@@ -25,10 +25,10 @@ export default function Home() {
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://pavankumar.co/" />
+        <meta property="og:url" content="https://www.pavankumar.co/" />
         <meta property="og:title" content="Pavan Kumar | Frontend & Mobile App Developer" />
         <meta property="og:description" content="Specialist in Frontend & Mobile App Development. Crafting high-performance web applications and native mobile apps with modern technologies like React, Next.js, React Native, and Android." />
-        <meta property="og:image" content="https://pavankumar.co/opengraph-image.png" />
+        <meta property="og:image" content="https://www.pavankumar.co/opengraph-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Pavan Kumar Portfolio" />
@@ -36,11 +36,11 @@ export default function Home() {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://pavankumar.co/" />
+        <meta name="twitter:url" content="https://www.pavankumar.co/" />
         <meta name="twitter:title" content="Pavan Kumar | Frontend & Mobile App Developer" />
         <meta name="twitter:description" content="Specialist in Frontend & Mobile App Development. Crafting high-performance web applications and native mobile apps with modern technologies like React, Next.js, React Native, and Android." />
-        <meta name="twitter:image" content="https://pavankumar.co/opengraph-image.png" />
-        <meta name="twitter:creator" content="@YourTwitterHandle" />
+        <meta name="twitter:image" content="https://www.pavankumar.co/opengraph-image.png" />
+        <meta name="twitter:creator" content="@pavankumarts26" />
 
         {/* Mobile App Capability Tags */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
