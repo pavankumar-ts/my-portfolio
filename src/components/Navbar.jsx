@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import gsap from 'gsap';
+import { ThemeToggle } from './common/ThemeToggle';
 
 const Navbar = ({ onThemeToggle }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -78,13 +79,10 @@ const Navbar = ({ onThemeToggle }) => {
                     </div>
 
                     <div className="flex items-center space-x-4">
-                        <button
-                            onClick={toggleTheme}
-                            className="text-primary/60 hover:text-primary"
-                            aria-label="Toggle theme"
-                        >
-                            {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}
-                        </button>
+                        <ThemeToggle 
+                            isDarkMode={isDarkMode}
+                            onToggle={toggleTheme}
+                        />
                         <Link
                             href="/contact"
                             className="button px-4 py-2 border hover:bg-primary hover:text-secondary transition-colors hidden md:flex items-center font-medium"
