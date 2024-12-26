@@ -27,6 +27,7 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', isDarkMode);
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
   }, [isDarkMode]);
 
   const handleThemeToggle = (isDark) => {
@@ -34,14 +35,16 @@ export default function App({ Component, pageProps }) {
   };
 
   return (
-    <>
-      <Navbar onThemeToggle={handleThemeToggle} />
-      <div
-        className={`fixed top-0 left-0 w-full h-1 z-50 ${isDarkMode ? 'bg-white' : 'bg-black'}`}
-        style={{ width: `${scrollPosition}%` }}
+    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 transition-colors duration-200">
+      <Navbar 
+        scrollPosition={scrollPosition} 
+        isDarkMode={isDarkMode} 
+        onThemeToggle={handleThemeToggle}
       />
-      <Component {...pageProps} />
+      <main className="flex-grow">
+        <Component {...pageProps} />
+      </main>
       <Footer isDarkMode={isDarkMode} />
-    </>
+    </div>
   );
 }
