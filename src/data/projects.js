@@ -147,6 +147,7 @@ export const projects = [
     {
         id: 2,
         slug: "yuvi-builders",
+        home: true,
         title: "Yuvi Builders",
         description: "An advanced web platform for Yuvi Builders, a real estate and construction firm, built with Next.js and integrated with Drupal CMS for content management. The platform includes dynamic product listing with features like filtering, sorting, and categorization to showcase their projects efficiently.",
         category: [3],
@@ -254,6 +255,7 @@ export const projects = [
     {
         id: 4,
         slug: 'bangalore-gastro-centre',
+        home: true,
         title: 'Bangalore Gastro Centre',
         description: 'A comprehensive website for the Bangalore Gastro Centre, featuring information about the center, specialities, doctors, appointment booking, blogs, courses, media & events, awards, outreach programs, careers, and research. The team has access to edit the content via Drupal CMS, which reflects on the website.',
         category: [3],
@@ -365,6 +367,7 @@ export const projects = [
     {
         id: 6,
         slug: 'snip-dark-salon-spa',
+        home: true,
         title: 'Snip Dark Salon Spa',
         description: 'A premium website for Snip Dark Salon Spa, showcasing their luxury spa services, ambiance, and expertise with a sleek design built on WordPress for easy content management and customization.',
         category: [2],
@@ -417,6 +420,7 @@ export const projects = [
     {
         id: 7,
         slug: "neo-leather",
+        home: true,
         title: "Neo Leather",
         description: "A modern web platform for Neo Leather, showcasing their personalized leather furniture offerings with a static, high-performance website developed using Next.js to ensure speed, scalability, and SEO optimization.",
         category: [3],
@@ -551,7 +555,8 @@ export const projects = [
     {
         id: 11,
         slug: "socialize",
-        title: "Socialize - Social Media App",
+        home: true,
+         title: "Socialize - Social Media App",
         description: "A social media Android application developed as a college project, similar to Instagram. Built using Java in Android Studio, with Firebase for real-time database management and secure user authentication.",
         category: [4],
         technologies: [2, 3, 10],
