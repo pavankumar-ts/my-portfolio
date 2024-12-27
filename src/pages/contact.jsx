@@ -57,10 +57,10 @@ const ContactPage = () => {
                 <h3 className="text-xl font-semibold mb-4">Let's Talk</h3>
                 <div className="space-y-2">
                   <a
-                    href="mailto:tspavan01@gmail.com"
+                    href="mailto:contact@pavankumar.co"
                     className="text-primary/60 hover:text-primary block transition-colors"
                   >
-                    tspavan01@gmail.com
+                    contact@pavankumar.co
                   </a>
                   <a
                     href="tel:+919483262200"
