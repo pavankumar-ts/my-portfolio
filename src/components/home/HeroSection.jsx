@@ -128,7 +128,7 @@ const HeroSection = () => {
                     {/* Left Description */}
                     <div ref={descriptionRef} className="md:col-span-1">
                         <p className="text-primary/60 leading-relaxed mb-8">
-                        A versatile Software Developer crafting scalable digital solutions. Specializing in modern web applications, mobile apps, and business automation tools, I deliver high-performance experiences using cutting-edge technologies. My focus is on creating efficient, user-centric solutions that drive real business value.
+                            A versatile Software Developer crafting scalable digital solutions. Specializing in modern web applications, mobile apps, and business automation tools, I deliver high-performance experiences using cutting-edge technologies. My focus is on creating efficient, user-centric solutions that drive real business value.
                         </p>
                         <Button href="/contact">
                             Contact Now
@@ -138,7 +138,7 @@ const HeroSection = () => {
                     {/* Center Image */}
                     <div ref={imageRef} className="md:col-span-1 flex justify-center">
                         <Image
-                            src="/assets/DP.png"
+                            src="/assets/pavan-kumar.webp"
                             alt="Pavan Kumar"
                             className="w-full max-w-[400px] bg-gray-100"
                             width={3000}

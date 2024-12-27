@@ -17,10 +17,19 @@ const ServicePage = () => {
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Services | Pavan Kumar - Web & Mobile Solutions" />
                 <meta property="og:description" content="Expert developer crafting modern web applications and mobile solutions. Specialized in React, Next.js, and React Native. Building scalable, high-performance digital experiences." />
+                <meta property="og:image" content="https://www.pavankumar.co/og-image.png" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:url" content="https://www.pavankumar.co/services" />
+                <meta property="og:site_name" content="Pavan Kumar - Web & Mobile Solutions" />
 
                 {/* Twitter */}
+                <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Services | Pavan Kumar - Web & Mobile Solutions" />
                 <meta name="twitter:description" content="Expert developer crafting modern web applications and mobile solutions. Specialized in React, Next.js, and React Native. Building scalable, high-performance digital experiences." />
+                <meta name="twitter:image" content="https://www.pavankumar.co/og-image.png" />
+                <meta name="twitter:creator" content="@pavankumarts26" />
+                <meta name="twitter:site" content="@pavankumarts26" />
             </Head>
             <ServiceHero />
             <ServicesSection />

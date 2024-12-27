@@ -98,7 +98,7 @@ export const projects = [
         link: 'https://www.bricstaltech.com/',
         year: '2023',
         client: 'Bricstal Tech',
-        mainImg: '/assets/projects/bricstal_tech.png',
+        mainImg: '/assets/projects/bricstal_tech.webp',
         features: [
             'Server-side rendering with Next.js',
             'Responsive design implementation',
@@ -122,11 +122,11 @@ export const projects = [
             • Developing industry-specific solution pages with detailed insights`,
         screenshots: [
             {
-                url: '/assets/projects/bricstal_tech.png',
+                url: '/assets/projects/bricstal_tech.webp',
                 caption: 'Industry-specific solutions with interactive components'
             },
             {
-                url: '/assets/projects/bricstal_tech_phone.png',
+                url: '/assets/projects/bricstal_tech_phone.webp',
                 caption: 'About page with company insights and expertise'
             },
         ],
@@ -155,7 +155,7 @@ export const projects = [
         link: "https://www.yuvibuilders.com/",
         year: "2024",
         client: "Yuvi Builders",
-        mainImg: "/assets/projects/yuvibuilders.png",
+        mainImg: "/assets/projects/yuvibuilders.webp",
         features: [
             "Dynamic product listing with filtering and sorting options for projects",
             "Integration with Drupal CMS for centralized content management",
@@ -178,11 +178,11 @@ export const projects = [
         • Modular and reusable components for scalability and future enhancements`,
         screenshots: [
             {
-                url: "/assets/projects/yuvibuilders.png",
+                url: "/assets/projects/yuvibuilders.webp",
                 caption: "Homepage showcasing Yuvi Builders’ projects and services"
             },
             {
-                url: "/assets/projects/yuvibuilders_phone.png",
+                url: "/assets/projects/yuvibuilders_phone.webp",
                 caption: "Product listing page with filtering and sorting options"
             }
         ],
@@ -208,7 +208,7 @@ export const projects = [
         link: 'https://tuffppf.com/',
         year: '2024',
         client: 'TUFF PPF',
-        mainImg: '/assets/projects/tuff_ppf.png',
+        mainImg: '/assets/projects/tuff_ppf.webp',
         features: [
             'Customized design built with Elementor for flexible, user-friendly page layouts',
             'Advanced on-page SEO optimization using Yoast SEO',
@@ -231,11 +231,11 @@ export const projects = [
             • Leveraging performance plugins to improve page speed and user experience`,
         screenshots: [
             {
-                url: '/assets/projects/tuff_ppf.png',
+                url: '/assets/projects/tuff_ppf.webp',
                 caption: 'Industry-specific solutions with interactive components'
             },
             {
-                url: '/assets/projects/tuff_ppf_phone.png',
+                url: '/assets/projects/tuff_ppf_phone.webp',
                 caption: 'About page with company insights and expertise'
             },
         ],
@@ -263,7 +263,7 @@ export const projects = [
         link: 'https://bangalore-gastro-centre.vercel.app/',
         year: '2024',
         client: 'Bangalore Gastro Centre',
-        mainImg: '/assets/projects/bgc_phone.png',
+        mainImg: '/assets/projects/bgc_phone.webp',
         features: [
             'Comprehensive content management using Drupal CMS',
             'Information about specialities and list of doctors',
@@ -289,11 +289,11 @@ export const projects = [
             • Ensuring secure and efficient API call integration for dynamic content`,
         screenshots: [
             {
-                url: '/assets/projects/bgc.png',
+                url: '/assets/projects/bgc.webp',
                 caption: 'Dashboard for managing content and updates'
             },
             {
-                url: '/assets/projects/bgc_phone.png',
+                url: '/assets/projects/bgc_phone.webp',
                 caption: 'User-friendly interface for accessing information and booking appointments'
             }
         ],
@@ -320,7 +320,7 @@ export const projects = [
         link: 'https://www.harvisinfra.com/',
         year: '2024',
         client: 'Harvis Infra',
-        mainImg: '/assets/projects/harvis.png',
+        mainImg: '/assets/projects/harvis.webp',
         features: [
             'Server-Side Rendering (SSR) for improved performance and SEO',
             'Responsive design ensuring seamless user experience across devices',
@@ -343,11 +343,11 @@ export const projects = [
             • Implementing a professional design to enhance user engagement`,
         screenshots: [
             {
-                url: '/assets/projects/harvis.png',
+                url: '/assets/projects/harvis.webp',
                 caption: 'Homepage showcasing Harvis Infra’s core services and expertise'
             },
             {
-                url: '/assets/projects/harvis_phone.png',
+                url: '/assets/projects/harvis_phone.webp',
                 caption: 'Project portfolio page highlighting completed and ongoing infrastructure projects'
             }
         ],
@@ -375,7 +375,7 @@ export const projects = [
         link: 'https://snipdark.com/',
         year: '2024',
         client: 'Snip Dark Salon Spa',
-        mainImg: '/assets/projects/snipdark_phone.png',
+        mainImg: '/assets/projects/snipdark_phone.webp',
         features: [
             'Customized layouts using Elementor for flexible and visually stunning page designs',
             'Advanced SEO optimization using Yoast SEO for better visibility',
@@ -396,11 +396,11 @@ export const projects = [
         • Integrating visually engaging elements to showcase the spa's ambiance and offerings`,
         screenshots: [
             {
-                url: '/assets/projects/snipdark.png',
+                url: '/assets/projects/snipdark.webp',
                 caption: 'Homepage highlighting premium spa services and luxury ambiance'
             },
             {
-                url: '/assets/projects/snipdark_phone.png',
+                url: '/assets/projects/snipdark_phone.webp',
                 caption: 'Service page detailing various spa treatments with a booking option'
             }
         ],
@@ -428,7 +428,7 @@ export const projects = [
         link: "https://neoleather.in/",
         year: "2024",
         client: "Neo Leather",
-        mainImg: "/assets/projects/neoleather.png",
+        mainImg: "/assets/projects/neoleather.webp",
         features: [
             "Static Site Generation (SSG) for faster load times and superior SEO performance",
             "Fully responsive design to provide seamless user experiences across all devices",
@@ -442,11 +442,11 @@ export const projects = [
         solution: "The solution involved building the website with Next.js, focusing on: \n        • Utilizing Static Site Generation (SSG) to deliver lightning-fast load times and improve SEO, \n        • Designing a visually appealing, mobile-first layout with Tailwind CSS, \n        • Implementing optimized image handling using the Next.js Image component, \n        • Developing modular, reusable components for scalable future enhancements, \n        • Structuring the website to maximize search engine visibility and user engagement",
         screenshots: [
             {
-                url: "/assets/projects/neoleather.png",
+                url: "/assets/projects/neoleather.webp",
                 caption: "Homepage featuring Neo Leather’s premium leather furniture and craftsmanship"
             },
             {
-                url: "/assets/projects/neoleather_phone.png",
+                url: "/assets/projects/neoleather_phone.webp",
                 caption: "Product showcase page with detailed descriptions and high-quality visuals"
             }
         ],
@@ -473,7 +473,7 @@ export const projects = [
         link: "https://www.chargeinfra.com/",
         year: "2024",
         client: "Charge Infra",
-        mainImg: "/assets/projects/chargeinfra.png",
+        mainImg: "/assets/projects/chargeinfra.webp",
         features: [
             "Responsive and modern design for an optimal user experience across devices",
             "Tailored sections for highlighting services, projects, and client testimonials",
@@ -486,11 +486,11 @@ export const projects = [
         solution: "The solution was developed using Next.js, focusing on: \n        • Crafting a responsive, mobile-first design with CSS, \n        • Building modular and reusable components to streamline development and maintenance, \n        • Utilizing the Next.js Image component for optimized image loading, \n        • Structuring content to emphasize Charge Infra's expertise and project success stories",
         screenshots: [
             {
-                url: "/assets/projects/chargeinfra.png",
+                url: "/assets/projects/chargeinfra.webp",
                 caption: "Homepage showcasing Charge Infra’s core services and mission"
             },
             {
-                url: "/assets/projects/chargeinfra_phone.png",
+                url: "/assets/projects/chargeinfra_phone.webp",
                 caption: "Projects page detailing completed and ongoing infrastructure projects"
             }
         ],
@@ -517,7 +517,7 @@ export const projects = [
         link: "https://neoheights.com/",
         year: "2024",
         client: "Neo Heights",
-        mainImg: "/assets/projects/neoheights.png",
+        mainImg: "/assets/projects/neoheights.webp",
         features: [
             "Static Site Generation (SSG) for faster load times and superior SEO performance",
             "Integrated Drupal CMS for seamless content management and updates",
@@ -531,11 +531,11 @@ export const projects = [
         solution: "The solution involved building the website using Next.js and Drupal CMS, focusing on: \n        • Leveraging Static Site Generation (SSG) for improved page speed and SEO, \n        • Integrating Drupal CMS for centralized and efficient content updates, \n        • Crafting a visually appealing and responsive design with Tailwind CSS, \n        • Optimizing images and assets for better performance, \n        • Structuring the content to highlight Neo Heights’ projects and industry credibility",
         screenshots: [
             {
-                url: "/assets/projects/neoheights.png",
+                url: "/assets/projects/neoheights.webp",
                 caption: "Homepage featuring Neo Heights’ industrial and commercial construction expertise"
             },
             {
-                url: "/assets/projects/neoheights_phone.png",
+                url: "/assets/projects/neoheights_phone.webp",
                 caption: "Projects page showcasing completed and ongoing construction projects"
             }
         ],
@@ -564,7 +564,7 @@ export const projects = [
         btnText: 'View on GitHub',
         year: "2022",
         client: "College Project",
-        mainImg: "/assets/projects/socialize01.png",
+        mainImg: "/assets/projects/socialize01.webp",
         features: [
             "User authentication using Firebase Authentication for secure access",
             "Post creation and sharing with image upload functionality",
@@ -579,11 +579,11 @@ export const projects = [
         solution: "The solution focused on leveraging Firebase and Android development best practices: \n        • Using Firebase Realtime Database for real-time data updates and synchronization, \n        • Implementing Firebase Authentication for secure user sign-in and registration, \n        • Designing a clean and responsive UI in Android Studio, \n        • Optimizing image uploads using Firebase Storage for efficient handling of media files, \n        • Incorporating features like likes, comments, and notifications to boost engagement",
         screenshots: [
             {
-                url: "/assets/projects/socialize01.png",
+                url: "/assets/projects/socialize01.webp",
                 caption: "Real-time feed displaying posts from all users"
             },
             {
-                url: "/assets/projects/socialize02.png",
+                url: "/assets/projects/socialize02.webp",
                 caption: "User profile page showcasing posts and user details"
             }
         ],
