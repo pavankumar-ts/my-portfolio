@@ -63,10 +63,10 @@ const ContactPage = () => {
                     tspavan01@gmail.com
                   </a>
                   <a
-                    href="tel:+918197754321"
+                    href="tel:+919483262200"
                     className="text-primary/60 hover:text-primary block transition-colors"
                   >
-                    +91 81977 54321
+                    +91 9483262200
                   </a>
                 </div>
               </div>
