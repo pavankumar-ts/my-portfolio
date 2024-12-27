@@ -36,7 +36,7 @@ export default function Home() {
         <meta property="og:image" content={`${siteUrl}opengraph-image.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:site_name" content="Pavan Kumar - Digital Solutions" />
+        <meta property="og:site_name" content="Pavan Kumar - Web & Mobile App Developer" />
         <meta property="og:locale" content="en_US" />
 
         {/* Twitter */}
@@ -47,29 +47,39 @@ export default function Home() {
         <meta name="twitter:image" content={`${siteUrl}opengraph-image.png`} />
         <meta name="twitter:creator" content="@pavankumarts26" />
 
-        {/* Mobile App Capability Tags */}
+        {/* PWA Tags */}
+        <meta name="application-name" content="Pavan Kumar" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="Pavan Kumar - Digital Solutions" />
-        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-title" content="Pavan Kumar" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="application-name" content="Pavan Kumar - Digital Solutions" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="format-detection" content="telephone=no" />
+
+        {/* Android Add to Home Screen Icons */}
+        <link rel="icon" type="image/png" sizes="192x192" href="/icons/android-chrome-192x192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/icons/android-chrome-512x512.png" />
+
+        {/* Apple Touch Icons */}
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="167x167" href="/icons/apple-touch-icon.png" />
 
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+
+        {/* Manifest */}
+        <link rel="manifest" href="/manifest.json" />
 
         {/* Additional SEO Tags */}
         <link rel="canonical" href={siteUrl} />
         <meta name="geo.region" content="IN" />
         <meta name="geo.placename" content="India" />
-
-        {/* Theme Color */}
-        <meta name="theme-color" content="#fff" />
-        <meta name="msapplication-TileColor" content="#fff" />
       </Head>
 
       <main>
