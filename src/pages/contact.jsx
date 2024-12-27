@@ -36,7 +36,7 @@ const ContactPage = () => {
   return (
     <>
       <Head>
-        <title>Contact | Your Name</title>
+        <title>Contact | Pavan Kumar</title>
         <meta name="description" content="Get in touch with me for web development and design services." />
         <meta name="keywords" content="contact, web development, web design, portfolio" />
       </Head>
