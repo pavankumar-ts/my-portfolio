@@ -22,11 +22,11 @@ const ContactPage = () => {
 
     emailjs.sendForm('my_portfolio', 'my_portfolio_template', e.target, 'envDnIzt4XmWq_8T9')
       .then((result) => {
-          console.log(result.text);
-          setButtonText('Sent');
+        console.log(result.text);
+        setButtonText('Sent');
       }, (error) => {
-          console.log(error.text);
-          setButtonText('Send it over');
+        console.log(error.text);
+        setButtonText('Send it over');
       })
       .finally(() => {
         setIsSending(false);
@@ -36,9 +36,18 @@ const ContactPage = () => {
   return (
     <>
       <Head>
-        <title>Contact | Pavan Kumar</title>
-        <meta name="description" content="Get in touch with me for web development and design services." />
-        <meta name="keywords" content="contact, web development, web design, portfolio" />
+        <title>Contact | Pavan Kumar - Let's Build Something Amazing</title>
+        <meta name="description" content="Get in touch to transform your ideas into powerful web and mobile solutions. Expert in React, Next.js, and React Native development. Let's create exceptional digital experiences together." />
+        <meta name="keywords" content="contact Pavan Kumar, hire React developer, Next.js developer, mobile app developer, web application development, React Native developer, frontend developer, custom web solutions, mobile app development, technical consultation" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Contact | Pavan Kumar - Let's Build Something Amazing" />
+        <meta property="og:description" content="Get in touch to transform your ideas into powerful web and mobile solutions. Expert in React, Next.js, and React Native development. Let's create exceptional digital experiences together." />
+
+        {/* Twitter */}
+        <meta name="twitter:title" content="Contact | Pavan Kumar - Let's Build Something Amazing" />
+        <meta name="twitter:description" content="Get in touch to transform your ideas into powerful web and mobile solutions. Expert in React, Next.js, and React Native development. Let's create exceptional digital experiences together." />
       </Head>
       <div className="container ">
         {/* Hero Title */}
@@ -144,7 +153,7 @@ const ContactPage = () => {
                 placeholder="Project Description"
                 rows={4}
                 className="w-full bg-transparent border-b border-primary/10 py-4 focus:outline-none focus:border-primary transition-colors resize-none"
-                
+
               />
 
               <button

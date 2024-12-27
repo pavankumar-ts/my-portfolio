@@ -19,51 +19,63 @@ export default function ProjectPage({ project, relatedProjects }) {
     return (
         <>
             <Head>
-                <title>{project.title} | Project | Pavan Kumar</title>
+                <title>{`${project.title} | Web & Mobile App | Pavan Kumar`}</title>
                 <meta name="description" content={project.description} />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+                {/* Primary Meta Tags */}
+                <meta name="keywords" content={`${project.title}, ${project.tags?.join(', ')}, web development, mobile app development, React, Next.js, React Native, Android development, portfolio project`} />
+
+                {/* Open Graph / Facebook */}
+                <meta property="og:type" content="article" />
+                <meta property="og:title" content={`${project.title} | Web & Mobile App | Pavan Kumar`} />
+                <meta property="og:description" content={project.description} />
+                {project.image && <meta property="og:image" content={project.image} />}
+
+                {/* Twitter */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={`${project.title} | Web & Mobile App | Pavan Kumar`} />
+                <meta name="twitter:description" content={project.description} />
+                {project.image && <meta name="twitter:image" content={project.image} />}
             </Head>
 
             <div className="container">
                 {/* Hero Section with Title */}
-                <div 
-                    ref={heroRef} 
-                    className={`text-center mb-8 md:mb-16 transition-all duration-1000 transform ${
-                        heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                    }`}
+                <div
+                    ref={heroRef}
+                    className={`text-center mb-8 md:mb-16 transition-all duration-1000 transform ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                        }`}
                 >
                     <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[100px] font-bold tracking-tight leading-none">
                         {project.title}
                     </h1>
 
-                    <div className={`mt-8 transition-all duration-1000 delay-300 transform ${
-                        heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                    }`}>
+                    <div className={`mt-8 transition-all duration-1000 delay-300 transform ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                        }`}>
                         <Link
                             href={project.link}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group px-4 md:px-6 py-2 md:py-3 bg-primary text-secondary font-medium inline-flex items-center gap-2 hover:bg-primary/90 transition-all hover:translate-x-1"
                         >
-                           {project.btnText ? project.btnText : 'Visit Website'}
+                            {project.btnText ? project.btnText : 'Visit Website'}
                             <span className="arrow">→</span>
                         </Link>
                     </div>
                 </div>
 
                 {/* Screenshots Grid */}
-                <div 
+                <div
                     ref={screenshotsRef}
                     className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 mb-16 md:mb-32"
                 >
                     {project.screenshots.map((screenshot, index) => (
                         <div
                             key={index}
-                            className={`relative w-full rounded-sm overflow-hidden transition-all duration-1000 transform ${
-                                screenshotsInView 
-                                    ? 'opacity-100 translate-y-0' 
+                            className={`relative w-full rounded-sm overflow-hidden transition-all duration-1000 transform ${screenshotsInView
+                                    ? 'opacity-100 translate-y-0'
                                     : 'opacity-0 translate-y-10'
-                            }`}
+                                }`}
                             style={{ transitionDelay: `${index * 200}ms` }}
                         >
                             <Image
@@ -82,11 +94,10 @@ export default function ProjectPage({ project, relatedProjects }) {
                 {/* Project Content */}
                 <div className="flex flex-col lg:flex-row gap-12 md:gap-20">
                     {/* Left Section - Project Info */}
-                    <div 
+                    <div
                         ref={infoRef}
-                        className={`w-full lg:w-[40%] transition-all duration-1000 transform ${
-                            infoInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-                        }`}
+                        className={`w-full lg:w-[40%] transition-all duration-1000 transform ${infoInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+                            }`}
                     >
                         <div className="lg:sticky lg:top-32 space-y-12">
                             <div className="border-l-2 border-primary/10 pl-6 transition-all hover:border-primary">
@@ -107,7 +118,7 @@ export default function ProjectPage({ project, relatedProjects }) {
                                                 const tech = getTechnologyById(techId);
                                                 return (
                                                     <div key={tech.id} className="flex items-center gap-2">
-                                                        <Image src={tech.url} alt={tech.name} width={36} height={36} className={`${tech.isDark ? 'bg-white' : ''} p-1`}/>
+                                                        <Image src={tech.url} alt={tech.name} width={36} height={36} className={`${tech.isDark ? 'bg-white' : ''} p-1`} />
                                                         <span className="text-primary/60">{tech.name}</span>
                                                     </div>
                                                 );
@@ -120,16 +131,15 @@ export default function ProjectPage({ project, relatedProjects }) {
                     </div>
 
                     {/* Right Section - Project Content */}
-                    <div 
+                    <div
                         ref={contentRef}
                         className="w-full lg:w-[60%] space-y-12"
                     >
                         {['Overview', 'Challenge', 'Solution', 'Features', 'Results'].map((section, index) => (
                             <div
                                 key={section}
-                                className={`group border-b border-primary/10 pb-12 hover:border-primary transition-all duration-1000 transform ${
-                                    contentInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                                }`}
+                                className={`group border-b border-primary/10 pb-12 hover:border-primary transition-all duration-1000 transform ${contentInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                                    }`}
                                 style={{ transitionDelay: `${index * 200}ms` }}
                             >
                                 <div className="flex items-start gap-6">
@@ -168,25 +178,24 @@ export default function ProjectPage({ project, relatedProjects }) {
                     </div>
                 </div>
             </div>
-            
+
             <ContactCTA />
 
             {/* Related Projects Section */}
-            <div 
+            <div
                 ref={relatedRef}
-                className={`container mt-16 transition-all duration-1000 transform ${
-                    relatedInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}
+                className={`container mt-16 transition-all duration-1000 transform ${relatedInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                    }`}
             >
                 <h2 className="text-3xl font-semibold mb-8">Related Projects</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {relatedProjects.map((relatedProject, index) => (
-                        <ProjectCard 
-                            key={relatedProject.id} 
-                            project={relatedProject} 
-                            inView={relatedInView} 
-                            categoryChanged={false} 
-                            index={index} 
+                        <ProjectCard
+                            key={relatedProject.id}
+                            project={relatedProject}
+                            inView={relatedInView}
+                            categoryChanged={false}
+                            index={index}
                         />
                     ))}
                 </div>
