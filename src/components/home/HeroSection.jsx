@@ -139,7 +139,7 @@ const HeroSection = () => {
                     <div ref={imageRef} className="md:col-span-1 flex justify-center">
                         <Image
                             src="/assets/DP.png"
-                            alt="Professional portrait"
+                            alt="Pavan Kumar"
                             className="w-full max-w-[400px] bg-gray-100"
                             width={3000}
                             height={3000}
