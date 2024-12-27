@@ -128,7 +128,7 @@ const HeroSection = () => {
                     {/* Left Description */}
                     <div ref={descriptionRef} className="md:col-span-1">
                         <p className="text-primary/60 leading-relaxed mb-8">
-                            A passionate Software Developer specializing in creating modern and responsive web applications. Experienced in developing scalable solutions with a focus on clean code, optimal user experience, and cutting-edge technologies.
+                        A versatile Software Developer crafting scalable digital solutions. Specializing in modern web applications, mobile apps, and business automation tools, I deliver high-performance experiences using cutting-edge technologies. My focus is on creating efficient, user-centric solutions that drive real business value.
                         </p>
                         <Button href="/contact">
                             Contact Now

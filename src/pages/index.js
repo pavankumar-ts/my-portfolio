@@ -10,45 +10,50 @@ import FAQSection from "@/components/common/FAQSection";
 import ContactCTA from "@/components/common/ContactCTA";
 
 export default function Home() {
+  const siteUrl = "https://www.pavankumar.co/";
+  const siteTitle = "Pavan Kumar | Software Developer & Digital Solutions Expert";
+  const siteDescription = "Expert in software development, specializing in React, Next.js, mobile apps, and no-code solutions. Delivering high-performance web applications, CMS solutions, and business automation tools with modern technologies.";
+  const keywords = "Software Developer, React Developer, Next.js Expert, Mobile App Developer, No-Code Development, CMS Solutions, Web Applications, Business Applications, Backend Integration, SEO Optimization, React Native, Firebase, Supabase, WordPress, Shopify, Technical Consulting, Software Engineer, Digital Solutions, Pavan, Pavan Kumar";
+
   return (
     <>
       <Head>
         {/* Primary Meta Tags */}
-        <title>Pavan Kumar | Frontend Developer & Mobile App Developer</title>
-        <meta name="title" content="Pavan Kumar | Frontend Developer & Mobile App Developer" />
-        <meta name="description" content="Specialist in Frontend & Mobile App Development. Building high-performance web applications with React, Next.js, and native mobile apps with React Native, Android." />
+        <title>{siteTitle}</title>
+        <meta name="title" content={siteTitle} />
+        <meta name="description" content={siteDescription} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="English" />
         <meta name="author" content="Pavan Kumar" />
-        <meta name="keywords" content="Frontend Developer, Mobile App Developer, React Native Developer, Android Development, React Developer, Next.js, Web Development, Software Engineer, UI/UX, Web Applications, JavaScript Developer, Full Stack Developer" />
+        <meta name="keywords" content={keywords} />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.pavankumar.co/" />
-        <meta property="og:title" content="Pavan Kumar | Frontend & Mobile App Developer" />
-        <meta property="og:description" content="Specialist in Frontend & Mobile App Development. Crafting high-performance web applications and native mobile apps with modern technologies like React, Next.js, React Native, and Android." />
-        <meta property="og:image" content="https://www.pavankumar.co/opengraph-image.png" />
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:title" content={siteTitle} />
+        <meta property="og:description" content={siteDescription} />
+        <meta property="og:image" content={`${siteUrl}opengraph-image.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:site_name" content="Pavan Kumar Portfolio" />
+        <meta property="og:site_name" content="Pavan Kumar - Digital Solutions" />
         <meta property="og:locale" content="en_US" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.pavankumar.co/" />
-        <meta name="twitter:title" content="Pavan Kumar | Frontend & Mobile App Developer" />
-        <meta name="twitter:description" content="Specialist in Frontend & Mobile App Development. Crafting high-performance web applications and native mobile apps with modern technologies like React, Next.js, React Native, and Android." />
-        <meta name="twitter:image" content="https://www.pavankumar.co/opengraph-image.png" />
+        <meta name="twitter:url" content={siteUrl} />
+        <meta name="twitter:title" content={siteTitle} />
+        <meta name="twitter:description" content={siteDescription} />
+        <meta name="twitter:image" content={`${siteUrl}opengraph-image.png`} />
         <meta name="twitter:creator" content="@pavankumarts26" />
 
         {/* Mobile App Capability Tags */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="Pavan Kumar" />
+        <meta name="apple-mobile-web-app-title" content="Pavan Kumar - Digital Solutions" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="application-name" content="Pavan Kumar" />
+        <meta name="application-name" content="Pavan Kumar - Digital Solutions" />
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
@@ -56,6 +61,11 @@ export default function Home() {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
+
+        {/* Additional SEO Tags */}
+        <link rel="canonical" href={siteUrl} />
+        <meta name="geo.region" content="IN" />
+        <meta name="geo.placename" content="India" />
 
         {/* Theme Color */}
         <meta name="theme-color" content="#fff" />

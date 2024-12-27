@@ -1,4 +1,3 @@
-// components/about/AboutHero.jsx
 import React from 'react';
 import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
@@ -22,9 +21,9 @@ const AboutHero = () => {
 
             <div className={`md:w-[60%] transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 <p className="text-primary/60 text-xl leading-relaxed mb-8">
-                    I'm a frontend developer specializing in building exceptional digital experiences. Currently focused on creating responsive web applications while working with modern technologies like React, Next.js, and TailwindCSS.
+                I'm Pavan Kumar, a versatile developer crafting comprehensive digital solutions. From web and mobile applications to CMS and no-code platforms, I build exceptional experiences using modern technologies like React, Next.js, and Firebase. I focus on delivering high-performance, scalable solutions that drive real business value.
                 </p>
-                <Button href='/contact' > Let's Talk</Button>
+                <Button href='/contact'>Let's Talk</Button>
             </div>
         </div>
     );
