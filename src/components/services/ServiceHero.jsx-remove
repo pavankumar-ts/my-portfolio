@@ -2,16 +2,16 @@
 import React from 'react';
 import AnimatedSection from '@/components/common/AnimatedSection';
 
-const ServiceHero = () => {
+const ServiceHero = ({ title, title2 }) => {
   return (
     <div className="container pt-32">
       {/* Main Title */}
       <div className="text-left mb-16">
         <AnimatedSection className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[140px] font-bold tracking-tight leading-none">
-          WHAT'S
+          {title}
         </AnimatedSection>
         <AnimatedSection className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[140px] ml-[20%] font-bold tracking-tight leading-none" delayMultiplier={400}>
-          AVAILABLE?
+          {title2}
         </AnimatedSection>
       </div>
     </div>

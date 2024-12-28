@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { projects, projectCategories } from '@/data/projects';
 import { useInView } from 'react-intersection-observer';
 import ProjectCard from '../common/ProjectCard';
+import TitleHeroSection from '../common/TitleHeroSection';
 
 const ProjectsSection = () => {
     const [selectedCategory, setSelectedCategory] = useState(1); // Default to 'All Projects'
@@ -28,15 +29,10 @@ const ProjectsSection = () => {
         <>
             <div ref={ref} className="container">
                 {/* Section Title */}
-                <div className="text-center mb-16 ">
-                    <h2 className={`text-[50px] sm:text-[80px] md:text-[100px] lg:text-[140px] font-bold tracking-tight leading-none transition-all duration-1000 transform ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-                        FEATURED
-                    </h2>
-                    <h2 className={`text-[50px] sm:text-[80px] md:text-[100px] lg:text-[140px] ml-[20%] font-bold tracking-tight leading-none transition-all duration-1000 transform ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-                        PROJECTS
-                    </h2>
-                </div>
-
+                <TitleHeroSection
+                    title="FEATURED"
+                    title2="PROJECTS"
+                />
                 {/* Filter Buttons */}
                 <div className="flex flex-wrap justify-center gap-4 mb-16">
                     {projectCategories.map((category) => (

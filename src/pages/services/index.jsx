@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
-import ServiceHero from '@/components/services/ServiceHero';
 import ServicesSection from '@/components/services/ServicesSection';
 import ContactCTA from '@/components/common/ContactCTA';
 import ProcessSection from '@/components/home/ProcessSection';
+import TitleHeroSection from '@/components/common/TitleHeroSection';
 
 const ServicePage = () => {
     return (
@@ -31,7 +31,12 @@ const ServicePage = () => {
                 <meta name="twitter:creator" content="@pavankumarts26" />
                 <meta name="twitter:site" content="@pavankumarts26" />
             </Head>
-            <ServiceHero />
+            <div className="container">
+                <TitleHeroSection
+                    title="WHAT'S"
+                    title2="AVAILABLE?"
+                />
+            </div>
             <ServicesSection />
             <ProcessSection />
             <ContactCTA />

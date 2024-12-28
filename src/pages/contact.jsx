@@ -2,16 +2,11 @@
 import { services } from '@/data/services';
 import { socialLinks } from '@/data/socialLinks';
 import React from 'react';
-import { useInView } from 'react-intersection-observer';
 import Head from 'next/head';
 import emailjs from 'emailjs-com';
+import TitleHeroSection from '@/components/common/TitleHeroSection';
 
 const ContactPage = () => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   const [buttonText, setButtonText] = React.useState('Send it over');
   const [isSending, setIsSending] = React.useState(false);
 
@@ -51,12 +46,10 @@ const ContactPage = () => {
       </Head>
       <div className="container ">
         {/* Hero Title */}
-        <div ref={ref} className="text-center mb-12">
-          <h1 className={`text-[50px] sm:text-[80px] md:text-[100px] lg:text-[140px] font-bold tracking-tight leading-none transition-all duration-1000 transform ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-            CONTACT ME
-          </h1>
-        </div>
-
+        <TitleHeroSection
+          title="LET'S WORK"
+          title2="TOGETHER"
+        />
         {/* Contact Content */}
         <div className="flex flex-col md:flex-row gap-20">
           {/* Left Section - Contact Info */}
