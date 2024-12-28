@@ -95,12 +95,6 @@ const HeroSection = () => {
 
     return (
         <>
-            <Head>
-                <title>Home | Pavan Kumar</title>
-                <meta name="description" content="Welcome to the portfolio of Pavan Kumar, a passionate Software Developer specializing in creating modern and responsive web applications." />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            </Head>
-
             <div className="container pt-32">
                 {/* Greeting */}
                 <h1 className="text-center text-2xl mb-8 greeting">
