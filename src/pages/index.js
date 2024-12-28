@@ -28,7 +28,7 @@ export default function Home() {
         <meta property="og:url" content="https://www.pavankumar.co/" />
         <meta property="og:title" content="Pavan Kumar | Software Developer & Digital Solutions Expert" />
         <meta property="og:description" content="Expert in software development, specializing in React, Next.js, mobile apps, and no-code solutions. Delivering high-performance web applications, CMS solutions, and business automation tools with modern technologies." />
-        <meta property="og:image" content={`$https://www.pavankumar.co/opengraph-image.png`} />
+        <meta property="og:image" content="https://www.pavankumar.co/opengraph-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Pavan Kumar - Software Developer & Digital Solutions Expert" />
