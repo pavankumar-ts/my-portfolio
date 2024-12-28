@@ -106,7 +106,7 @@ const Navbar = ({ onThemeToggle }) => {
                 >
                     <div className="flex justify-between items-center p-4 border-b border-primary/10">
                         <Link href="/" className="text-2xl font-bold text-primary">
-                            <Image src={isDarkMode ? '/assets/logo_white.svg' : '/assets/logo.svg'}
+                            <Image src={isDarkMode ? '/assets/logo2_white.svg' : '/assets/logo2.svg'}
                                 alt='Pavan'
                                 width={1000} height={1000}
                                 className='h-[30px] w-auto object-contain'

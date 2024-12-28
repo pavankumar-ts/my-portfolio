@@ -14,7 +14,7 @@ const AboutExperience = () => {
             <div className="md:w-[50%] pb-12 md:pb-0">
                 <div className="sticky top-32">
                     <h2 className="heading-xl whitespace-pre-line">
-                        MY{'\n'}EXPERIENCE
+                        MY <br className='md:block hidden' />EXPERIENCE
                     </h2>
                 </div>
             </div>
@@ -22,16 +22,16 @@ const AboutExperience = () => {
             <div className="md:w-[50%] space-y-24">
                 {experience.map((section) => (
                     <div key={section.id}>
-                        <div className="flex items-start mb-12">
+                        {/* <div className="flex items-start mb-12">
                             <span className="text-sm font-medium text-primary/60">[{section.id}]</span>
                             <h3 className="text-2xl font-semibold ml-8">{section.type}</h3>
-                        </div>
+                        </div> */}
 
-                        <div className="space-y-16">
+                        <div className="space-y-8 md:space-y-16 ">
                             {section.items.map((item, index) => (
                                 <div
                                     key={index}
-                                    className={`border-b border-primary/10 pb-16 ml-16 transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                                    className={`border-b border-primary/10 md:pb-16 pb-8 ml-0 md:ml-16 transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                                     style={{ transitionDelay: `${index * 200}ms` }}
                                 >
                                     <div className="flex justify-between items-start mb-4">

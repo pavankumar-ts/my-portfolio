@@ -36,17 +36,17 @@ const ProcessSection = () => {
             <div className="md:w-[50%] pb-12 md:pb-0">
                 <div className="sticky top-32">
                     <h1 className="heading-xl whitespace-pre-line">
-                        HOW{'\n'}I WORK
+                        HOW <br className='md:block hidden' />I WORK
                     </h1>
                 </div>
             </div>
 
-            <div className="md:w-[50%] space-y-24">
+            <div className="md:w-[50%] space-y-8 md:space-y-16">
                 {steps.map((step, index) => (
                     <AnimatedSection key={step.id} delayMultiplier={index * 200}>
-                        <div className="border-b border-primary/10 pb-12">
+                        <div className="border-b border-primary/10 pb-8 md:pb-16">
                             <div className="flex flex-col gap-4">
-                                <div className="flex items-start justify-between">
+                                <div className="flex flex-col md:flex-row items-start justify-between">
                                     <span className="text-sm font-medium text-primary">
                                         [STEP-{step.id}]
                                     </span>

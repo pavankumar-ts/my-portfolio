@@ -11,10 +11,10 @@ const ServicesSection = () => {
                 </h1>
             </div>
 
-            <div className="md:w-[50%] space-y-14">
+            <div className="md:w-[50%] space-y-8 md:space-y-16">
                 {services.map((service, index) => (
                     <AnimatedSection key={service.id} delayMultiplier={index * 200}>
-                        <div className="border-b border-primary/10 pb-14">
+                        <div className="border-b border-primary/10 pb-8 md:pb-16">
                             <div className="flex flex-col gap-4">
                                 <div className="flex items-center gap-6">
                                     <span className="text-sm font-medium w-12">[{service.id}]</span>

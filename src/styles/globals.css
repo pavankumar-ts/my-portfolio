@@ -34,7 +34,7 @@ body {
 }
 
 .heading-xl {
-  @apply text-[60px] md:text-[120px] lg:text-[80px] font-bold tracking-tight leading-none;
+  @apply text-[40px] md:text-[120px] lg:text-[80px] font-bold tracking-tight leading-none;
 }
 
 @media (max-width: 768px) {

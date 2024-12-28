@@ -17,15 +17,15 @@ const ExperienceSection = () => {
             <div className="md:w-[50%] pb-12 md:pb-0">
                 <div className="sticky top-32">
                     <h1 className="heading-xl whitespace-pre-line">
-                        WORKING{'\n'}EXPERIENCE
+                        WORKING <br className='md:block hidden' />EXPERIENCE
                     </h1>
                 </div>
             </div>
 
-            <div className="md:w-[50%] space-y-12">
+            <div className="md:w-[50%] space-y-8 md:space-y-16">
                 {professionalExperience.items.map((item, index) => (
                     <AnimatedSection key={index} delayMultiplier={index * 200}>
-                        <div className="border-b border-primary/10 pb-12">
+                        <div className="border-b border-primary/10 pb-8 md:pb-16">
                             <div className="flex justify-between items-start mb-8">
                                 <h2 className="text-2xl font-semibold">
                                     {item.title}

@@ -40,15 +40,15 @@ const NumbersSection = () => {
       <div className="md:w-[50%] pb-12 md:pb-0">
         <div className="sticky top-32">
           <h1 className="heading-xl whitespace-pre-line">
-            SOME{'\n'}NUMBERS
+            SOME <br className='md:block hidden' />NUMBERS
           </h1>
         </div>
       </div>
 
-      <div className="md:w-[50%] grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+      <div className="md:w-[50%] grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 md:gap-y-16">
         {statistics.map((stat, index) => (
           <AnimatedSection key={index} delayMultiplier={index * 200}>
-            <div className="border-b border-primary/10 pb-8">
+            <div className="border-b border-primary/10 pb-8 md:pb-16">
               <div className="flex flex-col gap-2">
                 <span className="text-6xl font-bold">
                   {stat.number}

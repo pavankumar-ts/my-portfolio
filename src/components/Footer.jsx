@@ -8,7 +8,7 @@ const Footer = ({ isDarkMode }) => {
 
   return (
     <footer className="border-t border-primary/10">
-      <div className="max-w-[1200px] mx-auto py-12 md:px-[3rem] px-[1rem] ">
+      <div className="max-w-[1200px] mx-auto py-12 pb-1 md:pb-12 md:px-[3rem] px-[1rem] ">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex flex-col md:flex-row md:items-end items-center  gap-4 md:gap-8">
             {/* Logo */}

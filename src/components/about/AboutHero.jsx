@@ -14,7 +14,7 @@ const AboutHero = () => {
             <div className="md:w-[40%] pb-12 md:pb-0">
                 <div className="sticky top-32">
                     <h1 className={`heading-xl whitespace-pre-line transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                        ABOUT{'\n'}ME
+                        ABOUT <br className='md:block hidden' />ME
                     </h1>
                 </div>
             </div>

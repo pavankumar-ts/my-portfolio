@@ -44,16 +44,16 @@ const AboutValues = () => {
                 <div className="md:w-[50%] pb-12 md:pb-0">
                     <div className="sticky top-32">
                         <h2 className="heading-xl whitespace-pre-line">
-                            MY{'\n'}VALUES
+                            MY <br className='md:block hidden' />VALUES
                         </h2>
                     </div>
                 </div>
 
-                <div className="md:w-[50%] space-y-14">
+                <div className="md:w-[50%] space-y-7 md:space-y-14">
                     {values.map((value, index) => (
                         <div
                             key={value.id}
-                            className={`border-b border-primary/10 pb-14 transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                            className={`border-b border-primary/10 pb-7 md:pb-14 transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                             style={{ transitionDelay: `${index * 200}ms` }}
                         >
                             <div className="flex flex-col gap-4">

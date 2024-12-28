@@ -33,6 +33,7 @@ const ProjectsSection = () => {
                     title="FEATURED"
                     title2="PROJECTS"
                 />
+
                 {/* Filter Buttons */}
                 <div className="flex flex-wrap justify-center gap-4 mb-16">
                     {projectCategories.map((category) => (

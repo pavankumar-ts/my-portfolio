@@ -30,15 +30,15 @@ const WhyChooseSection = () => {
       <div className="md:w-[50%] pb-12 md:pb-0">
         <div className="sticky top-32">
           <h1 className="heading-xl whitespace-pre-line">
-            WHY{'\n'}CHOOSE{'\n'}ME?
+            WHY <br className='md:block hidden' />CHOOSE <br className='md:block hidden' />ME?
           </h1>
         </div>
       </div>
 
-      <div className="md:w-[50%] space-y-12">
+      <div className="md:w-[50%] space-y-8 md:space-y-16">
         {reasons.map((reason, index) => (
           <AnimatedSection key={reason.id} delayMultiplier={index * 200}>
-            <div className="border-b border-primary/10 pb-12">
+            <div className="border-b border-primary/10 pb-8 md:pb-16">
               <div className="flex flex-col gap-4">
                 <div className="flex items-start justify-between">
                   <span className="text-sm font-medium text-primary/60">[{reason.id}]</span>

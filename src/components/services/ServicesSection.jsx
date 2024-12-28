@@ -27,11 +27,11 @@ const ServicesSection = () => {
             </div>
 
             {/* Right Section */}
-            <div className="md:w-[50%] md:pl-8 space-y-16">
+            <div className="md:w-[50%] md:pl-8 space-y-8 md:space-y-16">
                 {services.map((service, index) => (
                     <div
                         key={service.id}
-                        className={`border-b border-primary/10 pb-16 transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                        className={`border-b border-primary/10 pb-8 md:pb-16 transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                         style={{ transitionDelay: `${index * 200}ms` }}
                     >
                         <div className="flex flex-col items-start justify-between mb-4">
