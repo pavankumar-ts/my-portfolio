@@ -34,12 +34,6 @@ const AboutValues = () => {
 
     return (
         <>
-            <Head>
-                <title>About Values | Pavan Kumar</title>
-                <meta name="description" content="Discover the core values of Pavan Kumar, focusing on user-centric approach, clean code, continuous learning, and effective communication." />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            </Head>
-
             <div ref={ref} className="container flex flex-col md:flex-row pt-32">
                 <div className="md:w-[50%] pb-12 md:pb-0">
                     <div className="sticky top-32">
