@@ -10,24 +10,24 @@ const AboutPage = () => {
     return (
         <>
             <Head>
-                <title>Services | Pavan Kumar - Software Developer</title>
-                <meta name="description" content="Expert developer crafting modern web applications and mobile solutions. Specialized in React, Next.js, and React Native. Building scalable, high-performance digital experiences." />
-                <meta name="keywords" content="React developer, Next.js development, mobile app development, React Native, web applications, frontend development, Android development, custom CMS solutions, modern web development, technical SEO, performance optimization, Firebase integration, Supabase" />
+                <title>About | Pavan Kumar - Software Developer</title>
+                <meta name="description" content="Software Developer with over 2+ years of experience building scalable web and mobile applications. Specialized in React, Next.js, and React Native development with a focus on performance and user experience." />
+                <meta name="keywords" content="about Pavan Kumar, software developer background, development experience, technical expertise, React developer portfolio, Next.js expert, React Native specialist, professional background, developer skills, software engineering values" />
 
                 {/* Open Graph / Facebook */}
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content="Services | Pavan Kumar - Software Developer" />
-                <meta property="og:description" content="Expert developer crafting modern web applications and mobile solutions. Specialized in React, Next.js, and React Native. Building scalable, high-performance digital experiences." />
+                <meta property="og:title" content="About | Pavan Kumar - Software Developer" />
+                <meta property="og:description" content="Software Developer with over 2+ years of experience building scalable web and mobile applications. Specialized in React, Next.js, and React Native development with a focus on performance and user experience." />
                 <meta property="og:image" content="https://www.pavankumar.co/opengraph-image.png" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
-                <meta property="og:url" content="https://www.pavankumar.co/services" />
+                <meta property="og:url" content="https://www.pavankumar.co/about" />
                 <meta property="og:site_name" content="Pavan Kumar - Software Developer" />
 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Services | Pavan Kumar - Software Developer" />
-                <meta name="twitter:description" content="Expert developer crafting modern web applications and mobile solutions. Specialized in React, Next.js, and React Native. Building scalable, high-performance digital experiences." />
+                <meta name="twitter:title" content="About | Pavan Kumar - Software Developer" />
+                <meta name="twitter:description" content="Software Developer with over 2+ years of experience building scalable web and mobile applications. Specialized in React, Next.js, and React Native development with a focus on performance and user experience." />
                 <meta name="twitter:image" content="https://www.pavankumar.co/opengraph-image.png" />
                 <meta name="twitter:creator" content="@pavankumarts26" />
                 <meta name="twitter:site" content="@pavankumarts26" />
