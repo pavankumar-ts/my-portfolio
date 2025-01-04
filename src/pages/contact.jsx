@@ -19,6 +19,7 @@ const ContactPage = () => {
       .then((result) => {
         console.log(result.text);
         setButtonText('Sent');
+        e.target.reset(); // Clear the input fields
       }, (error) => {
         console.log(error.text);
         setButtonText('Send it over');

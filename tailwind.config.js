@@ -20,21 +20,6 @@ module.exports = {
         bgColor: "var(--bg-color)",
         logoColor: "var(--logo-color)",
       },
-      animation: {
-        "border-width": "border-width 3s infinite alternate",
-      },
-      keyframes: {
-        "border-width": {
-          from: {
-            width: "10px",
-            opacity: "0",
-          },
-          to: {
-            width: "100px",
-            opacity: "1",
-          },
-        },
-      },
       fontFamily: {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
