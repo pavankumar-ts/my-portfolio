@@ -1,5 +1,7 @@
+import PopupForm from "@/components/common/PopupForm";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import FloatingButton from "@/components/pricing/FloatingButton";
 import "@/styles/globals.css";
 import { useEffect, useState } from "react";
 
@@ -42,6 +44,8 @@ export default function App({ Component, pageProps }) {
         onThemeToggle={handleThemeToggle}
       />
       <main className="flex-grow">
+        {/* <FloatingButton /> */}
+        <PopupForm />
         <Component {...pageProps} />
       </main>
       <Footer isDarkMode={isDarkMode} />

@@ -116,16 +116,18 @@ const ContactPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <input
                   type="text"
-                  name="company"
-                  placeholder="Company Name"
+                  name="phone"
+                  placeholder="Phone Number *"
+                  required
                   className="bg-transparent border-b border-primary/10 py-4 focus:outline-none focus:border-primary transition-colors"
                 />
                 <input
                   type="text"
-                  name="website"
-                  placeholder="www.example.com"
+                  name="company"
+                  placeholder="Company Name"
                   className="bg-transparent border-b border-primary/10 py-4 focus:outline-none focus:border-primary transition-colors"
                 />
+
               </div>
 
               <select
