@@ -351,19 +351,19 @@ const PricingInquiry = () => {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
-              icon: "🔒",
-              title: "100% Secure",
-              description: "Your information never shared"
+              icon: "🤝",
+              title: "Personal Approach",
+              description: "Direct communication with me throughout your project"
             },
             {
               icon: "⚡",
-              title: "Fast Response",
-              description: "Get your custom quote within 24 hours"
+              title: "Quick Response",
+              description: "Get your quote and project updates within 12 hours"
             },
             {
-              icon: "🤝",
-              title: "Expert Team",
-              description: "Work with experienced professionals"
+              icon: "💡",
+              title: "Creative Solutions",
+              description: "Custom development tailored to your unique needs"
             }
           ].map((item, index) => (
             <TrustIndicator key={index} {...item} />
