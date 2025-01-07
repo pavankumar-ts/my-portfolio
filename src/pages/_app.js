@@ -44,7 +44,7 @@ export default function App({ Component, pageProps }) {
         onThemeToggle={handleThemeToggle}
       />
       <main className="flex-grow">
-        {/* <FloatingButton /> */}
+        <FloatingButton />
         <PopupForm />
         <Component {...pageProps} />
       </main>
