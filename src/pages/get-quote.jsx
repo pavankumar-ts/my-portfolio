@@ -131,12 +131,12 @@ const PricingInquiry = () => {
     <button
       type="submit"
       disabled={isLoading}
-      className={`ml-auto px-8 py-3 rounded-xl transition-all ${isLoading ? 'opacity-70 cursor-not-allowed' : 'hover:opacity-90'
+      className={`ml-auto px-8 py-3  transition-all ${isLoading ? 'opacity-70 cursor-not-allowed' : 'hover:opacity-90'
         } bg-[var(--logo-color)] text-white`}
     >
       {isLoading ? (
         <div className="flex items-center space-x-2">
-          <div className="w-5 h-5 border-t-2 border-b-2 border-white rounded-full animate-spin" />
+          <div className="w-5 h-5 border-t-2 border-b-2 border-white  animate-spin" />
           <span>Sending...</span>
         </div>
       ) : (
