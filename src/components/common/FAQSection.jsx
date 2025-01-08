@@ -56,7 +56,7 @@ const FAQSection = () => {
                 </div>
             </div>
 
-            <div className="md:w-[50%] space-y-6">
+            <div className="md:w-[50%] space-y-1">
                 {faqs.map((faq, index) => (
                     <AnimatedSection key={faq.id} delayMultiplier={index * 200}>
                         <div className="border-b border-primary/10">
