@@ -9,6 +9,8 @@ import BlogSection from '@/components/blog/BlogSection';
 import { blogs } from '@/data/blog';
 
 export default function BlogPost({ post, relatedPosts }) {
+    if (!post) return null;
+    
     const { ref: heroRef, inView: heroInView } = useInView({ triggerOnce: true, threshold: 0.1 });
     const { ref: contentRef, inView: contentInView } = useInView({ triggerOnce: true, threshold: 0.1 });
     const { ref: relatedRef, inView: relatedInView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -19,7 +21,7 @@ export default function BlogPost({ post, relatedPosts }) {
                 <title>{`${post.title} | Blog | Pavan Kumar`}</title>
                 <meta name="description" content={post.description} />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <meta name="keywords" content={`${post.title}, ${post.tags.join(', ')}, web development, technical blog, software engineering, React, Next.js, development tips, coding tutorials, software development blog`} />
+                <meta name="keywords" content={`${post.title}, ${post.tags?.join(', ') || ''}, web development, technical blog, software engineering, React, Next.js, development tips, coding tutorials, software development blog`} />
                 <meta property="og:type" content="article" />
                 <meta property="og:title" content={`${post.title} | Blog | Pavan Kumar`} />
                 <meta property="og:description" content={post.description} />
@@ -53,7 +55,7 @@ export default function BlogPost({ post, relatedPosts }) {
 
                         {/* Tags */}
                         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
-                            {post.tags.map((tag, index) => (
+                            {post.tags?.map((tag, index) => (
                                 <span
                                     key={index}
                                     className="px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/5 text-primary/60 text-xs sm:text-sm rounded-full hover:bg-primary/10 transition-colors"
@@ -69,7 +71,6 @@ export default function BlogPost({ post, relatedPosts }) {
                                 <Image
                                     src={post.author.image}
                                     alt={post.author.name}
-                                    // fill
                                     width={200}
                                     height={200}
                                     className="object-cover w-full h-full"
@@ -83,12 +84,13 @@ export default function BlogPost({ post, relatedPosts }) {
 
                         {/* Main Image */}
                         {post.mainImg && (
-                            <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] overflow-hidden  shadow-xl sm:shadow-2xl">
+                            <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] overflow-hidden rounded-lg sm:rounded-2xl shadow-xl sm:shadow-2xl">
                                 <Image
                                     src={post.mainImg}
                                     alt={post.title}
-                                    fill
-                                    className="object-cover"
+                                    width={1920}
+                                    height={1080}
+                                    className="object-cover w-full h-full"
                                     priority
                                 />
                             </div>
@@ -101,7 +103,7 @@ export default function BlogPost({ post, relatedPosts }) {
                         className="max-w-3xl mx-auto py-12 sm:py-16 md:py-20"
                     >
                         {/* Introduction */}
-                        {post.content.introduction && (
+                        {post.content?.introduction && (
                             <div
                                 className={`mb-12 sm:mb-16 transition-all duration-1000 transform ${
                                     contentInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -114,7 +116,7 @@ export default function BlogPost({ post, relatedPosts }) {
                         )}
 
                         {/* Content Sections */}
-                        {post.content.sections?.map((section, index) => (
+                        {post.content?.sections?.map((section, index) => (
                             <BlogSection
                                 key={index}
                                 section={section}
@@ -124,7 +126,7 @@ export default function BlogPost({ post, relatedPosts }) {
                         ))}
 
                         {/* Conclusion */}
-                        {post.content.conclusion && (
+                        {post.content?.conclusion && (
                             <div
                                 className={`transition-all duration-1000 transform ${
                                     contentInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
