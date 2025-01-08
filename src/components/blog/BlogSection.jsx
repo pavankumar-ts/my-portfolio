@@ -25,7 +25,7 @@ const BlogSection = ({ section, index, inView }) => {
               </div>
             )}
             {section.image && (
-              <div className="relative w-full aspect-video rounded-xl overflow-hidden mt-8">
+              <div className="relative w-full aspect-video overflow-hidden mt-8">
                 <Image
                   src={section.image}
                   alt={section.title || 'Blog section image'}

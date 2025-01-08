@@ -20,10 +20,10 @@ const ProgressSteps = ({ currentStep }) => (
           className={`w-12 h-12 rounded-full border-2 flex items-center justify-center mb-2 transition-colors duration-300
           relative z-10 
             ${currentStep === num 
-              ? 'bg-white dark:bg-gray-900 border-logoColor text-logoColor' 
+              ? 'bg-white dark:bg-black border-logoColor text-logoColor' 
               : currentStep > num 
                 ? 'bg-logoColor border-logoColor text-white' 
-                : 'bg-white dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100'
+                : 'bg-white dark:bg-black border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100'
             }`}
         >
           {currentStep > num ? '✓' : num}

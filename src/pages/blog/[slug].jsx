@@ -49,7 +49,7 @@ export default function BlogPost({ post, relatedPosts }) {
                         </div>
 
                         {/* Title */}
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1] text-center max-w-[1200px] mx-auto mb-8 sm:mb-12">
+                        <h1 className="uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1] text-center max-w-[1200px] mx-auto mb-8 sm:mb-12">
                             {post.title}
                         </h1>
 
@@ -84,7 +84,7 @@ export default function BlogPost({ post, relatedPosts }) {
 
                         {/* Main Image */}
                         {post.mainImg && (
-                            <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] overflow-hidden rounded-lg sm:rounded-2xl shadow-xl sm:shadow-2xl">
+                            <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] overflow-hidden shadow-xl sm:shadow-2xl">
                                 <Image
                                     src={post.mainImg}
                                     alt={post.title}
