@@ -1,4 +1,3 @@
-// pages/pricing.js
 import FormInput from '@/components/pricing/FormInput';
 import FormTextArea from '@/components/pricing/FormTextArea';
 import ProgressSteps from '@/components/pricing/ProgressSteps';
@@ -43,8 +42,8 @@ const PricingInquiry = () => {
 
     try {
       await emailjs.send(
-        'my_portfolio', // Replace with your Service ID
-        'template_pricing', // Replace with your Template ID
+        'my_portfolio',
+        'template_pricing',
         {
           from_name: formData.name,
           project_type: formData.projectType,
@@ -58,7 +57,7 @@ const PricingInquiry = () => {
           phone: formData.phone,
           message: formData.message,
         },
-        'envDnIzt4XmWq_8T9' // Replace with your Public Key
+        'envDnIzt4XmWq_8T9'
       );
 
       setStatus({
@@ -66,7 +65,6 @@ const PricingInquiry = () => {
         message: 'Thank you! We will get back to you soon.'
       });
 
-      // Reset form after successful submission
       setFormData({
         projectType: '',
         projectScope: '',
@@ -81,7 +79,6 @@ const PricingInquiry = () => {
         message: ''
       });
 
-      // Reset to first step after a delay
       setTimeout(() => {
         setStep(1);
         setStatus({ type: '', message: '' });
@@ -98,12 +95,12 @@ const PricingInquiry = () => {
     }
   };
 
-  // Add this to your return JSX, where you show the success/error messages
   const StatusMessage = () => {
     if (!status.message) return null;
 
     return (
-      <div className={`text-center p-4 rounded-lg mb-6 ${status.type === 'success' ? 'bg-green-50 text-green-600' : 'bg-red-50 text-red-600'
+      <div className={`text-center p-4 rounded-lg mb-6 ${status.type === 'success' ? 'bg-green-50 text-green-600 dark:bg-green-900/50 dark:text-green-400'
+        : 'bg-red-50 text-red-600 dark:bg-red-900/50 dark:text-red-400'
         }`}>
         {status.message}
       </div>
@@ -122,22 +119,23 @@ const PricingInquiry = () => {
     setStep(prev => prev + 1);
     window.scrollTo({
       top: 0,
-      behavior: 'smooth' // Enables smooth scrolling
+      behavior: 'smooth'
     });
     setStatus({ type: 'error', message: '' });
   };
 
   const prevStep = () => setStep(prev => prev - 1);
+
   const SubmitButton = () => (
     <button
       type="submit"
       disabled={isLoading}
-      className={`ml-auto px-8 py-3  transition-all ${isLoading ? 'opacity-70 cursor-not-allowed' : 'hover:opacity-90'
-        } bg-[var(--logo-color)] text-white`}
+      className={`ml-auto px-8 py-3 bg-logoColor text-white transition-all ${isLoading ? 'opacity-70 cursor-not-allowed' : 'hover:opacity-90'
+        }`}
     >
       {isLoading ? (
         <div className="flex items-center space-x-2">
-          <div className="w-5 h-5 border-t-2 border-b-2 border-white  animate-spin" />
+          <div className="w-5 h-5 border-t-2 border-b-2 border-white animate-spin" />
           <span>Sending...</span>
         </div>
       ) : (
@@ -152,27 +150,23 @@ const PricingInquiry = () => {
         <title>Get a Quote | Pavan Kumar - Software Developer & Digital Solutions Expert</title>
         <meta name="description" content="Get a personalized project estimate from Pavan Kumar, an expert in software development, specializing in React, Next.js, mobile apps, and no-code solutions." />
       </Head>
-      <div className="bg-[var(--bg-color)] text-[var(--text-color)]">
+      <div className="bg-white dark:bg-black text-gray-900 dark:text-gray-100">
         <div className="container mx-auto px-4 max-w-4xl">
-          {/* Header Section */}
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6" >
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Get Your Project Estimate
             </h1>
-            <p className="text-lg md:text-xl max-w-2xl mx-auto opacity-80">
+            <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
               Let's understand your vision and provide you with a tailored solution
             </p>
           </div>
 
-          {/* Progress Steps */}
           <ProgressSteps currentStep={step} />
 
-          {/* Main Form */}
-          <div className="rounded-2xl shadow-lg p-8 md:p-12 border border-[var(--border-color)] bg-[var(--bg-color)]">
+          <div className="rounded-2xl shadow-lg p-4 md:p-12 border border-gray-200 dark:border-gray-700 bg-white dark:bg-black">
             <form onSubmit={handleSubmit} className="space-y-8">
-              <StatusMessage />
 
-              {/* Step 1: Project Details */}
+
               {step === 1 && (
                 <div className="space-y-8">
                   <div className="flex items-center gap-2 mb-8">
@@ -181,10 +175,10 @@ const PricingInquiry = () => {
                   </div>
 
                   <div>
-                    <label className="block font-medium mb-2 opacity-80">
+                    <label className="block font-medium mb-2 text-gray-700 dark:text-gray-300">
                       What type of project are you looking to build? <span className="text-red-500">*</span>
                     </label>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                       {services.map((service) => (
                         <SelectButton
                           key={service.id}
@@ -213,7 +207,7 @@ const PricingInquiry = () => {
                   />
 
                   <div>
-                    <label className="block font-medium mb-2 opacity-80">
+                    <label className="block font-medium mb-2 text-gray-700 dark:text-gray-300">
                       Expected Timeline
                     </label>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -231,7 +225,6 @@ const PricingInquiry = () => {
                 </div>
               )}
 
-              {/* Step 2: Business Details */}
               {step === 2 && (
                 <div className="space-y-8">
                   <div className="flex items-center gap-2 mb-8">
@@ -242,43 +235,31 @@ const PricingInquiry = () => {
                   <div className="grid gap-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <FormInput
-                        label={<>Business Name <span className='text-red-500'></span></>}
+                        label={<>Business Name <span className="text-red-500">*</span></>}
                         name="businessName"
                         value={formData.businessName}
                         onChange={handleChange}
                         required
                       />
                       <FormInput
-                        label={<>Industry <span className='text-red-500'></span></>}
+                        label={<>Industry <span className="text-red-500">*</span></>}
                         name="industry"
                         value={formData.industry}
                         onChange={handleChange}
                         required
                       />
                       <FormInput
-                        label={<>Budget Range <span className="text-red-500"></span></>}
+                        label={<>Budget Range <span className="text-red-500">*</span></>}
                         name="budget"
                         value={formData.budget}
                         onChange={handleChange}
                         required
                       />
                     </div>
-                    {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        {['₹20k - 20k', '₹10k-$25k', '₹25k-₹50k', '₹50k+'].map((budget) => (
-                          <SelectButton
-                            key={budget}
-                            selected={formData.budget === budget}
-                            onClick={() => setFormData(prev => ({ ...prev, budget: budget }))}
-                          >
-                            {budget}
-                          </SelectButton>
-                        ))}
-                      </div> */}
                   </div>
                 </div>
               )}
 
-              {/* Step 3: Contact Details */}
               {step === 3 && (
                 <div className="space-y-8">
                   <div className="flex items-center gap-2 mb-8">
@@ -289,14 +270,14 @@ const PricingInquiry = () => {
                   <div className="grid gap-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <FormInput
-                        label={<>Your Name <span className='text-red-500'>*</span></>}
+                        label={<>Your Name <span className="text-red-500">*</span></>}
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
                         required
                       />
                       <FormInput
-                        label={<>Email Address <span className='text-red-500'>*</span></>}
+                        label={<>Email Address <span className="text-red-500">*</span></>}
                         name="email"
                         type="email"
                         value={formData.email}
@@ -306,7 +287,7 @@ const PricingInquiry = () => {
                     </div>
 
                     <FormInput
-                      label={<>Phone Number <span className='text-red-500'>*</span></>}
+                      label={<>Phone Number <span className="text-red-500">*</span></>}
                       name="phone"
                       type="tel"
                       value={formData.phone}
@@ -324,36 +305,34 @@ const PricingInquiry = () => {
                   </div>
                 </div>
               )}
-
-              {/* Navigation Buttons */}
               <div className="flex justify-between mt-12">
                 {step > 1 && (
                   <button
                     type="button"
                     onClick={prevStep}
                     disabled={isLoading}
-                    className={`px-8 py-3  transition-colors hover:opacity-90 ${isLoading ? 'opacity-70 cursor-not-allowed' : ''
-                      } bg-[var(--border-color)] text-[var(--text-color)]`}
+                    className={`px-8 py-3 transition-colors bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 ${isLoading ? 'opacity-70 cursor-not-allowed' : 'hover:bg-gray-200 dark:hover:bg-gray-700'
+                      }`}
                   >
-                    <span className="ml-2 font-semibold" style={{ display: "inline-block", transform: "rotate(180deg)" }}>→</span> Previous
+                    <span className="ml-2 font-semibold hidden md:inline-block " style={{ transform: "rotate(180deg)" }}>→</span> Previous
                   </button>
                 )}
                 {step < 3 ? (
                   <button
                     type="button"
                     onClick={nextStep}
-                    className="ml-auto px-8 py-3  transition-colors hover:opacity-90 bg-[var(--logo-color)] text-white"
+                    className="ml-auto  px-8 py-3 bg-logoColor text-white transition-colors hover:opacity-90"
                   >
-                    Continue <span className="ml-2 font-semibold">→</span>
+                    Continue <span className="ml-2 font-semibold hidden md:inline-block">→</span>
                   </button>
                 ) : (
                   <SubmitButton />
                 )}
               </div>
+              <StatusMessage />
             </form>
           </div>
 
-          {/* Trust Indicators */}
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
@@ -375,8 +354,8 @@ const PricingInquiry = () => {
               <TrustIndicator key={index} {...item} />
             ))}
           </div>
-        </div >
-      </div >
+        </div>
+      </div>
     </>
   );
 };

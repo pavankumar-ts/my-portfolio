@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
+import { useRouter } from 'next/router';
 
 const PopupForm = () => {
+  const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
@@ -15,15 +17,28 @@ const PopupForm = () => {
   });
 
   useEffect(() => {
+    // Check if on excluded pages
+    if (router.pathname === '/get-quote' || router.pathname === '/contact') {
+      return;
+    }
+
+    // Check if user has already seen the popup
+    const hasSeenPopup = sessionStorage.getItem('hasSeenPopup');
+    if (hasSeenPopup) {
+      return;
+    }
+
     emailjs.init("envDnIzt4XmWq_8T9");
 
     const timer = setTimeout(() => {
       setIsVisible(true);
       setTimeout(() => setShowContent(true), 100);
+      // Mark that user has seen the popup
+      sessionStorage.setItem('hasSeenPopup', 'true');
     }, 5000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [router.pathname]);
 
   const handleClose = () => {
     setIsClosing(true);
@@ -38,8 +53,6 @@ const PopupForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-
-
 
     try {
       const result = await emailjs.send(
@@ -68,8 +81,6 @@ const PopupForm = () => {
     }
   };
 
-
-
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -77,7 +88,8 @@ const PopupForm = () => {
     });
   };
 
-  if (!isVisible) return null;
+  // Don't render if on excluded pages or popup shouldn't be visible
+  if (!isVisible || router.pathname === '/get-quote' || router.pathname === '/contact') return null;
 
   return (
     <div
@@ -162,7 +174,7 @@ const PopupForm = () => {
             <textarea
               name="message"
               placeholder="Would you like to leave a message?"
-              className="w-full  p-3 h-24"
+              className="w-full p-3 h-24"
               style={{
                 backgroundColor: 'transparent',
                 border: '1px solid var(--border-color)',
@@ -176,12 +188,8 @@ const PopupForm = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className={`px-6 py-2 font-bold transition-transform duration-300
+                className={`px-6 py-2 font-bold transition-transform duration-300 text-white bg-logoColor w-full
                   ${isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105'}`}
-                style={{
-                  backgroundColor: 'var(--logo-color)',
-                  color: '#fff',
-                }}
               >
                 {isLoading ? 'SENDING...' : 'SEND'}
               </button>
