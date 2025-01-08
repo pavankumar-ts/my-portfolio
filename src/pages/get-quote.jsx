@@ -99,7 +99,7 @@ const PricingInquiry = () => {
     if (!status.message) return null;
 
     return (
-      <div className={`text-center p-4 rounded-lg mb-6 ${status.type === 'success' ? 'bg-green-50 text-green-600 dark:bg-green-900/50 dark:text-green-400'
+      <div className={`text-center p-4 rounded-lg mb-6 ${status.type === 'success' ? 'bg-logoColor text-logoColor dark:bg-logoColor/50 dark:text-logoColor'
         : 'bg-red-50 text-red-600 dark:bg-red-900/50 dark:text-red-400'
         }`}>
         {status.message}

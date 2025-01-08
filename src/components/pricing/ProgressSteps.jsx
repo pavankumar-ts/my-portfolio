@@ -3,11 +3,11 @@ const ProgressSteps = ({ currentStep }) => (
     {/* Connector lines */}
     <div 
       className={`absolute left-[20%] right-[20%] top-6 border-t-2 border-dashed transition-colors duration-300 
-        ${currentStep > 1 ? 'border-emerald-500' : 'border-gray-300 dark:border-gray-700'}`}
+        ${currentStep > 1 ? 'border-logoColor' : 'border-gray-300 dark:border-gray-700'}`}
     />
     <div 
       className={`absolute left-[55%] right-[20%] top-6 border-t-2 border-dashed transition-colors duration-300 
-        ${currentStep > 2 ? 'border-emerald-500' : 'border-gray-300 dark:border-gray-700'}`}
+        ${currentStep > 2 ? 'border-logoColor' : 'border-gray-300 dark:border-gray-700'}`}
     />
 
     {[
@@ -22,7 +22,7 @@ const ProgressSteps = ({ currentStep }) => (
             ${currentStep === num 
               ? 'bg-white dark:bg-gray-900 border-logoColor text-logoColor' 
               : currentStep > num 
-                ? 'bg-emerald-500 border-emerald-500 text-white' 
+                ? 'bg-logoColor border-logoColor text-white' 
                 : 'bg-white dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100'
             }`}
         >
@@ -33,7 +33,7 @@ const ProgressSteps = ({ currentStep }) => (
             ${currentStep === num 
               ? 'text-logoColor' 
               : currentStep > num 
-                ? 'text-emerald-500' 
+                ? 'text-logoColor' 
                 : 'text-gray-500 dark:text-gray-400'
             }`}
         >
