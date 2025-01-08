@@ -52,6 +52,48 @@ export default function BlogPost({ post, relatedPosts }) {
                 {/* Additional Meta Tags */}
                 <meta property="og:locale" content="en_US" />
                 <link rel="canonical" href={`https://www.pavankumar.co/blog/${post.slug}`} />
+
+                {/* Structured Data */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "BlogPosting",
+                            "mainEntityOfPage": {
+                                "@type": "WebPage",
+                                "@id": `https://www.pavankumar.co/blog/${post.slug}`
+                            },
+                            "headline": post.title,
+                            "description": post.description,
+                            "image": post.mainImg ? `https://www.pavankumar.co${post.mainImg}` : undefined,
+                            "author": {
+                                "@type": "Person",
+                                "name": post.author.name,
+                                "jobTitle": post.author.role,
+                                "image": `https://www.pavankumar.co${post.author.image}`,
+                                "url": "https://www.pavankumar.co"
+                            },
+                            "publisher": {
+                                "@type": "Organization",
+                                "name": "Pavan Kumar",
+                                "logo": {
+                                    "@type": "ImageObject",
+                                    "url": "https://www.pavankumar.co/logo.png" // Update with your actual logo path
+                                }
+                            },
+                            "datePublished": post.date,
+                            "dateModified": post.dateModified || post.date,
+                            "keywords": post.tags?.join(', '),
+                            "articleBody": `${post.content?.introduction || ''} ${post.content?.sections?.map(section => section.content).join(' ') || ''
+                                } ${post.content?.conclusion || ''}`.trim(),
+                            "url": `https://www.pavankumar.co/blog/${post.slug}`,
+                            "articleSection": "Blog",
+                            "inLanguage": "en-US"
+                        })
+                    }}
+                />
+
             </Head>
 
             <article className="min-h-screen bg-gradient-to-b from-transparent to-primary/5">
