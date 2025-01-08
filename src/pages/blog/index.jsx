@@ -23,8 +23,9 @@ const BlogPage = () => {
     };
 
     const filteredBlogs = selectedCategory === 1
-        ? blogs
-        : blogs.filter(blog => blog.category.includes(selectedCategory));
+        ? blogs.slice().reverse() // Reverse the entire blogs array for "All Posts"
+        : blogs.filter(blog => blog.category.includes(selectedCategory)).reverse(); // Reverse filtered blogs
+
 
     return (
         <>
@@ -53,11 +54,10 @@ const BlogPage = () => {
                         <button
                             key={category.id}
                             onClick={() => handleCategoryChange(category.id)}
-                            className={`px-6 py-2 border transition-colors ${
-                                selectedCategory === category.id
+                            className={`px-6 py-2 border transition-colors ${selectedCategory === category.id
                                     ? 'bg-primary text-secondary'
                                     : 'border-primary/10 hover:border-primary/50'
-                            }`}
+                                }`}
                         >
                             {category.name}
                         </button>

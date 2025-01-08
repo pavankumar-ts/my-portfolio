@@ -7,6 +7,23 @@ import ContactCTA from '@/components/common/ContactCTA';
 import BlogCard from '@/components/blog/BlogCard';
 import BlogSection from '@/components/blog/BlogSection';
 import { blogs } from '@/data/blog';
+import dynamic from 'next/dynamic'
+
+
+// Import AudioPlayer with no SSR
+const AudioPlayer = dynamic(
+    () => {
+        console.log("Loading AudioPlayer dynamically"); // Debug log
+        return import('@/components/blog/AudioPlayer');
+    },
+    {
+        ssr: false,
+        loading: () => {
+            console.log("AudioPlayer is loading"); // Debug loading
+            return <div>Loading...</div>;
+        }
+    }
+);
 
 export default function BlogPost({ post, relatedPosts }) {
     if (!post) return null;
@@ -97,7 +114,13 @@ export default function BlogPost({ post, relatedPosts }) {
             </Head>
 
             <article className="min-h-screen bg-gradient-to-b from-transparent to-primary/5">
+
                 <div className="container">
+                    {/* Audio */}
+                    {/* {post?.content && <AudioPlayer content={post.content} />} */}
+
+
+                    
                     {/* Hero Section */}
                     <header
                         ref={heroRef}
@@ -115,6 +138,7 @@ export default function BlogPost({ post, relatedPosts }) {
                         <h1 className="uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1] text-center max-w-[1200px] mx-auto mb-8 sm:mb-12">
                             {post.title}
                         </h1>
+
 
                         {/* Tags */}
                         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
