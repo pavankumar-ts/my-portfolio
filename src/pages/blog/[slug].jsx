@@ -10,7 +10,7 @@ import { blogs } from '@/data/blog';
 
 export default function BlogPost({ post, relatedPosts }) {
     if (!post) return null;
-    
+
     const { ref: heroRef, inView: heroInView } = useInView({ triggerOnce: true, threshold: 0.1 });
     const { ref: contentRef, inView: contentInView } = useInView({ triggerOnce: true, threshold: 0.1 });
     const { ref: relatedRef, inView: relatedInView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -21,15 +21,37 @@ export default function BlogPost({ post, relatedPosts }) {
                 <title>{`${post.title} | Blog | Pavan Kumar`}</title>
                 <meta name="description" content={post.description} />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+                {/* Primary Meta Tags */}
                 <meta name="keywords" content={`${post.title}, ${post.tags?.join(', ') || ''}, web development, technical blog, software engineering, React, Next.js, development tips, coding tutorials, software development blog`} />
+
+                {/* Open Graph / Facebook */}
                 <meta property="og:type" content="article" />
+                <meta property="og:site_name" content="Pavan Kumar" />
                 <meta property="og:title" content={`${post.title} | Blog | Pavan Kumar`} />
                 <meta property="og:description" content={post.description} />
-                {post.mainImg && <meta property="og:image" content={post.mainImg} />}
+                {post.mainImg && (
+                    <>
+                        <meta property="og:image" content={`https://www.pavankumar.co${post.mainImg}`} />
+                        <meta property="og:image:secure_url" content={`https://www.pavankumar.co${post.mainImg}`} />
+                        <meta property="og:image:width" content="1200" />
+                        <meta property="og:image:height" content="630" />
+                        <meta property="og:image:type" content="image/webp" />
+                    </>
+                )}
+                <meta property="og:url" content={`https://www.pavankumar.co/blog/${post.slug}`} />
+
+                {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={`${post.title} | Blog | Pavan Kumar`} />
                 <meta name="twitter:description" content={post.description} />
-                {post.mainImg && <meta name="twitter:image" content={post.mainImg} />}
+                {post.mainImg && (
+                    <meta name="twitter:image" content={`https://www.pavankumar.co${post.mainImg}`} />
+                )}
+
+                {/* Additional Meta Tags */}
+                <meta property="og:locale" content="en_US" />
+                <link rel="canonical" href={`https://www.pavankumar.co/blog/${post.slug}`} />
             </Head>
 
             <article className="min-h-screen bg-gradient-to-b from-transparent to-primary/5">
@@ -37,9 +59,8 @@ export default function BlogPost({ post, relatedPosts }) {
                     {/* Hero Section */}
                     <header
                         ref={heroRef}
-                        className={`pb-6 sm:pb-8 transition-all duration-1000 transform ${
-                            heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                        }`}
+                        className={`pb-6 sm:pb-8 transition-all duration-1000 transform ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                            }`}
                     >
                         {/* Meta info */}
                         <div className="flex items-center justify-center gap-3 sm:gap-4 text-primary/60 mb-6 sm:mb-8 text-sm sm:text-base">
@@ -105,9 +126,8 @@ export default function BlogPost({ post, relatedPosts }) {
                         {/* Introduction */}
                         {post.content?.introduction && (
                             <div
-                                className={`mb-12 sm:mb-16 transition-all duration-1000 transform ${
-                                    contentInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                                }`}
+                                className={`mb-12 sm:mb-16 transition-all duration-1000 transform ${contentInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                                    }`}
                             >
                                 <p className="text-lg sm:text-xl md:text-2xl text-primary/80 leading-relaxed">
                                     {post.content.introduction}
@@ -128,11 +148,10 @@ export default function BlogPost({ post, relatedPosts }) {
                         {/* Conclusion */}
                         {post.content?.conclusion && (
                             <div
-                                className={`transition-all duration-1000 transform ${
-                                    contentInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                                }`}
-                                style={{ 
-                                    transitionDelay: `${(post.content.sections?.length || 0) * 200}ms` 
+                                className={`transition-all duration-1000 transform ${contentInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                                    }`}
+                                style={{
+                                    transitionDelay: `${(post.content.sections?.length || 0) * 200}ms`
                                 }}
                             >
                                 <p className="text-lg sm:text-xl md:text-2xl text-primary/80 leading-relaxed">
@@ -149,9 +168,8 @@ export default function BlogPost({ post, relatedPosts }) {
                 {relatedPosts?.length > 0 && (
                     <section
                         ref={relatedRef}
-                        className={`container py-12 sm:py-16 md:py-20 transition-all duration-1000 transform ${
-                            relatedInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                        }`}
+                        className={`container py-12 sm:py-16 md:py-20 transition-all duration-1000 transform ${relatedInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                            }`}
                     >
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12">
                             Related Articles

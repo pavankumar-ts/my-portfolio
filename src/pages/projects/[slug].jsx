@@ -28,15 +28,30 @@ export default function ProjectPage({ project, relatedProjects }) {
 
                 {/* Open Graph / Facebook */}
                 <meta property="og:type" content="article" />
+                <meta property="og:site_name" content="Pavan Kumar" />
                 <meta property="og:title" content={`${project.title} | Web & Mobile App | Pavan Kumar`} />
                 <meta property="og:description" content={project.description} />
-                {project.image && <meta property="og:image" content={project.image} />}
+                {project.mainImg && (
+                    <>
+                        <meta property="og:image" content={`https://www.pavankumar.co${project.mainImg}`} />
+                        <meta property="og:image:secure_url" content={`https://www.pavankumar.co${project.mainImg}`} />
+                        <meta property="og:image:width" content="1200" />
+                        <meta property="og:image:height" content="630" />
+                        <meta property="og:image:type" content="image/webp" />
+                    </>
+                )}
 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={`${project.title} | Web & Mobile App | Pavan Kumar`} />
                 <meta name="twitter:description" content={project.description} />
-                {project.image && <meta name="twitter:image" content={project.image} />}
+                {project.mainImg && (
+                    <meta name="twitter:image" content={`https://www.pavankumar.co${project.mainImg}`} />
+                )}
+
+                {/* Additional Meta Tags */}
+                <meta property="og:url" content={`https://www.pavankumar.co/projects/${project.slug}`} />
+                <meta property="og:locale" content="en_US" />
             </Head>
 
             <div className="container">
@@ -73,8 +88,8 @@ export default function ProjectPage({ project, relatedProjects }) {
                         <div
                             key={index}
                             className={`relative w-full rounded-sm overflow-hidden transition-all duration-1000 transform ${screenshotsInView
-                                    ? 'opacity-100 translate-y-0'
-                                    : 'opacity-0 translate-y-10'
+                                ? 'opacity-100 translate-y-0'
+                                : 'opacity-0 translate-y-10'
                                 }`}
                             style={{ transitionDelay: `${index * 200}ms` }}
                         >
