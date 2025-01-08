@@ -9,7 +9,7 @@ const FormTextArea = ({ label, name, value, onChange, placeholder, rows = 4, ...
         onChange={onChange}
         placeholder={placeholder}
         rows={rows}
-        className="w-full p-4 rounded-xl transition-all focus:ring-2 focus:ring-[var(--logo-color)] outline-none bg-transparent border border-[var(--border-color)] text-[var(--text-color)]"
+        className="w-full p-4 transition-all focus:ring-2 focus:ring-[var(--logo-color)] outline-none bg-transparent border border-[var(--border-color)] text-[var(--text-color)]"
         {...props}
       />
     </div>

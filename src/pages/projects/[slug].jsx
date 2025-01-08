@@ -19,24 +19,24 @@ export default function ProjectPage({ project, relatedProjects }) {
     return (
         <>
             <Head>
-                <title>{`${project.title} | Web & Mobile App | Pavan Kumar`}</title>
-                <meta name="description" content={project.description} />
+                <title>{`${post.title} | Blog | Pavan Kumar`}</title>
+                <meta name="description" content={post.description} />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
                 {/* Primary Meta Tags */}
-                <meta name="keywords" content={`${project.title}, ${project.tags?.join(', ')}, web development, mobile app development, React, Next.js, React Native, Android development, portfolio project`} />
+                <meta name="keywords" content={`${post.title}, ${post.tags.join(', ')}, web development, technical blog, software engineering, React, Next.js, development tips, coding tutorials, software development blog`} />
 
                 {/* Open Graph / Facebook */}
                 <meta property="og:type" content="article" />
-                <meta property="og:title" content={`${project.title} | Web & Mobile App | Pavan Kumar`} />
-                <meta property="og:description" content={project.description} />
-                {project.image && <meta property="og:image" content={project.image} />}
+                <meta property="og:title" content={`${post.title} | Blog | Pavan Kumar`} />
+                <meta property="og:description" content={post.description} />
+                {post.mainImg && <meta property="og:image" content={post.mainImg} />}
 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={`${project.title} | Web & Mobile App | Pavan Kumar`} />
-                <meta name="twitter:description" content={project.description} />
-                {project.image && <meta name="twitter:image" content={project.image} />}
+                <meta name="twitter:title" content={`${post.title} | Blog | Pavan Kumar`} />
+                <meta name="twitter:description" content={post.description} />
+                {post.mainImg && <meta name="twitter:image" content={post.mainImg} />}
             </Head>
 
             <div className="container">
@@ -73,8 +73,8 @@ export default function ProjectPage({ project, relatedProjects }) {
                         <div
                             key={index}
                             className={`relative w-full rounded-sm overflow-hidden transition-all duration-1000 transform ${screenshotsInView
-                                    ? 'opacity-100 translate-y-0'
-                                    : 'opacity-0 translate-y-10'
+                                ? 'opacity-100 translate-y-0'
+                                : 'opacity-0 translate-y-10'
                                 }`}
                             style={{ transitionDelay: `${index * 200}ms` }}
                         >

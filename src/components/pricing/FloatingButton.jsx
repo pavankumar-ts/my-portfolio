@@ -15,8 +15,6 @@ const FloatingButton = () => {
                 writingMode: 'vertical-lr',
                 textOrientation: 'mixed',
                 transform: 'rotate(180deg)',
-                borderTopRightRadius: '8px',
-                borderBottomRightRadius: '8px',
             }}
         >
             <div className="relative flex flex-col items-center py-6 px-2 space-y-2 

@@ -112,7 +112,11 @@ const PricingInquiry = () => {
       setStatus({ type: 'error', message: 'Please select a project type.' });
       return;
     }
-    if (step === 3 && (!formData.businessName || !formData.industry)) {
+    if (step === 2 && (!formData.businessName )) {
+      setStatus({ type: 'error', message: 'Please fill in all required fields.' });
+      return;
+    }
+    if (step === 3 && (!formData.name || !formData.email || !formData.phone)) {
       setStatus({ type: 'error', message: 'Please fill in all required fields.' });
       return;
     }
@@ -242,14 +246,14 @@ const PricingInquiry = () => {
                         required
                       />
                       <FormInput
-                        label={<>Industry <span className="text-red-500">*</span></>}
+                        label={<>Industry <span className="text-red-500"></span></>}
                         name="industry"
                         value={formData.industry}
                         onChange={handleChange}
                         required
                       />
                       <FormInput
-                        label={<>Budget Range <span className="text-red-500">*</span></>}
+                        label={<>Budget Range <span className="text-red-500"></span></>}
                         name="budget"
                         value={formData.budget}
                         onChange={handleChange}
