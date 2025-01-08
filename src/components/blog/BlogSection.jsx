@@ -82,7 +82,7 @@ const BlogSection = ({ section, index, inView }) => {
                   alt={section.title || 'Blog section image'}
                   width={1200}
                   height={675}
-                  className="object-cover w-full h-full"
+                  className={`object-contain w-full h-full ${isFullscreen ? 'object-contain' : 'object-cover'}`}
                 />
                 <button
                   className="absolute top-4 right-4 p-2 bg-primary/10 text-primary/70 hover:text-primary/90 rounded-full z-50"
@@ -146,9 +146,11 @@ const BlogSection = ({ section, index, inView }) => {
                   {copied ? 'Copied' : 'Copy'}
                 </button>
               </div>
-              <pre className="overflow-x-auto px-4 py-3 text-sm font-mono">
-                <code className="text-primary/90">{section.content}</code>
-              </pre>
+              <div className="overflow-x-auto">
+                <pre className="px-4 py-3 text-sm font-mono whitespace-pre-wrap break-all">
+                  <code className="text-primary/90">{section.content}</code>
+                </pre>
+              </div>
             </div>
           </div>
         ) : null;

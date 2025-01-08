@@ -102,10 +102,9 @@ export const blogs = [
                     content: `import Head from 'next/head';\n\nexport default function Home() {\n  return (\n    <>\n      <Head>\n        <title>Next.js SEO Optimization</title>\n        <meta name=\"description\" content=\"Learn effective SEO techniques for Next.js applications.\" />\n        <link rel=\"canonical\" href=\"https://yourwebsite.com/nextjs-seo-optimization\" />\n      </Head>\n      <main>\n        <h1>Welcome to Next.js SEO Optimization</h1>\n      </main>\n    </>\n  );\n}`
                 },
                 {
-                    type: 'image',
+                    type: 'code',
                     title: 'Structured Data in Next.js',
-                    content: 'Implementing structured data helps search engines understand your content better, improving visibility and rankings.',
-                    // image: '/assets/blog/structured_data.webp'
+                    content: `import Head from 'next/head';\n\nexport default function Home() {\n  return (\n    <>\n      <Head>\n        <script type="application/ld+json">\n          {JSON.stringify({\n            "@context": "https://schema.org",\n            "@type": "WebPage",\n            "name": "Structured Data in Next.js",\n            "description": "Implementing structured data helps search engines understand your content better, improving visibility and rankings.",\n            "url": "https://yourwebsite.com/structured-data-nextjs"\n          })}\n        </script>\n      </Head>\n      <main>\n        <h1>Learn Structured Data in Next.js</h1>\n      </main>\n    </>\n  );\n}`
                 },
                 {
                     type: 'quote',
