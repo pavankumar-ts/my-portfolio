@@ -67,7 +67,7 @@ export default function BlogPost({ post, relatedPosts }) {
 
                         {/* Author info */}
                         <div className="flex items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
-                            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden relative ring-4 ring-primary/10">
+                            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden relative ring-4 ring-[#f16829c4]">
                                 <Image
                                     src={post.author.image}
                                     alt={post.author.name}

@@ -1,6 +1,7 @@
 // components/blog/BlogSection.jsx
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { FiMaximize, FiMinimize } from 'react-icons/fi';
 
 const BlogSection = ({ section, index, inView }) => {
   if (!section) return null;
@@ -17,6 +18,53 @@ const BlogSection = ({ section, index, inView }) => {
         );
 
       case 'image':
+        const [isFullscreen, setIsFullscreen] = useState(false);
+        const fullscreenRef = useRef(null);
+
+        const toggleFullscreen = () => {
+          const element = fullscreenRef.current;
+
+          if (!element) return;
+
+          if (!isFullscreen) {
+            // Enter fullscreen
+            if (element.requestFullscreen) {
+              element.requestFullscreen();
+            } else if (element.webkitRequestFullscreen) {
+              element.webkitRequestFullscreen(); // Safari
+            } else if (element.msRequestFullscreen) {
+              element.msRequestFullscreen(); // IE
+            }
+          } else {
+            // Exit fullscreen
+            if (document.fullscreenElement || document.webkitFullscreenElement) {
+              if (document.exitFullscreen) {
+                document.exitFullscreen();
+              } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen(); // Safari
+              } else if (document.msExitFullscreen) {
+                document.msExitFullscreen(); // IE
+              }
+            }
+          }
+        };
+
+        useEffect(() => {
+          const handleFullscreenChange = () => {
+            setIsFullscreen(!!document.fullscreenElement);
+          };
+
+          // Add event listener
+          document.addEventListener('fullscreenchange', handleFullscreenChange);
+          document.addEventListener('webkitfullscreenchange', handleFullscreenChange); // Safari
+
+          // Cleanup event listener
+          return () => {
+            document.removeEventListener('fullscreenchange', handleFullscreenChange);
+            document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
+          };
+        }, []);
+
         return (
           <>
             {section.content && (
@@ -25,7 +73,10 @@ const BlogSection = ({ section, index, inView }) => {
               </div>
             )}
             {section.image && (
-              <div className="relative w-full aspect-video overflow-hidden mt-8">
+              <div
+                ref={fullscreenRef}
+                className="relative w-full aspect-video mt-8 overflow-hidden"
+              >
                 <Image
                   src={section.image}
                   alt={section.title || 'Blog section image'}
@@ -33,6 +84,12 @@ const BlogSection = ({ section, index, inView }) => {
                   height={675}
                   className="object-cover w-full h-full"
                 />
+                <button
+                  className="absolute top-4 right-4 p-2 bg-primary/10 text-primary/70 hover:text-primary/90 rounded-full z-50"
+                  onClick={toggleFullscreen}
+                >
+                  {isFullscreen ? <FiMinimize size={24} /> : <FiMaximize size={24} />}
+                </button>
               </div>
             )}
           </>
@@ -62,6 +119,40 @@ const BlogSection = ({ section, index, inView }) => {
           </blockquote>
         ) : null;
 
+      case 'code':
+        const [copied, setCopied] = useState(false);
+
+        const handleCopy = () => {
+          navigator.clipboard.writeText(section.content);
+          setCopied(true);
+
+          // Reset the text back to "Copy" after 2 seconds
+          setTimeout(() => setCopied(false), 2000);
+        };
+
+        return section.content ? (
+          <div className="relative group">
+            {/* Code block container */}
+            <div className="bg-gray-900 text-gray-100 rounded-md overflow-hidden shadow-md">
+              <div className="flex justify-between items-center bg-gray-800 text-gray-400 text-xs px-4 py-2">
+                <span>Code Snippet</span>
+                <button
+                  onClick={handleCopy}
+                  className={`px-3 py-1 text-sm rounded transition-all ${copied
+                      ? 'bg-green-500 text-white'
+                      : 'bg-gray-700 text-gray-200 hover:bg-gray-600'
+                    }`}
+                >
+                  {copied ? 'Copied' : 'Copy'}
+                </button>
+              </div>
+              <pre className="overflow-x-auto px-4 py-3 text-sm font-mono">
+                <code className="text-primary/90">{section.content}</code>
+              </pre>
+            </div>
+          </div>
+        ) : null;
+
       default:
         return null;
     }
@@ -69,9 +160,8 @@ const BlogSection = ({ section, index, inView }) => {
 
   return (
     <div
-      className={`group border-b border-primary/10 pb-12 sm:pb-16 mb-12 sm:mb-16 hover:border-primary transition-all duration-1000 transform ${
-        inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+      className={`group border-b border-primary/10 pb-12 sm:pb-16 mb-12 sm:mb-16 hover:border-primary transition-all duration-1000 transform ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
       style={{ transitionDelay: `${index * 200}ms` }}
     >
       <div className="flex items-start gap-4 sm:gap-8">
