@@ -85,7 +85,7 @@ const BlogSection = ({ section, index, inView }) => {
                   className={`object-contain w-full h-full ${isFullscreen ? 'object-contain' : 'object-cover'}`}
                 />
                 <button
-                  className="absolute top-4 right-4 p-2 bg-primary/10 text-primary/70 hover:text-primary/90 rounded-full z-50"
+                  className="absolute bg-bgColor top-4 right-4 p-2 bg-primary/10 text-primary/70 hover:text-primary/90 rounded-full z-50"
                   onClick={toggleFullscreen}
                 >
                   {isFullscreen ? <FiMinimize size={24} /> : <FiMaximize size={24} />}
