@@ -7,23 +7,9 @@ import ContactCTA from '@/components/common/ContactCTA';
 import BlogCard from '@/components/blog/BlogCard';
 import BlogSection from '@/components/blog/BlogSection';
 import { blogs } from '@/data/blog';
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
 
 
-// Import AudioPlayer with no SSR
-const AudioPlayer = dynamic(
-    () => {
-        console.log("Loading AudioPlayer dynamically"); // Debug log
-        return import('@/components/blog/AudioPlayer');
-    },
-    {
-        ssr: false,
-        loading: () => {
-            console.log("AudioPlayer is loading"); // Debug loading
-            return <div>Loading...</div>;
-        }
-    }
-);
 
 export default function BlogPost({ post, relatedPosts }) {
     if (!post) return null;
@@ -31,6 +17,74 @@ export default function BlogPost({ post, relatedPosts }) {
     const { ref: heroRef, inView: heroInView } = useInView({ triggerOnce: true, threshold: 0.1 });
     const { ref: contentRef, inView: contentInView } = useInView({ triggerOnce: true, threshold: 0.1 });
     const { ref: relatedRef, inView: relatedInView } = useInView({ triggerOnce: true, threshold: 0.1 });
+
+    // Create a properly formatted JSON-LD object
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://www.pavankumar.co/blog/${post.slug}`
+        },
+        "headline": post.title,
+        "description": post.description,
+        "image": post.mainImg ? `https://www.pavankumar.co${post.mainImg}` : undefined,
+        "author": {
+            "@type": "Person",
+            "name": post.author.name,
+            "jobTitle": post.author.role,
+            "image": `https://www.pavankumar.co${post.author.image}`,
+            "url": "https://www.pavankumar.co"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Pavan Kumar",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.pavankumar.co/assets/logo.svg"
+            }
+        },
+        "datePublished": post.date,
+        "dateModified": post.dateModified || post.date,
+        "keywords": post.tags ? post.tags.join(', ') : '',
+        "articleBody": (() => {
+            // Helper function to clean content
+            const cleanContent = (text) => {
+                if (!text) return '';
+                return text
+                    .replace(/\n+/g, ' ')
+                    .replace(/\s+/g, ' ')
+                    .trim();
+            };
+
+            // Get introduction
+            const introduction = cleanContent(post.content?.introduction);
+
+            // Get section content, excluding code sections
+            const sectionsContent = post.content?.sections
+                ?.filter(section => section.type !== 'code') // Exclude code sections
+                ?.map(section => {
+                    if (section.type === 'list' && Array.isArray(section.items)) {
+                        return section.items.join(', ');
+                    }
+                    return section.content;
+                })
+                ?.filter(Boolean)
+                ?.map(cleanContent)
+                ?.join('. ') || '';
+
+            // Get conclusion
+            const conclusion = cleanContent(post.content?.conclusion);
+
+            return [introduction, sectionsContent, conclusion]
+                .filter(Boolean)
+                .join('. ')
+                .trim();
+        })(),
+        "url": `https://www.pavankumar.co/blog/${post.slug}`,
+        "articleSection": "Blog",
+        "inLanguage": "en-US"
+    };
 
     return (
         <>
@@ -70,62 +124,25 @@ export default function BlogPost({ post, relatedPosts }) {
                 <meta property="og:locale" content="en_US" />
                 <link rel="canonical" href={`https://www.pavankumar.co/blog/${post.slug}`} />
 
-                {/* Structured Data */}
+                {/* Fixed JSON-LD Implementation */}
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
-                        __html: JSON.stringify({
-                            "@context": "https://schema.org",
-                            "@type": "BlogPosting",
-                            "mainEntityOfPage": {
-                                "@type": "WebPage",
-                                "@id": `https://www.pavankumar.co/blog/${post.slug}`
-                            },
-                            "headline": post.title,
-                            "description": post.description,
-                            "image": post.mainImg ? `https://www.pavankumar.co${post.mainImg}` : undefined,
-                            "author": {
-                                "@type": "Person",
-                                "name": post.author.name,
-                                "jobTitle": post.author.role,
-                                "image": `https://www.pavankumar.co${post.author.image}`,
-                                "url": "https://www.pavankumar.co"
-                            },
-                            "publisher": {
-                                "@type": "Organization",
-                                "name": "Pavan Kumar",
-                                "logo": {
-                                    "@type": "ImageObject",
-                                    "url": "https://www.pavankumar.co/logo.png" // Update with your actual logo path
-                                }
-                            },
-                            "datePublished": post.date,
-                            "dateModified": post.dateModified || post.date,
-                            "keywords": post.tags?.join(', '),
-                            "articleBody": `${post.content?.introduction || ''} ${post.content?.sections?.map(section => section.content).join(' ') || ''
-                                } ${post.content?.conclusion || ''}`.trim(),
-                            "url": `https://www.pavankumar.co/blog/${post.slug}`,
-                            "articleSection": "Blog",
-                            "inLanguage": "en-US"
-                        })
+                        __html: JSON.stringify(jsonLd)
                     }}
                 />
-
             </Head>
 
             <article className="min-h-screen bg-gradient-to-b from-transparent to-primary/5">
-
                 <div className="container">
-                    {/* Audio */}
-                    {/* {post?.content && <AudioPlayer content={post.content} />} */}
 
 
-                    
                     {/* Hero Section */}
                     <header
                         ref={heroRef}
-                        className={`pb-6 sm:pb-8 transition-all duration-1000 transform ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                            }`}
+                        className={`pb-6 sm:pb-8 transition-all duration-1000 transform ${
+                            heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                        }`}
                     >
                         {/* Meta info */}
                         <div className="flex items-center justify-center gap-3 sm:gap-4 text-primary/60 mb-6 sm:mb-8 text-sm sm:text-base">
@@ -138,7 +155,6 @@ export default function BlogPost({ post, relatedPosts }) {
                         <h1 className="uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1] text-center max-w-[1200px] mx-auto mb-8 sm:mb-12">
                             {post.title}
                         </h1>
-
 
                         {/* Tags */}
                         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
@@ -192,8 +208,9 @@ export default function BlogPost({ post, relatedPosts }) {
                         {/* Introduction */}
                         {post.content?.introduction && (
                             <div
-                                className={`mb-12 sm:mb-16 transition-all duration-1000 transform ${contentInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                                    }`}
+                                className={`mb-12 sm:mb-16 transition-all duration-1000 transform ${
+                                    contentInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                                }`}
                             >
                                 <p className="text-lg sm:text-xl md:text-2xl text-primary/80 leading-relaxed">
                                     {post.content.introduction}
@@ -214,8 +231,9 @@ export default function BlogPost({ post, relatedPosts }) {
                         {/* Conclusion */}
                         {post.content?.conclusion && (
                             <div
-                                className={`transition-all duration-1000 transform ${contentInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                                    }`}
+                                className={`transition-all duration-1000 transform ${
+                                    contentInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                                }`}
                                 style={{
                                     transitionDelay: `${(post.content.sections?.length || 0) * 200}ms`
                                 }}
@@ -234,8 +252,9 @@ export default function BlogPost({ post, relatedPosts }) {
                 {relatedPosts?.length > 0 && (
                     <section
                         ref={relatedRef}
-                        className={`container py-12 sm:py-16 md:py-20 transition-all duration-1000 transform ${relatedInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                            }`}
+                        className={`container py-12 sm:py-16 md:py-20 transition-all duration-1000 transform ${
+                            relatedInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                        }`}
                     >
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12">
                             Related Articles

@@ -15,7 +15,7 @@ const Footer = ({ isDarkMode }) => {
             {/* Logo */}
             <Link href="/">
               <Image 
-                src={isDarkMode ? '/assets/logo2_white.svg' : '/assets/logo2.svg'}
+                src={isDarkMode ? '/assets/logo_white.svg' : '/assets/logo.svg'}
                 alt='Pavan'
                 width={1000} 
                 height={1000}
