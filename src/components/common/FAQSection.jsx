@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Head from 'next/head';
 import AnimatedSection from '@/components/common/AnimatedSection';
 
 const FAQSection = () => {
@@ -46,42 +47,65 @@ const FAQSection = () => {
         setOpenId(openId === id ? null : id);
     };
 
+    // Create FAQ Schema
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+            }
+        }))
+    };
+
     return (
-        <div className="container flex flex-col md:flex-row">
-            <div className="md:w-[50%] pb-12 md:pb-0">
-                <div className="sticky top-32">
-                    <h2 className="heading-xl">
-                        FAQ
-                    </h2>
+        <>
+            <Head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+                />
+            </Head>
+
+            <div className="container flex flex-col md:flex-row">
+                <div className="md:w-[50%] pb-12 md:pb-0">
+                    <div className="sticky top-32">
+                        <h2 className="heading-xl">
+                            FAQ
+                        </h2>
+                    </div>
+                </div>
+
+                <div className="md:w-[50%] space-y-1">
+                    {faqs.map((faq, index) => (
+                        <AnimatedSection key={faq.id} delayMultiplier={index * 200}>
+                            <div className="border-b border-primary/10">
+                                <button
+                                    className="w-full py-6 flex items-center justify-between text-left"
+                                    onClick={() => toggleFaq(faq.id)}
+                                >
+                                    <span className="text-xl font-medium">{faq.question}</span>
+                                    <span className="text-2xl">
+                                        {openId === faq.id ? '−' : '+'}
+                                    </span>
+                                </button>
+
+                                <div
+                                    className={`overflow-hidden transition-all duration-500 ${openId === faq.id ? 'max-h-screen' : 'max-h-0'}`}
+                                >
+                                    <p className="text-primary/60 pb-8 leading-relaxed">
+                                        {faq.answer}
+                                    </p>
+                                </div>
+                            </div>
+                        </AnimatedSection>
+                    ))}
                 </div>
             </div>
-
-            <div className="md:w-[50%] space-y-1">
-                {faqs.map((faq, index) => (
-                    <AnimatedSection key={faq.id} delayMultiplier={index * 200}>
-                        <div className="border-b border-primary/10">
-                            <button
-                                className="w-full py-6 flex items-center justify-between text-left"
-                                onClick={() => toggleFaq(faq.id)}
-                            >
-                                <span className="text-xl font-medium">{faq.question}</span>
-                                <span className="text-2xl">
-                                    {openId === faq.id ? '−' : '+'}
-                                </span>
-                            </button>
-
-                            <div
-                                className={`overflow-hidden transition-all duration-500 ${openId === faq.id ? 'max-h-screen' : 'max-h-0'}`}
-                            >
-                                <p className="text-primary/60 pb-8 leading-relaxed">
-                                    {faq.answer}
-                                </p>
-                            </div>
-                        </div>
-                    </AnimatedSection>
-                ))}
-            </div>
-        </div>
+        </>
     );
 };
 
