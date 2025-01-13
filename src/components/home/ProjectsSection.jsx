@@ -15,9 +15,9 @@ const ProjectsSection = () => {
 
   return (
     <div ref={ref} className="container">
-      <h1 className="heading-xl mb-20">
+      <h2 className="heading-xl mb-20">
         PROJECTS
-      </h1>
+      </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10 md:gap-y-20">
         {homeProjects.map((project, index) => (

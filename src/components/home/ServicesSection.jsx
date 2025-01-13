@@ -6,9 +6,9 @@ const ServicesSection = () => {
     return (
         <div className="container flex flex-col md:flex-row">
             <div className="md:w-[50%] pb-12 md:pb-0">
-                <h1 className="heading-xl sticky top-32">
+                <h2 className="heading-xl sticky top-32">
                     SERVICES
-                </h1>
+                </h2>
             </div>
 
             <div className="md:w-[50%] space-y-8 md:space-y-16">

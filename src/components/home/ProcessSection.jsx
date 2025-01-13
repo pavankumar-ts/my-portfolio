@@ -35,9 +35,9 @@ const ProcessSection = () => {
         <div ref={ref} className="container flex flex-col md:flex-row">
             <div className="md:w-[50%] pb-12 md:pb-0">
                 <div className="sticky top-32">
-                    <h1 className="heading-xl whitespace-pre-line">
+                    <h2 className="heading-xl whitespace-pre-line">
                         HOW <br className='md:block hidden' />I WORK
-                    </h1>
+                    </h2>
                 </div>
             </div>
 

@@ -7,8 +7,6 @@ import ContactCTA from '@/components/common/ContactCTA';
 import BlogCard from '@/components/blog/BlogCard';
 import BlogSection from '@/components/blog/BlogSection';
 import { blogs } from '@/data/blog';
-import dynamic from 'next/dynamic';
-
 
 
 export default function BlogPost({ post, relatedPosts }) {
