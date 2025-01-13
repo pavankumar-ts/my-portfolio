@@ -556,7 +556,7 @@ export const projects = [
         id: 11,
         slug: "socialize",
         home: true,
-         title: "Socialize - Social Media App",
+        title: "Socialize - Social Media App",
         description: "A social media Android application developed as a college project, similar to Instagram. Built using Java in Android Studio, with Firebase for real-time database management and secure user authentication.",
         category: [4],
         technologies: [2, 3, 10],
@@ -598,6 +598,216 @@ export const projects = [
             text: "Socialize was a great learning experience and a significant milestone in my journey as a developer. It gave me hands-on experience with Android development and Firebase integration.",
             author: "Pavan",
             role: "Developer, College Project"
+        }
+    },
+    {
+        id: 12,
+        slug: "saaranj",
+        home: true,
+        title: "Saaranj Ventures",
+        description: "A comprehensive corporate website for Saaranj Ventures, a leading construction and manufacturing company in Bengaluru. Built with Next.js and Tailwind CSS, the platform showcases their extensive portfolio in concrete manufacturing, brick production, and interior design services, emphasizing their 14+ years of industry expertise.",
+        category: [2],
+        technologies: [1, 7],
+        link: "https://saaranj.com",
+        year: "2024",
+        client: "Saaranj Ventures",
+        mainImg: "/assets/projects/saaranj.webp",
+        features: [
+            "Dynamic product catalog showcasing manufacturing capabilities",
+            "Project portfolio with detailed case studies and specifications",
+            "Interactive map showing manufacturing unit locations across Bengaluru",
+            "Streamlined inquiry system for project consultations",
+            "Comprehensive service listings for construction and interior design",
+            "Material specification sheets and technical documentation",
+            "Real-time project tracking for clients"
+        ],
+        overview: "Founded in 2018, Saaranj Ventures required a robust digital platform to showcase their comprehensive construction and manufacturing services. The website needed to reflect their expertise in concrete manufacturing, brick production, and interior design while highlighting their commitment to quality and customer satisfaction. The platform was developed to serve as a central hub for project inquiries, technical specifications, and portfolio demonstrations.",
+        challenge: `The main challenges included: 
+            • Creating an intuitive showcase for diverse services across construction and manufacturing
+            • Developing an efficient system for handling project inquiries and consultations
+            • Building a comprehensive portfolio display for completed projects
+            • Implementing technical documentation and specification sheets
+            • Ensuring the platform effectively communicates their 14+ years of industry expertise`,
+        solution: `The solution utilized Next.js and Tailwind CSS to deliver:
+            • A robust product and service catalog system
+            • Interactive project portfolio with detailed case studies
+            • Integrated inquiry management system
+            • Technical documentation repository
+            • Location-based service area visualization
+            • Mobile-optimized user experience for site visits`,
+        screenshots: [
+            {
+                url: "/assets/projects/saaranj.webp",
+                caption: "Homepage showcasing manufacturing facilities and services"
+            },
+            {
+                url: "/assets/projects/saaranj_phone.webp",
+                caption: "Mobile view of project portfolio and service offerings"
+            }
+        ],
+        results: [
+            "Streamlined project inquiry process leading to 40% more consultations",
+            "Enhanced visibility of manufacturing capabilities and service offerings",
+            "Improved client engagement through detailed project portfolios",
+            "Established strong digital presence in the Bengaluru construction sector",
+            "Facilitated easier access to technical specifications for clients"
+        ],
+        testimonial: {
+            text: "Our new website perfectly captures our commitment to quality and innovation in construction and manufacturing. It has significantly improved our ability to showcase our capabilities and connect with potential clients.",
+            author: "Leadership Team",
+            role: "Saaranj Ventures"
+        }
+    },
+    {
+        id: 13,
+        slug: "occasion-bangalore",
+        home: true,
+        title: "The Occasion Bangalore",
+        description: "An elegant website for The Occasion Bangalore, a premium event venue, showcasing their luxurious spaces and comprehensive event services. Built with modern web technologies, the platform highlights their venue's versatility, booking capabilities, and exceptional service offerings for weddings, corporate events, and celebrations.",
+        category: [2],
+        technologies: [1, 7],
+        link: "https://occasionbangalore.com",
+        year: "2024",
+        client: "The Occasion Bangalore",
+        mainImg: "/assets/projects/the_occasion.webp",
+        features: [
+            "Dynamic event package configurator and booking system",
+            "Interactive gallery showcasing past events and venue spaces",
+            "Real-time availability calendar and inquiry system",
+            "Detailed venue specifications and capacity information",
+            "Event planning resources and vendor integration",
+            "Responsive design optimized for mobile booking"
+        ],
+        overview: "The Occasion Bangalore required a sophisticated digital platform to showcase their premium event venue and streamline the booking process. The website needed to capture the luxury and elegance of their spaces while providing comprehensive information about their services, making it easier for clients to plan and book their events.",
+        challenge: `The main challenges included: 
+            • Creating an immersive virtual experience of the physical venue
+            • Developing an intuitive booking and inquiry system
+            • Showcasing different venue configurations for various event types
+            • Implementing dynamic pricing and package customization
+            • Building a responsive gallery system for venue and event portfolios
+            • Ensuring seamless mobile experience for on-the-go planning`,
+        solution: `The solution focused on delivering:
+            • High-quality virtual tours with interactive elements
+            • Custom-built event booking and management system
+            • Dynamic content management for venue configurations
+            • Integrated inquiry handling with automated responses
+            • Mobile-first design approach for accessible booking
+            • Performance-optimized image galleries and virtual tours`,
+        screenshots: [
+            {
+                url: "/assets/projects/the_occasion.webp",
+                caption: "Homepage showcasing the luxurious venue spaces"
+            },
+            {
+                url: "/assets/projects/the_occasion_phone.webp",
+                caption: "Mobile view of booking system and venue gallery"
+            }
+        ],
+        results: [
+            "Increased venue booking inquiries by 60% through digital platform",
+            "Streamlined event planning process with automated systems",
+            "Enhanced venue visibility through virtual tours and galleries",
+            "Improved client engagement with interactive booking features",
+            "Reduced administrative workload through automated inquiry handling"
+        ],
+        testimonial: {
+            text: "The website perfectly captures the elegance of our venue while making it incredibly easy for clients to explore and book our spaces. The virtual tour feature has been particularly successful in attracting clients from across the country.",
+            author: "Venue Director",
+            role: "The Occasion Bangalore"
+        }
+    },
+    {
+        id: 14,
+        slug: "turbo-tints",
+        home: true,
+        title: "Turbo Tints",
+        description: "A professional automotive customization website showcasing specialized services in window tinting, interior modifications, and bike PPF (Paint Protection Film). Built with WordPress and Elementor, featuring interactive before-after comparisons and detailed service presentations.",
+        category: [2],
+        technologies: [5, 9, 14], 
+        link: "http://turbotints.in",
+        year: "2024",
+        client: "Turbo Tints",
+        mainImg: "/assets/projects/turbo_tint.webp",
+        features: [
+            "Interactive before/after comparisons for window tinting results",
+            "Detailed showcase of interior modification projects",
+            "Specialized bike PPF service presentation with gallery",
+            "Service-specific inquiry forms for each specialization",
+            "Visual portfolio categorized by service type",
+            "Educational content about materials and processes",
+            "Mobile-optimized service galleries"
+        ],
+        overview: "Turbo Tints required a professional platform to showcase their three core services: window tinting, interior modifications, and bike PPF. The website needed to effectively demonstrate their expertise in each area while providing detailed information about their premium materials and professional installation processes.",
+        challenge: `The main challenges included: 
+            • Creating distinct yet cohesive presentations for three specialized services
+            • Implementing effective visualization tools for each service type
+            • Showcasing the quality of materials used in different services
+            • Developing service-specific inquiry systems
+            • Building informative content for each specialization
+            • Ensuring clear navigation between service sections`,
+        solution: `The solution utilized WordPress and Elementor to deliver:
+            • Dedicated service sections with unique visual presentations
+            • Custom before/after comparisons for window tinting
+            • Detailed galleries for interior modification projects
+            • Specialized showcase for bike PPF applications
+            • Service-specific consultation booking system
+            • Mobile-responsive design across all service sections`,
+        screenshots: [
+            {
+                url: "/assets/projects/turbo_tint.webp",
+                caption: "Service showcase highlighting window tinting and interior modifications"
+            },
+            {
+                url: "/assets/projects/turbo_tint_phone.webp",
+                caption: "Mobile view of bike PPF services and booking system"
+            }
+        ],
+        results: [
+            "Increased inquiries across all three service categories",
+            "Higher customer engagement through service-specific galleries",
+            "Improved conversion rates with specialized consultation forms",
+            "Enhanced visibility in local automotive service searches",
+            "Positive feedback on service presentation clarity"
+        ],
+        services: {
+            windowTint: {
+                title: "Window Tint",
+                description: "Professional automotive window tinting services using premium films for heat reduction, UV protection, and enhanced privacy. Featuring certified installation and warranty coverage.",
+                highlights: [
+                    "Premium quality tinting materials",
+                    "Professional installation",
+                    "Heat reduction and UV protection",
+                    "Privacy enhancement",
+                    "Warranty coverage"
+                ]
+            },
+            interiorMod: {
+                title: "Interior Modification",
+                description: "Comprehensive interior customization services including seat upholstery, dashboard modifications, audio system upgrades, and custom lighting solutions.",
+                highlights: [
+                    "Custom upholstery work",
+                    "Dashboard modifications",
+                    "Audio system upgrades",
+                    "Interior lighting",
+                    "Custom solutions"
+                ]
+            },
+            bikePPF: {
+                title: "Bike PPF",
+                description: "Specialized Paint Protection Film applications for motorcycles, providing superior protection against scratches, chips, and environmental damage.",
+                highlights: [
+                    "Custom-cut PPF solutions",
+                    "Surface protection",
+                    "Clear or matte finish options",
+                    "Professional application",
+                    "Long-lasting durability"
+                ]
+            }
+        },
+        testimonial: {
+            text: "The website perfectly showcases our expertise in window tinting, interior modifications, and bike PPF. The before/after comparisons and detailed service presentations have significantly improved our customer engagement.",
+            author: "Owner",
+            role: "Turbo Tints"
         }
     },
 ];
