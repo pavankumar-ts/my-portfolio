@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getTechnologyById } from '@/data/projects';
 
-const ProjectCard = ({ project, inView, categoryChanged, index }) => {
+const ProjectCard = ({ project, categoryChanged, index }) => {
     const truncateDescription = (description, limit) => {
         if (description.length <= limit) return description;
         return description.substring(0, limit) + '...';
@@ -12,13 +12,26 @@ const ProjectCard = ({ project, inView, categoryChanged, index }) => {
     return (
         <Link
             href={`/projects/${project.slug}`}
-            className={`group transition-all duration-1000 transform ${
-                inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            } ${
-                categoryChanged ? 'opacity-0 scale-95' : ''
-            }`}
-            style={{ transitionDelay: `${index * 200}ms` }}
+            className={`group ${categoryChanged ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}
+            style={{ 
+                animation: 'fadeUp 0.5s ease-out forwards',
+                animationDelay: `${index * 100}ms`,
+                animationFillMode: 'forwards',
+            }}
         >
+            <style jsx>{`
+                @keyframes fadeUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            `}</style>
+
             <div className="relative aspect-square mb-6 h-[300px] w-full bg-gray-100 overflow-hidden">
                 <Image
                     src={project.mainImg}

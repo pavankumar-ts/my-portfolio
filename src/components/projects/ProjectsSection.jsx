@@ -6,7 +6,7 @@ import ProjectCard from '../common/ProjectCard';
 import TitleHeroSection from '../common/TitleHeroSection';
 
 const ProjectsSection = () => {
-    const [selectedCategory, setSelectedCategory] = useState(1); // Default to 'All Projects'
+    const [selectedCategory, setSelectedCategory] = useState(1); 
     const { ref, inView, entry } = useInView({
         triggerOnce: true,
         threshold: 0.1,
