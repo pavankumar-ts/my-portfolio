@@ -603,7 +603,6 @@ export const projects = [
     {
         id: 12,
         slug: "saaranj",
-        home: true,
         title: "Saaranj Ventures",
         description: "A comprehensive corporate website for Saaranj Ventures, a leading construction and manufacturing company in Bengaluru. Built with Next.js and Tailwind CSS, the platform showcases their extensive portfolio in concrete manufacturing, brick production, and interior design services, emphasizing their 14+ years of industry expertise.",
         category: [2],
@@ -661,7 +660,6 @@ export const projects = [
     {
         id: 13,
         slug: "occasion-bangalore",
-        home: true,
         title: "The Occasion Bangalore",
         description: "An elegant website for The Occasion Bangalore, a premium event venue, showcasing their luxurious spaces and comprehensive event services. Built with modern web technologies, the platform highlights their venue's versatility, booking capabilities, and exceptional service offerings for weddings, corporate events, and celebrations.",
         category: [2],
@@ -719,7 +717,6 @@ export const projects = [
     {
         id: 14,
         slug: "turbo-tints",
-        home: true,
         title: "Turbo Tints",
         description: "A professional automotive customization website showcasing specialized services in window tinting, interior modifications, and bike PPF (Paint Protection Film). Built with WordPress and Elementor, featuring interactive before-after comparisons and detailed service presentations.",
         category: [2],
