@@ -5,7 +5,8 @@ export const blogCategories = [
     { id: 2, name: 'Development' },
     { id: 3, name: 'React' },
     { id: 4, name: 'Next.js' },
-    { id: 5, name: 'Performance' }
+    { id: 5, name: 'Performance' },
+    { id: 6, name: 'Design' },
 ];
 
 const author = {
@@ -71,7 +72,7 @@ export const blogs = [
         slug: 'nextjs-seo-optimization-techniques',
         title: 'Next.js SEO Optimization Techniques',
         description: 'Learn how to enhance the visibility of your Next.js applications in search engines using advanced SEO techniques, from metadata management to performance optimization.',
-        category: [6, 1, 5],
+        category: [1, 5],
         date: 'January 7, 2025',
         readTime: '9 min read',
         author,
@@ -160,6 +161,64 @@ export const blogs = [
                 }
             ],
             conclusion: 'By following these best practices, you can leverage no-code development to rapidly build effective applications while ensuring quality and scalability. Staying informed about the latest trends and continuously refining your approach will lead to sustained success in your no-code projects.'
+        }
+    },
+    {
+        id: 5,
+        slug: 'top-10-web-design-trends-2025',
+        title: 'Top 10 Web Design Trends of the Year 2025',
+        description: 'Explore the most influential web design trends of 2025, including AI integration, immersive 3D elements, and eco-friendly designs, to enhance user experience and engagement.',
+        category: [2,6],
+        date: 'January 19, 2025',
+        readTime: '12 min read',
+        author,
+        mainImg: '/assets/blog/top10_web_design_trends_of_2025.webp',
+        tags: ['Web Design', '2025 Trends', 'UI/UX', 'Web Development'],
+        content: {
+            introduction: 'As we step into 2025, the digital landscape continues to evolve, bringing forth innovative web design trends that prioritize user experience, accessibility, and aesthetics. Staying abreast of these trends is essential for businesses and designers aiming to create engaging and future-proof websites.',
+            sections: [
+                {
+                    type: 'default',
+                    title: '1. AI-Powered Design Tools',
+                    content: 'Artificial Intelligence (AI) has become a cornerstone in web design, automating tasks such as layout creation, color scheme selection, and content optimization. AI-driven tools enable designers to craft personalized user experiences efficiently.'
+                },
+                {
+                    type: 'default',
+                    title: '2. Immersive 3D Visuals',
+                    content: 'The incorporation of 3D elements adds depth and realism to websites, captivating users and encouraging interaction. Advances in web technologies have made it feasible to integrate high-quality 3D graphics without compromising performance.'
+                },
+                {
+                    type: 'default',
+                    title: '3. Dark Mode Standardization',
+                    content: 'Dark mode designs have gained popularity due to their aesthetic appeal and ability to reduce eye strain. In 2025, more websites are offering dark mode options, providing users with a choice that enhances comfort and accessibility.'
+                },
+                {
+                    type: 'default',
+                    title: '4. Custom Illustrations and Typography',
+                    content: 'Unique illustrations and bespoke typography help brands stand out, conveying personality and authenticity. Custom visuals create a memorable identity and enhance brand recognition.'
+                },
+                {
+                    type: 'default',
+                    title: '5. Advanced Scroll Animations',
+                    content: 'Innovative scroll effects, such as parallax scrolling and dynamic content loading, create a more interactive experience. These animations guide users through the narrative of the website smoothly.'
+                },
+                {
+                    type: 'default',
+                    title: '6. Minimalistic and Clean Layouts',
+                    content: 'Minimalism continues to dominate web design, focusing on simplicity and functionality. Clean layouts with ample white space enhance readability and direct user attention to essential elements.'
+                },
+                {
+                    type: 'default',
+                    title: '7. Micro-Interactions',
+                    content: 'Subtle animations and micro-interactions provide feedback to users, making interfaces more intuitive and engaging. These small details contribute significantly to the overall user experience.'
+                },
+                {
+                    type: 'default',
+                    title: '8. Sustainable and Eco-Friendly Design',
+                    content: 'Eco-conscious design practices are on the rise, with websites optimizing for energy efficiency and incorporating sustainable themes. This trend reflects a growing awareness of environmental issues in the digital space.'
+                },
+            ],
+            conclusion: 'Embracing these web design trends of 2025 can significantly enhance user engagement and satisfaction. By integrating AI technologies, immersive visuals, and sustainable practices, designers can create websites that are not only visually appealing but also functional and responsible.'
         }
     },
 ];

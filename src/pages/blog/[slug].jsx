@@ -185,13 +185,13 @@ export default function BlogPost({ post, relatedPosts }) {
 
                         {/* Main Image */}
                         {post.mainImg && (
-                            <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] overflow-hidden shadow-xl sm:shadow-2xl">
+                            <div className="relative w-fulloverflow-hidden ">
                                 <Image
                                     src={post.mainImg}
                                     alt={post.title}
                                     width={1920}
                                     height={1080}
-                                    className="object-cover w-full h-full"
+                                    className="object-contain mx-auto w-auto max-h-[500px] shadow-xl sm:shadow-2xl"
                                     priority
                                 />
                             </div>
