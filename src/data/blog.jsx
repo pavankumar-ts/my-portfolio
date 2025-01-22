@@ -179,44 +179,54 @@ export const blogs = [
             sections: [
                 {
                     type: 'default',
-                    title: '1. AI-Powered Design Tools',
+                    title: 'AI-Powered Design Tools',
                     content: 'Artificial Intelligence (AI) has become a cornerstone in web design, automating tasks such as layout creation, color scheme selection, and content optimization. AI-driven tools enable designers to craft personalized user experiences efficiently.'
                 },
                 {
                     type: 'default',
-                    title: '2. Immersive 3D Visuals',
+                    title: 'Immersive 3D Visuals',
                     content: 'The incorporation of 3D elements adds depth and realism to websites, captivating users and encouraging interaction. Advances in web technologies have made it feasible to integrate high-quality 3D graphics without compromising performance.'
                 },
                 {
                     type: 'default',
-                    title: '3. Dark Mode Standardization',
+                    title: 'Dark Mode Standardization',
                     content: 'Dark mode designs have gained popularity due to their aesthetic appeal and ability to reduce eye strain. In 2025, more websites are offering dark mode options, providing users with a choice that enhances comfort and accessibility.'
                 },
                 {
                     type: 'default',
-                    title: '4. Custom Illustrations and Typography',
+                    title: 'Custom Illustrations and Typography',
                     content: 'Unique illustrations and bespoke typography help brands stand out, conveying personality and authenticity. Custom visuals create a memorable identity and enhance brand recognition.'
                 },
                 {
                     type: 'default',
-                    title: '5. Advanced Scroll Animations',
+                    title: 'Advanced Scroll Animations',
                     content: 'Innovative scroll effects, such as parallax scrolling and dynamic content loading, create a more interactive experience. These animations guide users through the narrative of the website smoothly.'
                 },
                 {
                     type: 'default',
-                    title: '6. Minimalistic and Clean Layouts',
+                    title: 'Minimalistic and Clean Layouts',
                     content: 'Minimalism continues to dominate web design, focusing on simplicity and functionality. Clean layouts with ample white space enhance readability and direct user attention to essential elements.'
                 },
                 {
                     type: 'default',
-                    title: '7. Micro-Interactions',
+                    title: 'Micro-Interactions',
                     content: 'Subtle animations and micro-interactions provide feedback to users, making interfaces more intuitive and engaging. These small details contribute significantly to the overall user experience.'
                 },
                 {
                     type: 'default',
-                    title: '8. Sustainable and Eco-Friendly Design',
+                    title: 'Sustainable and Eco-Friendly Design',
                     content: 'Eco-conscious design practices are on the rise, with websites optimizing for energy efficiency and incorporating sustainable themes. This trend reflects a growing awareness of environmental issues in the digital space.'
                 },
+                {
+                    type: 'default',
+                    title: 'Personalized User Experiences with Data',
+                    content: 'Leveraging user data to create personalized web experiences has become a significant trend. From tailored content recommendations to adaptive interfaces, websites are using analytics and user behavior insights to make interactions more relevant and engaging. This level of personalization enhances user satisfaction and loyalty.'
+                },
+                {
+                    type: 'default',
+                    title: 'Dynamic Content and Real-Time Updates',
+                    content: 'Dynamic content that adapts to user inputs or updates in real-time is reshaping the way websites interact with visitors. Real-time features such as live feeds, notifications, and collaborative tools ensure that users receive timely and relevant information, boosting engagement and usability.'
+                }
             ],
             conclusion: 'Embracing these web design trends of 2025 can significantly enhance user engagement and satisfaction. By integrating AI technologies, immersive visuals, and sustainable practices, designers can create websites that are not only visually appealing but also functional and responsible.'
         }
