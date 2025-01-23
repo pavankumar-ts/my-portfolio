@@ -71,12 +71,12 @@ const ContactPage = () => {
                   >
                     +91 9483262200
                   </a>
-                  <a
+                  {/* <a
                     href="tel:+916362177951"
                     className="text-primary/60 hover:text-primary block transition-colors"
                   >
                     +91 6362177951
-                  </a>
+                  </a> */}
                 </div>
               </div>
 
