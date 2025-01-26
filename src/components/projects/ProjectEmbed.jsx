@@ -72,7 +72,7 @@ const ProjectEmbed = ({ link }) => {
                         objectFit: 'cover',
                         transition: 'all 0.5s ease-in-out'
                     }}
-                    className="border border-gray-200/50 "
+                    className="border border-gray-200/50 bg-white"
                 />
             </div>
         </div>
