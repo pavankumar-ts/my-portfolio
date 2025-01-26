@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import ContactCTA from '@/components/common/ContactCTA';
 import ProjectCard from '@/components/common/ProjectCard';
+import ProjectEmbed from '@/components/projects/ProjectEmbed';
 
 export default function ProjectPage({ project, relatedProjects }) {
     // Multiple refs for different sections
@@ -79,6 +80,9 @@ export default function ProjectPage({ project, relatedProjects }) {
                     </div>
                 </div>
 
+                {/* embed website */}
+                {!project.btnText && <ProjectEmbed link={project.link} />}
+
                 {/* Screenshots Grid */}
                 <div
                     ref={screenshotsRef}
@@ -105,6 +109,7 @@ export default function ProjectPage({ project, relatedProjects }) {
                         </div>
                     ))}
                 </div>
+
 
                 {/* Project Content */}
                 <div className="flex flex-col lg:flex-row gap-12 md:gap-20">
