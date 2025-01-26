@@ -23,7 +23,7 @@ const ProjectEmbed = ({ link }) => {
     };
 
     return (
-        <div className="w-full mb-20 flex flex-col items-center">
+        <div className="hidden lg:flex  w-full mb-20  flex-col items-center ">
             <div className="flex justify-center mb-6 bg-gray-100 rounded-full p-1 space-x-2">
                 <button 
                     onClick={() => setViewMode('desktop')}
