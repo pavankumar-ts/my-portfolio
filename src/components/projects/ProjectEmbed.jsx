@@ -24,12 +24,12 @@ const ProjectEmbed = ({ link }) => {
 
     return (
         <div className="hidden lg:flex  w-full mb-20  flex-col items-center ">
-            <div className="flex justify-center mb-6 bg-gray-100 rounded-full p-1 space-x-2">
+            <div className="flex justify-center mb-6 bg-gray-100  dark:bg-[#303136]  rounded-full p-1 space-x-2">
                 <button 
                     onClick={() => setViewMode('desktop')}
                     className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
                         viewMode === 'desktop' 
-                        ? 'bg-primary text-secondary shadow-md' 
+                        ? 'bg-primary text-secondary  shadow-md' 
                         : 'text-primary/60 hover:bg-primary/5'
                     }`}
                 >
