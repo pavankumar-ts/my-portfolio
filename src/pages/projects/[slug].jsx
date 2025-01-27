@@ -81,7 +81,7 @@ export default function ProjectPage({ project, relatedProjects }) {
                 </div>
 
                 {/* embed website */}
-                {!project.btnText && <ProjectEmbed link={project.link} />}
+                {/* {!project.btnText && <ProjectEmbed link={project.link} />} */}
 
                 {/* Screenshots Grid */}
                 <div
