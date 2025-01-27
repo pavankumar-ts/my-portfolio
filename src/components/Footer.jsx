@@ -14,10 +14,10 @@ const Footer = ({ isDarkMode }) => {
           <div className="flex flex-col md:flex-row md:items-end items-center gap-4 md:gap-8">
             {/* Logo */}
             <Link href="/">
-              <Image 
+              <Image
                 src={isDarkMode ? '/assets/logo_white.svg' : '/assets/logo.svg'}
                 alt='Pavan'
-                width={1000} 
+                width={1000}
                 height={1000}
                 className='h-[30px] w-auto object-contain'
               />
@@ -31,6 +31,7 @@ const Footer = ({ isDarkMode }) => {
                   rel="noopener noreferrer"
                   className="text-primary/60 hover:text-primary transition-colors"
                   aria-label={name}
+                  title={name} // This adds the hover name
                 >
                   <Icon size={20} />
                 </Link>

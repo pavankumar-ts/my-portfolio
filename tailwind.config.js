@@ -19,6 +19,7 @@ module.exports = {
         secondary: "var(--secondary-color)",
         bgColor: "var(--bg-color)",
         logoColor: "var(--logo-color)",
+        textColor: "var(--text-color)",
       },
       fontFamily: {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],

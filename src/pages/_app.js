@@ -46,7 +46,7 @@ export default function App({ Component, pageProps }) {
       <main className="flex-grow">
         <FloatingButton />
         <PopupForm />
-        <Component {...pageProps} />
+        <Component {...pageProps} isDarkMode={isDarkMode} />
       </main>
       <Footer isDarkMode={isDarkMode} />
     </div>

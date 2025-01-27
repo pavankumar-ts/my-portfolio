@@ -5,8 +5,9 @@ import React from 'react';
 import Head from 'next/head';
 import emailjs from 'emailjs-com';
 import TitleHeroSection from '@/components/common/TitleHeroSection';
+import BookCall from '@/components/contact/BookCall';
 
-const ContactPage = () => {
+const ContactPage = ({isDarkMode}) => {
   const [buttonText, setButtonText] = React.useState('Send it over');
   const [isSending, setIsSending] = React.useState(false);
 
@@ -48,8 +49,8 @@ const ContactPage = () => {
       <div className="container ">
         {/* Hero Title */}
         <TitleHeroSection
-          title="LET'S WORK"
-          title2="TOGETHER"
+          title="Let’s make "
+          title2="it happen"
         />
         {/* Contact Content */}
         <div className="flex flex-col md:flex-row gap-20">
@@ -90,12 +91,14 @@ const ContactPage = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-primary transition-colors"
+                      title={link.name} // This adds the hover name
                     >
-                      {link.name}
+                      <link.Icon size={20} />
                     </a>
                   ))}
                 </div>
               </div>
+              <BookCall isDarkMode={isDarkMode} />
             </div>
           </div>
 
