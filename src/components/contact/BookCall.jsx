@@ -1,6 +1,7 @@
 import { getCalApi } from "@calcom/embed-react";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import {  FaArrowRightLong } from "react-icons/fa6";
 import React from "react";
 
 const BookCall = ({ isDarkMode }) => {
@@ -106,7 +107,7 @@ const BookCall = ({ isDarkMode }) => {
                                 `}
                                 aria-label="Schedule meeting"
                             >
-                                <span className="font-semibold">→</span>
+                                <span className="font-semibold "><FaArrowRightLong  /></span>
                             </button>
                         </div>
                     </div>
