@@ -35,7 +35,7 @@ const PopupForm = () => {
       setTimeout(() => setShowContent(true), 100);
       // Mark that user has seen the popup
       sessionStorage.setItem('hasSeenPopup', 'true');
-    }, 5000);
+    }, 20000);
 
     return () => clearTimeout(timer);
   }, [router.pathname]);
