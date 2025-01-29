@@ -46,13 +46,13 @@ const BookCall = ({ isDarkMode }) => {
             <div className="space-y-6">
                 <div className="space-y-2">
                     <h3 className="text-xl font-semibold transition-colors duration-200">
-                        15 min Call 
+                        15 min Call
                     </h3>
                     <p className="text-sm transition-colors duration-200">
                         Let's talk for 15 minutes and see how my offer aligns with your goals
                     </p>
                 </div>
-                
+
 
                 <div className="flex flex-col lg:flex-row items-center gap-6">
                     <div className="relative">
@@ -85,7 +85,7 @@ const BookCall = ({ isDarkMode }) => {
                                     Schedule Free Consultation
                                 </span>
                                 <span className="text-xs transition-colors duration-200">
-                                    1 spot left in February
+                                    Pick a time that works for you!
                                 </span>
                             </div>
 
