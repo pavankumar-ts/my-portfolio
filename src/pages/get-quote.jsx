@@ -337,7 +337,7 @@ const PricingInquiry = () => {
             </form>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 icon: "🤝",
@@ -357,7 +357,7 @@ const PricingInquiry = () => {
             ].map((item, index) => (
               <TrustIndicator key={index} {...item} />
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </>
