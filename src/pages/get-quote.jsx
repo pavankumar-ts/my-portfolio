@@ -99,8 +99,8 @@ const PricingInquiry = () => {
     if (!status.message) return null;
 
     return (
-      <div className={`text-center p-4 rounded-lg mb-6 ${status.type === 'success' ? 'bg-logoColor text-logoColor dark:bg-logoColor/50 dark:text-logoColor'
-        : 'bg-red-50 text-red-600 dark:bg-red-900/50 dark:text-red-400'
+      <div className={`text-center p-4 rounded-lg mb-6 ${status.type === 'success' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
+        : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'
         }`}>
         {status.message}
       </div>
@@ -112,7 +112,7 @@ const PricingInquiry = () => {
       setStatus({ type: 'error', message: 'Please select a project type.' });
       return;
     }
-    if (step === 2 && (!formData.businessName )) {
+    if (step === 2 && (!formData.businessName)) {
       setStatus({ type: 'error', message: 'Please fill in all required fields.' });
       return;
     }
