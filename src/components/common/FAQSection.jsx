@@ -81,7 +81,7 @@ const FAQSection = () => {
 
                 <div className="md:w-[50%] space-y-1">
                     {faqs.map((faq, index) => (
-                        <AnimatedSection key={faq.id} delayMultiplier={index * 200}>
+                        <AnimatedSection key={faq.id} delayMultiplier={index * 0}>
                             <div className="border-b border-primary/10">
                                 <button
                                     className="w-full py-6 flex items-center justify-between text-left"

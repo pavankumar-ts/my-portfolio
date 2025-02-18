@@ -47,7 +47,7 @@ const NumbersSection = () => {
 
       <div className="md:w-[50%] grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 md:gap-y-16">
         {statistics.map((stat, index) => (
-          <AnimatedSection key={index} delayMultiplier={index * 200}>
+          <AnimatedSection key={index} delayMultiplier={index * 0}>
             <div className="border-b border-primary/10 pb-8 md:pb-16">
               <div className="flex flex-col gap-2">
                 <span className="text-6xl font-bold">
