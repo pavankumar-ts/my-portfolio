@@ -253,6 +253,59 @@ export const projects = [
         }
     },
     {
+        id: 15,
+        slug: 'iconhomz',
+        title: 'IconHomz',
+        description: 'A modern and visually appealing website for IconHomz, a renowned builder in Bangalore, showcasing their residential projects and commitment to quality living spaces.',
+        category: [2],
+        technologies: [5, 9, 14],
+        link: 'https://iconhomz.com/',
+        year: '2025',
+        client: 'IconHomz',
+        mainImg: '/assets/projects/iconhomz.webp',
+        features: [
+            'Custom design using Elementor for flexible and user-friendly layouts',
+            'Advanced SEO optimization with Yoast SEO for better visibility',
+            'Responsive design ensuring seamless browsing across devices',
+            'Integrated contact and inquiry forms for lead generation',
+            'Performance optimizations for faster loading times'
+        ],
+        overview: 'IconHomz required a high-performance website to showcase their residential projects and enhance their online presence. The project aimed to provide an engaging user experience, highlight their commitment to quality, and facilitate easy navigation and inquiries.',
+        challenge: `The main challenges included:
+            • Creating a visually appealing and dynamic showcase for residential projects using Elementor
+            • Ensuring on-page SEO optimization for better search engine rankings
+            • Designing forms for seamless client interaction and lead generation
+            • Achieving optimal performance and responsiveness across devices
+            • Implementing structured navigation for easy access to information`,
+        solution: `The solution was crafted using WordPress with Elementor for a custom design experience, focusing on:
+            • Developing intuitive, visually appealing layouts with Elementor
+            • Enhancing SEO visibility using Yoast SEO for optimized meta tags and structured content
+            • Building custom contact and inquiry forms using Contact Form 7
+            • Leveraging performance plugins to improve page speed and user experience`,
+        screenshots: [
+            {
+                url: '/assets/projects/iconhomz.webp',
+                caption: 'Homepage showcasing IconHomz’s residential projects and quality living spaces'
+            },
+            {
+                url: '/assets/projects/iconhomz_phone.webp',
+                caption: 'Project gallery with interactive elements and virtual tours'
+            },
+        ],
+        results: [
+            'Improved SEO rankings and increased organic traffic by 50%',
+            'Enhanced user engagement with optimized navigation and interactive galleries',
+            'Increased inquiries through well-designed contact forms',
+            'Achieved a responsive design with consistent performance across devices',
+            'Positive feedback from the client on the site\'s visual appeal and usability'
+        ],
+        testimonial: {
+            text: 'The website perfectly showcases our residential projects and has significantly improved our online presence. The interactive galleries and virtual tours have been particularly successful in attracting potential buyers.',
+            author: 'Rajesh Kumar',
+            role: 'Marketing Director, IconHomz'
+        }
+    },
+    {
         id: 4,
         slug: 'bangalore-gastro-centre',
         home: true,
@@ -260,7 +313,7 @@ export const projects = [
         description: 'A comprehensive website for the Bangalore Gastro Centre, featuring information about the center, specialities, doctors, appointment booking, blogs, courses, media & events, awards, outreach programs, careers, and research. The team has access to edit the content via Drupal CMS, which reflects on the website.',
         category: [3],
         technologies: [1, 6, 12, 14],
-        link: 'https://bangalore-gastro-centre.vercel.app/',
+        link: 'https://bangaloregastrocentre.com/',
         year: '2024',
         client: 'Bangalore Gastro Centre',
         mainImg: '/assets/projects/bgc_phone.webp',
@@ -720,7 +773,7 @@ export const projects = [
         title: "Turbo Tints",
         description: "A professional automotive customization website showcasing specialized services in window tinting, interior modifications, and bike PPF (Paint Protection Film). Built with WordPress and Elementor, featuring interactive before-after comparisons and detailed service presentations.",
         category: [2],
-        technologies: [5, 9, 14], 
+        technologies: [5, 9, 14],
         link: "http://turbotints.in",
         year: "2024",
         client: "Turbo Tints",
