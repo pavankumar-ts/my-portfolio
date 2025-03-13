@@ -11,9 +11,7 @@ const PopupForm = () => {
   const [showContent, setShowContent] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
-    message: ''
   });
 
   useEffect(() => {
@@ -35,7 +33,7 @@ const PopupForm = () => {
       setTimeout(() => setShowContent(true), 100);
       // Mark that user has seen the popup
       sessionStorage.setItem('hasSeenPopup', 'true');
-    }, 20000);
+    }, 10000);
 
     return () => clearTimeout(timer);
   }, [router.pathname]);
@@ -65,9 +63,7 @@ const PopupForm = () => {
         setSubmitStatus('success');
         setFormData({
           name: '',
-          email: '',
           phone: '',
-          message: ''
         });
         setTimeout(() => {
           handleClose();
@@ -133,14 +129,14 @@ const PopupForm = () => {
           className="text-4xl font-bold mb-4"
           style={{ color: 'var(--primary-color)' }}
         >
-          GET IN TOUCH
+          Confused Where to Start?          
         </h2>
 
         <p
           className="mb-6"
           style={{ color: 'var(--text-color)' }}
         >
-          Feel free to reach out to me. I'm always open to discuss new projects.
+          Get a free consultation and take the first step towards your dream project!
         </p>
 
         {submitStatus === 'success' ? (
@@ -153,12 +149,12 @@ const PopupForm = () => {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
-            {['name', 'email', 'phone'].map((field) => (
+            {['name', 'phone'].map((field) => (
               <input
                 key={field}
-                type={field === 'email' ? 'email' : field === 'phone' ? 'tel' : 'text'}
+                type={ field === 'phone' ? 'tel' : 'text'}
                 name={field}
-                placeholder={`What is your ${field}?`}
+                placeholder={`What is your ${field === 'phone' ? 'phone number' : 'name'}?`}
                 required
                 className="w-full p-3"
                 style={{
@@ -171,25 +167,13 @@ const PopupForm = () => {
               />
             ))}
 
-            <textarea
-              name="message"
-              placeholder="Would you like to leave a message?"
-              className="w-full p-3 h-24"
-              style={{
-                backgroundColor: 'transparent',
-                border: '1px solid var(--border-color)',
-                color: 'var(--text-color)',
-              }}
-              value={formData.message}
-              onChange={handleChange}
-            />
-
+            
             <div className="flex items-center space-x-2">
               <button
                 type="submit"
                 disabled={isLoading}
                 className={`px-6 py-2 font-bold transition-transform duration-300 text-white bg-logoColor w-full
-                  ${isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105'}`}
+                  ${isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:opacity-95'}`}
               >
                 {isLoading ? 'SENDING...' : 'SEND'}
               </button>
