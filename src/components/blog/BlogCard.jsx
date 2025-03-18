@@ -31,8 +31,8 @@ const BlogCard = ({ blog, inView, categoryChanged, index }) => {
                 <div className="flex flex-col gap-2">
                     {/* Meta information */}
                     <div className="flex items-center gap-3 text-sm text-primary/60">
-                        {blog.date && <span>{blog.date}</span>}
-                        {blog.date && blog.readTime && <span>•</span>}
+                        {/* {blog.date && <span>{blog.date}</span>} */}
+                        {/* {blog.date && blog.readTime && <span>•</span>} */}
                         {blog.readTime && <span>{blog.readTime}</span>}
                     </div>
 

@@ -144,8 +144,8 @@ export default function BlogPost({ post, relatedPosts }) {
                     >
                         {/* Meta info */}
                         <div className="flex items-center justify-center gap-3 sm:gap-4 text-primary/60 mb-6 sm:mb-8 text-sm sm:text-base">
-                            <span className="font-medium">{post.date}</span>
-                            <span>•</span>
+                            {/* <span className="font-medium">{post.date}</span> */}
+                            {/* <span>•</span> */}
                             <span>{post.readTime}</span>
                         </div>
 
