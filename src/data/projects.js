@@ -523,7 +523,7 @@ export const projects = [
         description: "A cutting-edge web platform for Charge Infra, designed to showcase their construction and infrastructure development services with a focus on performance and scalability using Next.js.",
         category: [2],
         technologies: [1, 6, 14],
-        link: "https://www.chargeinfra.com/",
+        link: "https://charge-infra-liard.vercel.app/",
         year: "2024",
         client: "Charge Infra",
         mainImg: "/assets/projects/chargeinfra.webp",
