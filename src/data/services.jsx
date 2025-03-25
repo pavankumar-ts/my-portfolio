@@ -8,15 +8,15 @@ export const services = [
     },
     {
         id: '02',
-        title: 'No-Code Development',
-        tags: ['Webflow', 'Bubble', 'Framer'],
-        description: 'Creating sophisticated web applications and websites using cutting-edge no-code platforms. Leveraging the power of visual development tools to rapidly build and deploy professional solutions while maintaining flexibility for future scaling.'
-    },
-    {
-        id: '03',
         title: 'CMS Solutions',
         tags: ['WordPress', 'Shopify', 'Custom CMS'],
         description: 'Building and customizing content management systems and e-commerce platforms. Developing tailored solutions for businesses, from company websites to full-featured online stores, with focus on usability and scalability.'
+    },
+    {
+        id: '03',
+        title: 'No-Code Development',
+        tags: ['Webflow', 'Bubble', 'Framer'],
+        description: 'Creating sophisticated web applications and websites using cutting-edge no-code platforms. Leveraging the power of visual development tools to rapidly build and deploy professional solutions while maintaining flexibility for future scaling.'
     },
     {
         id: '04',
