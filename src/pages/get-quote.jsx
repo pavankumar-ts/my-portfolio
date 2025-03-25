@@ -7,11 +7,13 @@ import emailjs from 'emailjs-com';
 import { services } from '@/data/services';
 import { useState } from 'react';
 import Head from "next/head";
+import { useRouter } from 'next/router';
 
 const PricingInquiry = () => {
   const [step, setStep] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState({ type: '', message: '' });
+  const router = useRouter();
 
   const [formData, setFormData] = useState({
     projectType: '',
@@ -59,7 +61,7 @@ const PricingInquiry = () => {
         },
         'envDnIzt4XmWq_8T9'
       );
-
+      router.push('/thank-you');
       setStatus({
         type: 'success',
         message: 'Thank you! We will get back to you soon.'

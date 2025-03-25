@@ -6,10 +6,12 @@ import Head from 'next/head';
 import emailjs from 'emailjs-com';
 import TitleHeroSection from '@/components/common/TitleHeroSection';
 import BookCall from '@/components/contact/BookCall';
+import { useRouter } from 'next/router';
 
 const ContactPage = ({isDarkMode}) => {
   const [buttonText, setButtonText] = React.useState('Send it over');
   const [isSending, setIsSending] = React.useState(false);
+  const router = useRouter();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -20,6 +22,7 @@ const ContactPage = ({isDarkMode}) => {
       .then((result) => {
         console.log(result.text);
         setButtonText('Sent');
+        router.push('/thank-you');
         e.target.reset(); // Clear the input fields
       }, (error) => {
         console.log(error.text);
