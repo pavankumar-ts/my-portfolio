@@ -1,6 +1,6 @@
 // data/socialLinks.js
 import { Github, Linkedin,  Instagram } from 'lucide-react';
-import { FaXTwitter } from "react-icons/fa6";
+import { FaWhatsapp, FaXTwitter } from "react-icons/fa6";
 
 
 export const socialLinks = [
@@ -23,5 +23,10 @@ export const socialLinks = [
         name: 'Instagram', 
         url: 'https://www.instagram.com/pavan__ts/',
         Icon: Instagram 
+    },
+    { 
+        name: 'Whatsapp', 
+        url: 'https://www.instagram.com/pavan__ts/',
+        Icon: FaWhatsapp 
     },
 ];
