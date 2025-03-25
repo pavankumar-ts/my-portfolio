@@ -10,24 +10,6 @@ export default function App({ Component, pageProps }) {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
-      setScrollPosition(scrollPercent);
-    };
-
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      setIsDarkMode(savedTheme === 'dark');
-      document.documentElement.classList.toggle('dark', savedTheme === 'dark');
-    }
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
     document.documentElement.classList.toggle('dark', isDarkMode);
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
   }, [isDarkMode]);
@@ -38,17 +20,16 @@ export default function App({ Component, pageProps }) {
 
   return (
     <div className="min-h-screen flex flex-col transition-colors duration-200">
-        <Navbar
-          scrollPosition={scrollPosition}
-          isDarkMode={isDarkMode}
-          onThemeToggle={handleThemeToggle}
-        />
-        <main className="flex-grow">
-          <FloatingButton />
-          <PopupForm />
-          <Component {...pageProps} isDarkMode={isDarkMode} />
-        </main>
-        <Footer isDarkMode={isDarkMode} />
+      <Navbar
+        isDarkMode={isDarkMode}
+        onThemeToggle={handleThemeToggle}
+      />
+      <main className="flex-grow">
+        <FloatingButton />
+        {/* <PopupForm /> */}
+        <Component {...pageProps} isDarkMode={isDarkMode} />
+      </main>
+      <Footer isDarkMode={isDarkMode} />
     </div>
   );
 }
