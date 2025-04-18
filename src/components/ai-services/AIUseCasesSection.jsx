@@ -22,7 +22,7 @@ const AIUseCasesSection = () => {
           <button
             key={industry.id}
             onClick={() => setActiveTab(industry.id)}
-            className={`px-6 py-3 text-lg font-medium rounded-lg transition-all duration-300 ${
+            className={`px-6 py-3 text-lg font-medium  transition-all duration-300 ${
               activeTab === industry.id
                 ? 'bg-primary text-bgColor shadow-lg scale-105'
                 : 'bg-primary/5 text-primary/70 hover:bg-primary/10'
@@ -43,7 +43,7 @@ const AIUseCasesSection = () => {
               activeTab === industry.id ? 'opacity-100' : 'opacity-0 absolute inset-0 pointer-events-none'
             }`}
           >
-            <div className="relative overflow-hidden rounded-2xl bg-primary/5 shadow-lg">
+            <div className="relative overflow-hidden  bg-primary/5 shadow-lg">
               {/* Industry Label */}
               <div className="absolute -right-10 top-10 rotate-45 bg-primary text-bgColor px-12 py-1 text-sm font-medium">
                 {industry.id}
@@ -56,7 +56,7 @@ const AIUseCasesSection = () => {
                 </p>
 
                 <h4 className="text-xl font-semibold mb-6 flex items-center">
-                  <span className="inline-block w-8 h-8 bg-primary text-bgColor rounded-full flex items-center justify-center mr-3">
+                  <span className=" w-8 h-8 bg-primary text-bgColor rounded-full flex items-center justify-center mr-3">
                     <ArrowRight size={16} />
                   </span>
                   Example Applications
@@ -66,7 +66,7 @@ const AIUseCasesSection = () => {
                   {industry.examples.map((example, index) => (
                     <div 
                       key={example} 
-                      className="bg-bgColor rounded-lg p-5 shadow-sm border border-primary/10 hover:shadow-md transition-shadow"
+                      className="bg-bgColor  p-5 shadow-sm border border-primary/10 hover:shadow-md transition-shadow"
                     >
                       <div className="flex items-start gap-4">
                         <div className="bg-primary/10 rounded-full w-7 h-7 flex items-center justify-center shrink-0 mt-1">

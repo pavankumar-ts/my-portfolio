@@ -38,7 +38,7 @@ const AIServiceProcess = () => {
               {/* Mobile layout (stacked) */}
               <div className="md:hidden mb-12">
                 <div 
-                  className={`border border-primary/10 rounded-xl overflow-hidden transition-all duration-300 ${
+                  className={`border border-primary/10  overflow-hidden transition-all duration-300 ${
                     isActive ? 'shadow-lg' : 'hover:shadow-md'
                   }`}
                   onClick={() => setActiveStep(isActive ? null : step.id)}
@@ -90,7 +90,7 @@ const AIServiceProcess = () => {
                     </div>
                     
                     <div className="col-span-5 pl-8">
-                      <div className="border border-primary/10 rounded-xl p-4 bg-primary/5 text-5xl font-bold text-primary/20 flex justify-center">
+                      <div className="border border-primary/10  p-4 bg-primary/5 text-5xl font-bold text-primary/20 flex justify-center">
                         {step.id}
                       </div>
                     </div>
@@ -101,7 +101,7 @@ const AIServiceProcess = () => {
                 {!isEven && (
                   <>
                     <div className="col-span-5 pr-8">
-                      <div className="border border-primary/10 rounded-xl p-4 bg-primary/5 text-5xl font-bold text-primary/20 flex justify-center">
+                      <div className="border border-primary/10  p-4 bg-primary/5 text-5xl font-bold text-primary/20 flex justify-center">
                         {step.id}
                       </div>
                     </div>
