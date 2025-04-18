@@ -8,6 +8,7 @@ import Contact from '@/components/businessConsulting/Contact'
 const index = () => {
     return (
         <>
+            {/* Should be updated */}
             <Head>
                 <title>Consulting | Pavan Kumar - Web & Mobile Solutions</title>
                 <meta name="description" content="Expert developer crafting modern web applications and mobile solutions. Specialized in React, Next.js, and React Native. Building scalable, high-performance digital experiences." />

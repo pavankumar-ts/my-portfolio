@@ -49,6 +49,8 @@ const Navbar = ({ onThemeToggle }) => {
         { name: 'Home', path: '/' },
         { name: 'Projects', path: '/projects' },
         { name: 'Services', path: '/services' },
+        { name: 'Business Consulting', path: '/business-consulting' },
+        { name: 'AI', path: '/ai' },
         { name: 'About', path: '/about' },
         { name: 'Blog', path: '/blog' },
     ];
