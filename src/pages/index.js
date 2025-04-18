@@ -87,7 +87,6 @@ export default function Home() {
         <ProcessSection />
         <FAQSection />
         <ContactCTA />
-        <div>TEST</div>
       </main>
     </>
   );
