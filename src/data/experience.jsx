@@ -6,7 +6,7 @@ export const experience = [
         type: 'Professional Experience',
         items: [
             {
-                title: 'Head of Web Development',
+                title: 'Team Lead - Web Development',
                 institution: 'Social Agent',
                 location: 'Bangalore',
                 period: 'August 2023 - Present',
