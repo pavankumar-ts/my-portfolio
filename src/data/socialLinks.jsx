@@ -26,7 +26,7 @@ export const socialLinks = [
     },
     { 
         name: 'Whatsapp', 
-        url: 'https://www.instagram.com/pavan__ts/',
+        url: 'https://wa.me/+919483262200',
         Icon: FaWhatsapp 
     },
 ];
