@@ -164,7 +164,7 @@ export const blogs = [
         }
     },
     {
-        id: 5,
+        id: 4,
         slug: 'top-10-web-design-trends-2025',
         title: 'Top 10 Web Design Trends of the Year 2025',
         description: 'Explore the most influential web design trends of 2025, including AI integration, immersive 3D elements, and eco-friendly designs, to enhance user experience and engagement.',
