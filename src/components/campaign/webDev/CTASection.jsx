@@ -12,24 +12,24 @@ const CTASection = () => {
                 <div className="absolute top-1/2 left-1/4 w-8 h-8 border-2 border-white rounded-full"></div>
                 <div className="absolute top-1/3 right-1/3 w-14 h-14 border-2 border-white rounded-full"></div>
             </div>
-            
+
             <div className="container relative z-10">
                 <div className="text-center text-white">
                     {/* Main Heading */}
                     <h2 className="text-4xl lg:text-5xl font-bold mb-6">
                         Ready to Build Your Business Website?
                     </h2>
-                    
+
                     {/* Description */}
                     <p className="text-xl mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed">
-                        Let the best website designer near you help you achieve your business goals 
+                        Let the best website designer near you help you achieve your business goals
                         with a professional, responsive website that drives results and grows your online presence.
                     </p>
-                    
+
                     {/* Stats Row */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 max-w-4xl mx-auto">
                         <div className="text-center">
-                            <div className="text-3xl lg:text-4xl font-bold mb-2 text-logoColor">50+</div>
+                            <div className="text-3xl lg:text-4xl font-bold mb-2 text-logoColor">25+</div>
                             <div className="text-sm opacity-80">Projects Completed</div>
                         </div>
                         <div className="text-center">
@@ -37,31 +37,31 @@ const CTASection = () => {
                             <div className="text-sm opacity-80">Client Satisfaction</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-3xl lg:text-4xl font-bold mb-2 text-logoColor">5+</div>
+                            <div className="text-3xl lg:text-4xl font-bold mb-2 text-logoColor">4+</div>
                             <div className="text-sm opacity-80">Years Experience</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-3xl lg:text-4xl font-bold mb-2 text-logoColor">24/7</div>
-                            <div className="text-sm opacity-80">Support Available</div>
+                            <div className="text-3xl lg:text-4xl font-bold mb-2 text-logoColor">99.9%</div>
+                            <div className="text-sm opacity-80">Website Uptime</div>
                         </div>
                     </div>
-                    
+
                     {/* CTA Buttons */}
                     <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                        <a 
-                            href="#contact" 
+                        <a
+                            href="#contact"
                             className="inline-block px-10 py-5 bg-logoColor text-white font-bold text-lg transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-2xl hover:bg-logoColor/90"
                         >
                             Schedule Free Consultation
                         </a>
-                        <a 
-                            href="#portfolio" 
+                        <a
+                            href="#portfolio"
                             className="inline-block px-10 py-5 border-[1px] border-white text-white font-bold text-lg transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-2xl"
                         >
-                           View Our Portfolio
+                            View Portfolio
                         </a>
                     </div>
-                    
+
                     {/* Trust Indicators */}
                     <div className="mt-16 pt-12 border-t border-white/20">
                         <p className="text-sm opacity-80 mb-6">

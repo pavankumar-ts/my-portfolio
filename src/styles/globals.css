@@ -19,12 +19,13 @@
   --text-color: #fff;
   --border-color: #444;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
-  scroll-behavior: smooth;
 }
 
 .container {

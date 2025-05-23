@@ -1,4 +1,5 @@
 // src/components/home/ServicesSection.jsx
+import { usePopup } from '@/contexts/PopupContext';
 import React from 'react';
 
 const ServicesSection = () => {
@@ -41,23 +42,26 @@ const ServicesSection = () => {
         }
     ];
 
+    const { openPopup } = usePopup();
+
     return (
-        <section className="">
+        <section className="" id='services' >
             <div className="container">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-textColor">
+                    <h2 className="max-w-[700px] mx-auto text-4xl lg:text-5xl font-bold mb-4 text-textColor">
                         Professional Web Design & Development Services
                     </h2>
                     <p className="text-lg text-textColor/70 max-w-4xl mx-auto">
-                        From small business websites to enterprise-level eCommerce solutions, our web design company offers affordable and professional web development services tailored to your specific business needs.
+                        Complete web solutions for every business size. From simple business websites to complex eCommerce platforms – all delivered with professional quality at affordable prices.
                     </p>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service) => (
                         <div
+                            onClick={() => openPopup('Get A Free Consultation')}
                             key={service.id}
-                            className="bg-bgColor border border-primary/10 rounded-lg p-8 shadow-sm transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg"
+                            className="bg-bgColor border cursor-pointer border-primary/10 rounded-lg p-8 shadow-sm transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg"
                         >
                             <div className="text-sm font-semibold text-logoColor mb-4">
                                 [{service.id}]

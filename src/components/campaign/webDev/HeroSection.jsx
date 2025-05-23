@@ -6,19 +6,43 @@ const HeroSection = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                 {/* Left Content */}
                 <div>
-                    <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-textColor" style={{ lineHeight: '1.3' }}>
-                        Top-Rated Website Designer & Developer in Bengaluru
+                    {/* Option 1 */}
+                    {/* <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-textColor  " style={{ lineHeight: '1.3' }}>
+                        Still Losing <span
+                            className="relative inline-block"
+                            style={{
+                                backgroundImage: 'url("/assets/campaign/paint_stroke.png")',
+                                backgroundSize: 'contain',
+                                backgroundPosition: 'center',
+                                backgroundRepeat: 'no-repeat'
+                            }}
+                        >
+                            <span className="text-white px-3 py-2">Customers</span>
+                        </span> to Competitors With Better Websites?
+                    </h1> */}
+                    {/* Option 2 */}
+                    <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-textColor  " style={{ lineHeight: '1.3' }}>
+                        Ready to Take Your <span
+                            className="relative inline-block"
+                            style={{
+                                backgroundImage: 'url("/assets/campaign/paint_stroke.png")',
+                                backgroundSize: 'contain',
+                                backgroundPosition: 'center',
+                                backgroundRepeat: 'no-repeat'
+                            }}
+                        >
+                            <span className="text-white px-3 py-2">Business </span>
+                        </span>Online? Start Here.
                     </h1>
                     <p className="text-lg mb-8 leading-relaxed text-textColor/70">
-                        Professional, affordable, and responsive web design services for businesses of all sizes.
-                        Specializing in custom web applications, responsive designs, and eCommerce website development.
+                        Professional website development for businesses taking their first step online. From idea to live website, including everything you need to succeed online.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4">
                         <a
                             href="#services"
                             className="inline-block px-8 py-4  font-medium text-center transition-all duration-300 hover:transform  hover:shadow-lg  hover:-translate-y-1 bg-textColor text-bgColor"
                         >
-                            Explore Our Services
+                            Explore Services
                         </a>
                         <a
                             href="#portfolio"
@@ -33,7 +57,7 @@ const HeroSection = () => {
                 <div className="w-full">
                     <div className="p-8 shadow-xl bg-bgColor border border-primary/10">
                         <h3 className="text-2xl font-semibold mb-5 text-center text-logoColor">
-                            Get A Free Website Consultation
+                            Get A Free Consultation
                         </h3>
                         <form className="space-y-5">
                             <div>

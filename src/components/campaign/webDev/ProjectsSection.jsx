@@ -60,14 +60,14 @@ const ProjectsSection = () => {
     ];
 
     return (
-        <section className="">
+        <section className="" id='portfolio'>
             <div className="container">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-textColor">
-                        Featured Web Design Projects
+                        Featured Projects
                     </h2>
                     <p className="text-lg text-textColor/70 max-w-4xl mx-auto">
-                        Browse through some of our best web development work. Each project represents our commitment to quality, performance, and client satisfaction.
+                        Explore the portfolio of successful web development projects. Every website showcases dedication to quality, performance, and client success.
                     </p>
                 </div>
 
@@ -120,14 +120,14 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* View All Projects Button */}
-                <div className="text-center mt-12">
+                {/* <div className="text-center mt-12">
                     <a
                         href="#contact"
                         className="inline-block px-8 py-4  font-medium transition-all duration-300 hover:transform  hover:shadow-lg bg-textColor text-bgColor"
                     >
                         View All Projects
                     </a>
-                </div>
+                </div> */}
             </div>
         </section>
     );

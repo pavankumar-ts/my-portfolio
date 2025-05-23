@@ -2,36 +2,37 @@
 import React from 'react';
 
 const ProcessSection = () => {
+    let height = "70"
     const processSteps = [
         {
             id: 1,
             title: 'Discovery',
             description: 'Understanding your vision, goals, and requirements through detailed consultation',
-            icon: '💡'
+            icon: <img width={height} height={height} src="https://img.icons8.com/ios/100/compass--v1.png" alt="compass--v1" />
         },
         {
             id: 2,
             title: 'Design',
             description: 'Creating beautiful, user-friendly designs that align with your brand',
-            icon: '🎨'
+            icon: <img width={height} height={height} src="https://img.icons8.com/pastel-glyph/100/web-design--v2.png" alt="web-design--v2" />
         },
         {
             id: 3,
             title: 'Develop',
             description: 'Building responsive, fast websites using modern technologies',
-            icon: '⚡'
+            icon: <img width={height} height={height} src="https://img.icons8.com/ios/100/laptop-coding.png" alt="laptop-coding" />
         },
         {
             id: 4,
             title: 'Deploy',
             description: 'Launching your website with testing, optimization and ongoing support',
-            icon: '🚀'
+            icon: <img width={height} height={height} src="https://img.icons8.com/ios/100/domain--v1.png" alt="domain--v1" />
         }
     ];
 
     return (
         <section className="">
-                  <div className="container relative z-10">
+            <div className="container relative z-10">
                 <div className="text-center mb-16">
                     <div className="inline-block px-4 py-2 text-logoColor  text-sm font-medium mb-4">
                         Process
@@ -41,7 +42,7 @@ const ProcessSection = () => {
                         <span className="text-logoColor"> Launch</span>
                     </h2>
                     <p className="text-lg text-textColor/70 max-w-2xl mx-auto">
-                        We follow a proven methodology to deliver exceptional results
+                        Every website built using a proven methodology that ensures exceptional results.
                     </p>
                 </div>
 
@@ -88,7 +89,7 @@ const ProcessSection = () => {
                                             {step.title}
                                         </h3>
                                         <p className="text-textColor/70 text-sm leading-relaxed">
-                                            {step.description}
+                                            {step.description}.
                                         </p>
 
                                         {/* Hover Glow */}
