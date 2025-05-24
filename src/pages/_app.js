@@ -3,11 +3,12 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import FloatingButton from "@/components/pricing/FloatingButton";
 import "@/styles/globals.css";
-import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { use, useEffect, useState } from "react";
 
 export default function App({ Component, pageProps }) {
-  const [scrollPosition, setScrollPosition] = useState(0);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', isDarkMode);
@@ -17,19 +18,31 @@ export default function App({ Component, pageProps }) {
   const handleThemeToggle = (isDark) => {
     setIsDarkMode(isDark);
   };
+  console.log("router", router);
 
   return (
     <div className="min-h-screen flex flex-col transition-colors duration-200">
-      <Navbar
-        isDarkMode={isDarkMode}
-        onThemeToggle={handleThemeToggle}
-      />
+      {
+        !router.pathname.startsWith("/campaign") && (
+          <Navbar
+            isDarkMode={isDarkMode}
+            onThemeToggle={handleThemeToggle}
+          />
+        )
+      }
       <main className="flex-grow">
-        <FloatingButton />
+        {!router.pathname.startsWith("/campaign") && <FloatingButton />}
         {/* <PopupForm /> */}
         <Component {...pageProps} isDarkMode={isDarkMode} />
       </main>
-      <Footer isDarkMode={isDarkMode} />
+      {
+        !router.pathname.startsWith("/campaign") && (
+          <Footer
+            isDarkMode={isDarkMode}
+            onThemeToggle={handleThemeToggle}
+          />
+        )
+      }
     </div>
   );
 }
