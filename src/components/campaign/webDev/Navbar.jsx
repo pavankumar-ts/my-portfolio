@@ -25,7 +25,7 @@ const Navbar = () => {
                     <div className="transition-all duration-300 hover:transform hover:-translate-y-0.5 hover:shadow-lg">
                         <div
                             onClick={() => openPopup('Get A Free Consultation')}
-                            className="px-6 py-3 bg-logoColor text-white  font-medium cursor-pointer"
+                            className="px-2 md:px-6 py-2 md:py-3 bg-logoColor text-white  font-medium cursor-pointer"
                         >
                             Free Consultation
                         </div>

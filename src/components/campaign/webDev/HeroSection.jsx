@@ -43,7 +43,7 @@ const HeroSection = () => {
     };
 
     return (
-        <div className="container min-h-[70vh] flex flex-col justify-center items-center">
+        <div className="container min-h-[80vh] flex flex-col justify-center items-center">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                 {/* Left Content */}
                 <div>
@@ -78,16 +78,16 @@ const HeroSection = () => {
                     <p className="text-lg mb-8 leading-relaxed text-textColor/70">
                         Professional website development for businesses taking their first step online. From idea to live website, including everything you need to succeed online.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4">
+                    <div className="flex flex-row gap-3 sm:gap-4">
                         <a
                             href="#services"
-                            className="inline-block px-8 py-4  font-medium text-center transition-all duration-300 hover:transform  hover:shadow-lg  hover:-translate-y-1 bg-textColor text-bgColor"
+                            className=" px-4 sm:px-8 py-4 font-medium text-center transition-all duration-300 hover:transform hover:shadow-lg hover:-translate-y-1 bg-textColor text-bgColor text-sm sm:text-base"
                         >
                             Explore Services
                         </a>
                         <a
                             href="#portfolio"
-                            className="inline-block px-8 py-4  font-medium text-center border border-primary/20 transition-all duration-300 bg-bgColor  hover:shadow-lg  text-textColor  hover:transform hover:-translate-y-1"
+                            className=" px-4 sm:px-8 py-4 font-medium text-center border border-primary/20 transition-all duration-300 bg-bgColor hover:shadow-lg text-textColor hover:transform hover:-translate-y-1 text-sm sm:text-base"
                         >
                             View Portfolio
                         </a>
@@ -96,7 +96,7 @@ const HeroSection = () => {
 
                 {/* Right Form */}
                 <div className="w-full">
-                    <div className="p-8 shadow-xl bg-bgColor border border-primary/10">
+                    <div className="p-4 md:p-8 shadow-xl bg-bgColor border border-primary/10">
                         <h3 className="text-2xl font-semibold mb-5 text-center text-logoColor">
                             Get A Free Consultation
                         </h3>

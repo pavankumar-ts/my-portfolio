@@ -62,7 +62,7 @@ const LeadPopup = () => {
             ></div>
             
             {/* Popup Content */}
-            <div className="relative bg-bgColor rounded-lg p-8 shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 scale-100">
+            <div className="relative bg-bgColor  p-8 shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 scale-100">
                 {/* Close Button */}
                 <button
                     onClick={closePopup}
@@ -93,7 +93,7 @@ const LeadPopup = () => {
                             value={formData.name}
                             onChange={handleChange}
                             required
-                            className="w-full p-4 border border-primary/20 rounded-lg focus:outline-none focus:border-logoColor transition-colors bg-bgColor text-textColor"
+                            className="w-full p-4 border border-primary/20  focus:outline-none focus:border-logoColor transition-colors bg-bgColor text-textColor"
                             placeholder="Enter your full name"
                         />
                     </div>
@@ -108,7 +108,7 @@ const LeadPopup = () => {
                             value={formData.phone}
                             onChange={handleChange}
                             required
-                            className="w-full p-4 border border-primary/20 rounded-lg focus:outline-none focus:border-logoColor transition-colors bg-bgColor text-textColor"
+                            className="w-full p-4 border border-primary/20  focus:outline-none focus:border-logoColor transition-colors bg-bgColor text-textColor"
                             placeholder="Enter your phone number"
                         />
                     </div>
@@ -116,7 +116,7 @@ const LeadPopup = () => {
                     <button
                         type="submit"
                         disabled={isSending}
-                        className={`w-full p-4 rounded-lg font-medium transition-all duration-300 ${
+                        className={`w-full p-4  font-medium transition-all duration-300 ${
                             isSending 
                                 ? 'bg-gray-400 cursor-not-allowed' 
                                 : 'bg-logoColor hover:bg-logoColor/90 hover:transform hover:-translate-y-1 hover:shadow-lg'

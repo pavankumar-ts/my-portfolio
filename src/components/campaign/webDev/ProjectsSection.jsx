@@ -1,7 +1,9 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 
 const ProjectsSection = () => {
+    const [showAll, setShowAll] = useState(false);
+
     const projects = [
         {
             id: 5,
@@ -59,64 +61,132 @@ const ProjectsSection = () => {
         }
     ];
 
+    // Show only first project on mobile initially, all on desktop
+    const displayedProjects = showAll ? projects : projects.slice(0, 3);
+
     return (
         <section className="" id='portfolio'>
-            <div className="container">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-textColor">
+            <div className="container px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-12 lg:mb-16">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-textColor">
                         Featured Projects
                     </h2>
-                    <p className="text-lg text-textColor/70 max-w-4xl mx-auto">
+                    <p className="text-base sm:text-lg text-textColor/70 max-w-4xl mx-auto">
                         Explore the portfolio of successful web development projects. Every website showcases dedication to quality, performance, and client success.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((project) => (
-                        <div
-                            key={project.id}
-                            className="bg-bgColor border border-primary/10 rounded-lg overflow-hidden shadow-sm transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg"
-                        >
-                            {/* Project Image */}
-                            <div className="h-[260px] bg-gray-200 relative overflow-hidden">
-                                <Image
-                                    src={project.image}
-                                    alt={project.title}
-                                    fill
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
-
-                            {/* Project Content */}
-                            <div className="p-6">
-                                <div className="text-sm font-medium text-logoColor mb-3">
-                                    {project.tech}
+                {/* Mobile View - Show/Hide Logic */}
+                <div className="block md:hidden">
+                    <div className="grid grid-cols-1 gap-6">
+                        {displayedProjects.map((project) => (
+                            <div
+                                key={project.id}
+                                className="bg-bgColor border border-primary/10 rounded-lg overflow-hidden shadow-sm transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg"
+                            >
+                                {/* Project Image */}
+                                <div className="h-[200px] bg-gray-200 relative overflow-hidden">
+                                    <Image
+                                        src={project.image}
+                                        alt={project.title}
+                                        fill
+                                        className="w-full h-full object-cover"
+                                    />
                                 </div>
-                                <h3 className="text-xl font-semibold mb-3 text-textColor">
-                                    {project.title}
-                                </h3>
-                                <p className="leading-relaxed mb-4">
-                                    {project.description}
-                                </p>
-                                <a
-                                    href={project.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center text-logoColor font-medium hover:text-logoColor/80 transition-colors"
-                                >
-                                    View Project
-                                    <svg
-                                        className="ml-2 w-4 h-4 transition-transform hover:translate-x-1"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
+
+                                {/* Project Content */}
+                                <div className="p-5">
+                                    <div className="text-xs font-medium text-logoColor mb-2">
+                                        {project.tech}
+                                    </div>
+                                    <h3 className="text-lg font-semibold mb-2 text-textColor">
+                                        {project.title}
+                                    </h3>
+                                    <p className="text-sm leading-relaxed mb-4 text-textColor/70">
+                                        {project.description}
+                                    </p>
+                                    <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center text-logoColor font-medium hover:text-logoColor/80 transition-colors text-sm"
                                     >
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14m-7-7l7 7-7 7" />
-                                    </svg>
-                                </a>
+                                        View Project
+                                        <svg
+                                            className="ml-2 w-4 h-4 transition-transform hover:translate-x-1"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14m-7-7l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
+
+                    {/* View More/Less Button - Mobile Only */}
+                    {console.log("showAll", showAll)}
+                    {!showAll && <div className="text-center mt-8">
+                        <button
+                            onClick={() => setShowAll(!showAll)}
+                            className="inline-block px-6 py-3 bg-logoColor text-white font-medium transition-all duration-300 hover:bg-logoColor/90 hover:transform hover:-translate-y-1 hover:shadow-lg"
+                        >
+                            View More Projects
+                        </button>
+                    </div>}
+                </div>
+
+                {/* Desktop View - Always Show All */}
+                <div className="hidden md:block">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {projects.map((project) => (
+                            <div
+                                key={project.id}
+                                className="bg-bgColor border border-primary/10 rounded-lg overflow-hidden shadow-sm transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg"
+                            >
+                                {/* Project Image */}
+                                <div className="h-[260px] bg-gray-200 relative overflow-hidden">
+                                    <Image
+                                        src={project.image}
+                                        alt={project.title}
+                                        fill
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+
+                                {/* Project Content */}
+                                <div className="p-6">
+                                    <div className="text-sm font-medium text-logoColor mb-3">
+                                        {project.tech}
+                                    </div>
+                                    <h3 className="text-xl font-semibold mb-3 text-textColor">
+                                        {project.title}
+                                    </h3>
+                                    <p className="leading-relaxed mb-4 text-textColor/70">
+                                        {project.description}
+                                    </p>
+                                    <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center text-logoColor font-medium hover:text-logoColor/80 transition-colors"
+                                    >
+                                        View Project
+                                        <svg
+                                            className="ml-2 w-4 h-4 transition-transform hover:translate-x-1"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14m-7-7l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 {/* View All Projects Button */}

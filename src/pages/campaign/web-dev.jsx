@@ -59,7 +59,7 @@ const WebDev = () => {
                 <ServicesSection />
                 <ProjectsSection />
                 <ProcessSection />
-                <PricingSection />
+                {/* <PricingSection /> */}
                 <CTASection />
                 <ContactSection />
             </PopupProvider>
