@@ -1,8 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+import emailjs from '@emailjs/browser';
 
 const HeroSection = () => {
+    const router = useRouter();
+    const [buttonText, setButtonText] = useState('Book My Free Consultation');
+    const [isSending, setIsSending] = useState(false);
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setIsSending(true);
+        setButtonText('Sending...');
+
+        // Send email using EmailJS
+        emailjs.sendForm('my_portfolio', 'my_portfolio_template', e.target, 'envDnIzt4XmWq_8T9')
+            .then((result) => {
+                console.log(result.text);
+                setButtonText('Sent');
+                router.push('/thank-you');
+                e.target.reset(); // Clear the input fields
+                setFormData({ name: '', phone: '', message: '' }); // Reset state
+            }, (error) => {
+                console.log(error.text);
+                setButtonText('Book My Free Consultation');
+                alert('Failed to send message. Please try again.');
+            })
+            .finally(() => {
+                setIsSending(false);
+            });
+    };
+
     return (
-        <div className="container min-h-[80vh] flex flex-col justify-center items-center">
+        <div className="container min-h-[70vh] flex flex-col justify-center items-center">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                 {/* Left Content */}
                 <div>
@@ -59,37 +100,51 @@ const HeroSection = () => {
                         <h3 className="text-2xl font-semibold mb-5 text-center text-logoColor">
                             Get A Free Consultation
                         </h3>
-                        <form className="space-y-5">
+                        <form onSubmit={handleSubmit} className="space-y-5">
                             <div>
                                 <input
                                     type="text"
                                     name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
                                     placeholder="Your Name*"
                                     required
-                                    className="w-full p-4  focus:outline-none transition-colors text-base border border-primary/20 bg-bgColor text-textColor focus:border-logoColor"
+                                    disabled={isSending}
+                                    className="w-full p-4  focus:outline-none transition-colors text-base border border-primary/20 bg-bgColor text-textColor focus:border-logoColor disabled:opacity-50 disabled:cursor-not-allowed"
                                 />
                             </div>
                             <div>
                                 <input
                                     type="tel"
                                     name="phone"
+                                    value={formData.phone}
+                                    onChange={handleChange}
                                     placeholder="Phone Number*"
                                     required
-                                    className="w-full p-4  focus:outline-none transition-colors text-base border border-primary/20 bg-bgColor text-textColor focus:border-logoColor"
+                                    disabled={isSending}
+                                    className="w-full p-4  focus:outline-none transition-colors text-base border border-primary/20 bg-bgColor text-textColor focus:border-logoColor disabled:opacity-50 disabled:cursor-not-allowed"
                                 />
                             </div>
                             <div>
                                 <textarea
                                     name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
                                     placeholder="Your Message"
-                                    className="w-full p-4 min-h-[70px] max-h-[120px] focus:outline-none transition-colors text-base border border-primary/20 bg-bgColor text-textColor focus:border-logoColor"
+                                    disabled={isSending}
+                                    className="w-full p-4 min-h-[70px] max-h-[120px] focus:outline-none transition-colors text-base border border-primary/20 bg-bgColor text-textColor focus:border-logoColor disabled:opacity-50 disabled:cursor-not-allowed"
                                 ></textarea>
                             </div>
                             <button
                                 type="submit"
-                                className="w-full p-4  font-medium transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg text-base bg-logoColor text-secondary"
+                                disabled={isSending}
+                                className={`w-full p-4 font-medium transition-all duration-300 text-base ${
+                                    isSending 
+                                        ? 'bg-gray-400 cursor-not-allowed' 
+                                        : 'bg-logoColor hover:transform hover:-translate-y-1 hover:shadow-lg'
+                                } text-secondary`}
                             >
-                                Book My Free Consultation
+                                {buttonText}
                             </button>
                         </form>
                     </div>

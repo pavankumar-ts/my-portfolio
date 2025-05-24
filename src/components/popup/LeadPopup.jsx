@@ -1,22 +1,47 @@
 import { usePopup } from "@/contexts/PopupContext";
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
+import { useRouter } from "next/router";
 
 // src/components/common/LeadPopup.jsx
 const LeadPopup = () => {
     const { isOpen, closePopup, popupTitle } = usePopup();
+    const router = useRouter();
     const [formData, setFormData] = useState({
         name: '',
         phone: ''
     });
+    const [buttonText, setButtonText] = useState('Request Callback');
+    const [isSending, setIsSending] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission here
-        console.log('Form submitted:', formData);
-        // You can add your form submission logic here
-        closePopup();
-        // Reset form
-        setFormData({ name: '', phone: '' });
+        setIsSending(true);
+        setButtonText('Sending...');
+
+        // Send email using EmailJS
+        emailjs.sendForm('my_portfolio', 'my_portfolio_template', e.target, 'envDnIzt4XmWq_8T9')
+            .then((result) => {
+                console.log(result.text);
+                setButtonText('Sent');
+                router.push('/thank-you');
+                // Close popup after successful submission
+                setTimeout(() => {
+                    closePopup();
+                    // Reset form and button state
+                    setFormData({ name: '', phone: '' });
+                    setButtonText('Request Callback');
+                }, 0);
+                
+                e.target.reset(); // Clear the input fields
+            }, (error) => {
+                console.log(error.text);
+                setButtonText('Request Callback');
+                alert('Failed to send message. Please try again.');
+            })
+            .finally(() => {
+                setIsSending(false);
+            });
     };
 
     const handleChange = (e) => {
@@ -50,14 +75,9 @@ const LeadPopup = () => {
 
                 {/* Content */}
                 <div className="text-center mb-6">
-                    {/* <div className="w-16 h-16 bg-logoColor/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-logoColor" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
-                    </div> */}
                     <h3 className="text-2xl font-bold text-textColor mb-2">{popupTitle}</h3>
                     <p className="text-textColor/70">
-                        Fill in your details and I'll call you back within 24 hours.
+                        Submit your details and receive a call back within 24 hours.
                     </p>
                 </div>
 
@@ -95,9 +115,14 @@ const LeadPopup = () => {
 
                     <button
                         type="submit"
-                        className="w-full p-4 bg-logoColor text-white rounded-lg font-medium transition-all duration-300 hover:bg-logoColor/90 hover:transform hover:-translate-y-1 hover:shadow-lg"
+                        disabled={isSending}
+                        className={`w-full p-4 rounded-lg font-medium transition-all duration-300 ${
+                            isSending 
+                                ? 'bg-gray-400 cursor-not-allowed' 
+                                : 'bg-logoColor hover:bg-logoColor/90 hover:transform hover:-translate-y-1 hover:shadow-lg'
+                        } text-white`}
                     >
-                        Request Callback
+                        {buttonText}
                     </button>
                 </form>
 

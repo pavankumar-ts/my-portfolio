@@ -1,6 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
+    const router = useRouter();
+    const [buttonText, setButtonText] = useState('Request Free Consultation');
+    const [isSending, setIsSending] = useState(false);
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        service: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setIsSending(true);
+        setButtonText('Sending...');
+
+        // Send email using EmailJS
+        emailjs.sendForm('my_portfolio', 'my_portfolio_template', e.target, 'envDnIzt4XmWq_8T9')
+            .then((result) => {
+                console.log(result.text);
+                setButtonText('Sent');
+                router.push('/thank-you');
+                e.target.reset(); // Clear the input fields
+                setFormData({ name: '', phone: '', service: '', message: '' }); // Reset state
+            }, (error) => {
+                console.log(error.text);
+                setButtonText('Request Free Consultation');
+                alert('Failed to send message. Please try again.');
+            })
+            .finally(() => {
+                setIsSending(false);
+            });
+    };
+
     return (
         <section className="" id="contact">
             <div className="container">
@@ -95,7 +137,7 @@ const ContactSection = () => {
                                 Let's Discuss Your Project
                             </h3>
 
-                            <form className="space-y-6">
+                            <form onSubmit={handleSubmit} className="space-y-6">
                                 <div>
                                     <label className="block text-sm font-medium text-textColor mb-2">
                                         Full Name*
@@ -103,8 +145,12 @@ const ContactSection = () => {
                                     <input
                                         type="text"
                                         name="name"
+                                        placeholder='Your Name*'
+                                        value={formData.name}
+                                        onChange={handleChange}
                                         required
-                                        className="w-full p-4 border border-primary/20  focus:outline-none focus:border-logoColor transition-colors bg-bgColor text-textColor"
+                                        disabled={isSending}
+                                        className="w-full p-4 border border-primary/20  focus:outline-none focus:border-logoColor transition-colors bg-bgColor text-textColor disabled:opacity-50 disabled:cursor-not-allowed"
                                     />
                                 </div>
 
@@ -115,22 +161,14 @@ const ContactSection = () => {
                                     <input
                                         type="tel"
                                         name="phone"
+                                        placeholder='Phone Number*'
+                                        value={formData.phone}
+                                        onChange={handleChange}
                                         required
-                                        className="w-full p-4 border border-primary/20  focus:outline-none focus:border-logoColor transition-colors bg-bgColor text-textColor"
+                                        disabled={isSending}
+                                        className="w-full p-4 border border-primary/20  focus:outline-none focus:border-logoColor transition-colors bg-bgColor text-textColor disabled:opacity-50 disabled:cursor-not-allowed"
                                     />
                                 </div>
-
-                                {/* <div>
-                                    <label className="block text-sm font-medium text-textColor mb-2">
-                                        Email Address
-                                    </label>
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        // required
-                                        className="w-full p-4 border border-primary/20  focus:outline-none focus:border-logoColor transition-colors bg-bgColor text-textColor"
-                                    />
-                                </div> */}
 
                                 <div>
                                     <label className="block text-sm font-medium text-textColor mb-2">
@@ -138,7 +176,10 @@ const ContactSection = () => {
                                     </label>
                                     <select
                                         name="service"
-                                        className="w-full p-4 border border-primary/20  focus:outline-none focus:border-logoColor transition-colors bg-bgColor text-textColor appearance-none"
+                                        value={formData.service}
+                                        onChange={handleChange}
+                                        disabled={isSending}
+                                        className="w-full p-4 border border-primary/20  focus:outline-none focus:border-logoColor transition-colors bg-bgColor text-textColor appearance-none disabled:opacity-50 disabled:cursor-not-allowed"
                                         style={{
                                             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z' fill='rgba(0,0,0,0.5)'/%3E%3C/svg%3E")`,
                                             backgroundRepeat: 'no-repeat',
@@ -163,17 +204,25 @@ const ContactSection = () => {
                                     </label>
                                     <textarea
                                         name="message"
+                                        value={formData.message}
+                                        onChange={handleChange}
                                         rows={5}
-                                        placeholder="Tell us about your project requirements..."
-                                        className="w-full p-4 border border-primary/20  focus:outline-none focus:border-logoColor transition-colors bg-bgColor text-textColor resize-none"
+                                        placeholder="Tell about your project requirements..."
+                                        disabled={isSending}
+                                        className="w-full p-4 border border-primary/20  focus:outline-none focus:border-logoColor transition-colors bg-bgColor text-textColor resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                                     ></textarea>
                                 </div>
 
                                 <button
                                     type="submit"
-                                    className="w-full p-4 bg-logoColor text-white  font-medium transition-all duration-300 hover:bg-logoColor/90 hover:transform hover:-translate-y-1 hover:shadow-lg"
+                                    disabled={isSending}
+                                    className={`w-full p-4 font-medium transition-all duration-300 ${
+                                        isSending 
+                                            ? 'bg-gray-400 cursor-not-allowed' 
+                                            : 'bg-logoColor hover:bg-logoColor/90 hover:transform hover:-translate-y-1 hover:shadow-lg'
+                                    } text-white`}
                                 >
-                                    Request Free Consultation
+                                    {buttonText}
                                 </button>
                             </form>
                         </div>

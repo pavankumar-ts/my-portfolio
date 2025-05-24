@@ -61,7 +61,7 @@ const ThankYou = () => {
             variants={itemVariants}
             className="text-lg text-center max-w-2xl mb-8 text-primary/80"
           >
-            Your submission has been received. I'll get back to you shortly. If you have any urgent queries, feel free to reach out to me directly via email or phone.
+            Your submission has been received. Expect a response within 24 hours. For urgent queries, please use the direct contact options below.
           </motion.p>
 
           {/* Additional Info */}
@@ -70,7 +70,7 @@ const ThankYou = () => {
             className="text-center text-primary/60 mb-12"
           >
             <p>
-              You can contact me at{' '}
+              For assistance, contact{' '}
               <a
                 href="mailto:contact@pavankumar.co"
                 className="text-primary underline hover:text-primary/80 transition-colors"
@@ -78,7 +78,7 @@ const ThankYou = () => {
               >
                 contact@pavankumar.co
               </a>{' '}
-              or call me at{' '}
+              or call{' '}
               <a
                 href="tel:9483262200"
                 className="text-primary underline hover:text-primary/80 transition-colors"
@@ -86,7 +86,7 @@ const ThankYou = () => {
               >
                 9483262200
               </a>{' '}
-              if you need additional assistance.
+              {/* if you need additional assistance. */}
             </p>
           </motion.div>
 

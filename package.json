@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.2",
+    "@emailjs/browser": "^4.4.1",
     "clsx": "^2.1.1",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^11.15.0",

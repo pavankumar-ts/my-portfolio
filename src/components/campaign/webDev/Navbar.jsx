@@ -1,9 +1,10 @@
 // src/components/common/Navbar.jsx
 
+import { usePopup } from "@/contexts/PopupContext";
 import Link from "next/link";
 
 const Navbar = () => {
-
+    const { openPopup } = usePopup();
 
     return (
         <nav className="w-full z-50 transition-all duration-300 ">
@@ -22,12 +23,12 @@ const Navbar = () => {
 
                     {/* CTA Button */}
                     <div className="transition-all duration-300 hover:transform hover:-translate-y-0.5 hover:shadow-lg">
-                        <Link
-                            href="#contact"
-                            className="px-6 py-3 bg-logoColor text-white  font-medium "
+                        <div
+                            onClick={() => openPopup('Get A Free Consultation')}
+                            className="px-6 py-3 bg-logoColor text-white  font-medium cursor-pointer"
                         >
                             Free Consultation
-                        </Link>
+                        </div>
                     </div>
                 </div>
             </div>
