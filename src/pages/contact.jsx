@@ -71,6 +71,7 @@ const ContactPage = ({isDarkMode}) => {
                   </a>
                   <a
                     href="tel:+919483262200"
+                    id="phone-link"
                     className="text-primary/60 hover:text-primary block transition-colors"
                   >
                     +91 9483262200
