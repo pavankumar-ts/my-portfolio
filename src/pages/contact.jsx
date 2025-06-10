@@ -7,6 +7,7 @@ import emailjs from 'emailjs-com';
 import TitleHeroSection from '@/components/common/TitleHeroSection';
 import BookCall from '@/components/contact/BookCall';
 import { useRouter } from 'next/router';
+import { contact } from '@/data/contact';
 
 const ContactPage = ({isDarkMode}) => {
   const [buttonText, setButtonText] = React.useState('Send it over');
@@ -64,17 +65,17 @@ const ContactPage = ({isDarkMode}) => {
                 <h3 className="text-xl font-semibold mb-4">Let's Talk</h3>
                 <div className="space-y-2">
                   <a
-                    href="mailto:contact@pavankumar.co"
+                    href={contact.email.href}
                     className="text-primary/60 hover:text-primary block transition-colors"
                   >
-                    contact@pavankumar.co
+                    {contact.email.value}
                   </a>
                   <a
-                    href="tel:+919483262200"
+                    href={contact.address.href}
                     id="phone-link"
                     className="text-primary/60 hover:text-primary block transition-colors"
                   >
-                    +91 9483262200
+                    {contact.phoneNo.value}
                   </a>
                   {/* <a
                     href="tel:+916362177951"

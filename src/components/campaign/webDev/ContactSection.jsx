@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import emailjs from '@emailjs/browser';
+import { contact } from '@/data/contact';
 
 const ContactSection = () => {
     const router = useRouter();
@@ -68,10 +69,10 @@ const ContactSection = () => {
                                 <div>
                                     <div className="font-medium text-textColor">Phone</div>
                                     <a
-                                        href="tel:+919482622000"
+                                        href={contact.phoneNo.href}
                                         className="text-textColor/70 hover:text-logoColor transition-colors duration-300"
                                     >
-                                        +91 948262200
+                                        {contact.phoneNo.value}
                                     </a>
                                 </div>
                             </div>
@@ -85,10 +86,10 @@ const ContactSection = () => {
                                 <div>
                                     <div className="font-medium text-textColor">Email</div>
                                     <a
-                                        href="mailto:contact@pavankumar.co"
+                                        href={contact.email.href}
                                         className="text-textColor/70 hover:text-logoColor transition-colors duration-300"
                                     >
-                                        contact@pavankumar.co
+                                        {contact.email.value}
                                     </a>
                                 </div>
                             </div>
@@ -102,7 +103,7 @@ const ContactSection = () => {
                                 </div>
                                 <div>
                                     <div className="font-medium text-textColor">Location</div>
-                                    <div className="text-textColor/70">Bengaluru, Karnataka, India</div>
+                                    <div className="text-textColor/70">{contact.address.value}</div>
                                 </div>
                             </div>
                         </div>
