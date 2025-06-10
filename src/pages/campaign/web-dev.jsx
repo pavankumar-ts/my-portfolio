@@ -15,33 +15,39 @@ const WebDev = () => {
         <>
             <Head>
                 {/* Primary Meta Tags */}
-                <title>Professional Website Designer & Developer in Bengaluru | Pavan Kumar</title>
+                <title>Website Designer & Developer in Bengaluru - Get Your Business Online | Pavan Kumar</title>
                 <meta
                     name="description"
-                    content="Top-rated website designer & developer in Bengaluru. Affordable, responsive web design, eCommerce, and custom web solutions for businesses. Get a free consultation today."
+                    content="Expert website design & development in Bengaluru. Affordable solutions to get your business online - from simple websites to full eCommerce platforms. Free consultation today."
                 />
 
-                {/* Prevent Indexing */}
+                {/* Prevent Indexing - Remove this when ready to go live */}
                 <meta name="robots" content="noindex, nofollow" />
 
                 {/* Additional Meta Tags */}
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="author" content="Pavan Kumar" />
-                <meta name="keywords" content="website designer, web developer, responsive web design, eCommerce website, custom web development, Bengaluru web designer, affordable website design, business website" />
+                <meta name="keywords" content="website designer Bengaluru, web developer Bangalore, create business website, first website, affordable website design, small business website, eCommerce website development, get business online, website cost Bangalore, professional web design" />
 
                 {/* Open Graph Meta Tags */}
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content="Professional Website Designer & Developer in Bengaluru | Pavan Kumar" />
-                <meta property="og:description" content="Top-rated website designer & developer in Bengaluru. Affordable, responsive web design, eCommerce, and custom web solutions for businesses." />
-                <meta property="og:locale" content="en_US" />
+                <meta property="og:title" content="Website Designer & Developer in Bengaluru - Get Your Business Online" />
+                <meta property="og:description" content="Launch your business online with professional website design. Affordable packages. Free consultation for Bengaluru businesses." />
+                <meta property="og:locale" content="en_IN" />
+                <meta property="og:site_name" content="Pavan Kumar - Web Developer" />
 
                 {/* Twitter Card Meta Tags */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Professional Website Designer & Developer in Bengaluru | Pavan Kumar" />
-                <meta name="twitter:description" content="Top-rated website designer & developer in Bengaluru. Affordable, responsive web design, eCommerce, and custom web solutions for businesses." />
+                <meta name="twitter:title" content="Get Your Business Online - Website Designer in Bengaluru" />
+                <meta name="twitter:description" content="Professional websites for Bengaluru businesses. Simple process, affordable pricing, complete support. Book your free consultation today." />
 
-                {/* Canonical URL - Update this to your actual landing page URL */}
+                {/* Canonical URL */}
                 <link rel="canonical" href="https://pavankumar.co/web-development" />
+
+                {/* Additional SEO Tags */}
+                <meta name="geo.region" content="IN-KA" />
+                <meta name="geo.placename" content="Bengaluru" />
+                <meta name="geo.position" content="12.9716;77.5946" />
 
                 {/* Favicon */}
                 <link rel="icon" href="/favicon.ico" />
@@ -53,7 +59,7 @@ const WebDev = () => {
                 <ServicesSection />
                 <ProjectsSection />
                 <ProcessSection />
-                <PricingSection />
+                {/* <PricingSection /> */}
                 <CTASection />
                 <ContactSection />
             </PopupProvider>

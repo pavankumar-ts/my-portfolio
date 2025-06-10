@@ -46,33 +46,33 @@ const ServicesSection = () => {
 
     return (
         <section className="" id='services' >
-            <div className="container">
-                <div className="text-center mb-16">
-                    <h2 className="max-w-[700px] mx-auto text-4xl lg:text-5xl font-bold mb-4 text-textColor">
+            <div className="container px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-12 lg:mb-16">
+                    <h2 className="max-w-[700px] mx-auto text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-textColor px-4 sm:px-0">
                         Professional Web Design & Development Services
                     </h2>
-                    <p className="text-lg text-textColor/70 max-w-4xl mx-auto">
+                    <p className="text-base sm:text-lg text-textColor/70 max-w-4xl mx-auto px-4 sm:px-0">
                         Complete web solutions for every business size. From simple business websites to complex eCommerce platforms – all delivered with professional quality at affordable prices.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                     {services.map((service) => (
                         <div
                             onClick={() => openPopup('Get A Free Consultation')}
                             key={service.id}
-                            className="bg-bgColor border cursor-pointer border-primary/10 rounded-lg p-8 shadow-sm transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg"
+                            className="bg-bgColor border cursor-pointer border-primary/10 rounded-lg p-6 lg:p-8 shadow-sm transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg"
                         >
-                            <div className="text-sm font-semibold text-logoColor mb-4">
+                            <div className="text-sm font-semibold text-logoColor mb-3 lg:mb-4">
                                 [{service.id}]
                             </div>
-                            <h3 className="text-xl font-semibold mb-4 text-textColor">
+                            <h3 className="text-lg sm:text-xl font-semibold mb-3 lg:mb-4 text-textColor">
                                 {service.title}
                             </h3>
-                            <div className="text-sm text-textColor/60 mb-4">
+                            <div className="text-xs sm:text-sm text-textColor/60 mb-3 lg:mb-4">
                                 {service.tech}
                             </div>
-                            <p className="text-textColor/70 leading-relaxed">
+                            <p className="text-sm sm:text-base text-textColor/70 leading-relaxed">
                                 {service.description}
                             </p>
                         </div>
