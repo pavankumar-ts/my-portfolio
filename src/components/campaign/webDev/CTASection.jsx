@@ -57,10 +57,10 @@ const CTASection = () => {
                             Schedule Free Consultation
                         </div>
                         <a
-                            href="#portfolio"
+                            href="#projects"
                             className="inline-block px-10 py-4  border-[1px] border-white text-white font-normal text-sm md:text-lg transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-2xl"
                         >
-                            View Portfolio
+                            View Projects
                         </a>
                     </div>
 

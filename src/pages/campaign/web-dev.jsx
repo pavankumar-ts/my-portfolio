@@ -6,9 +6,48 @@ import PricingSection from '@/components/campaign/webDev/PricingSection'
 import ProcessSection from '@/components/campaign/webDev/ProcessSection'
 import ProjectsSection from '@/components/campaign/webDev/ProjectsSection'
 import ServicesSection from '@/components/campaign/webDev/ServicesSection'
-import { PopupProvider } from '@/contexts/PopupContext'
+import FloatingButton from '@/components/pricing/FloatingButton'
+import { PopupProvider, usePopup } from '@/contexts/PopupContext'
 import Head from 'next/head'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+
+// Smart Auto Popup Component
+const SmartAutoPopup = () => {
+    const { openPopup } = usePopup();
+    const [hasShownPopup, setHasShownPopup] = useState(false);
+    const [userInteracted, setUserInteracted] = useState(false);
+
+    useEffect(() => {
+        // Track user interactions to show popup only to engaged users
+        const handleUserInteraction = () => {
+            setUserInteracted(true);
+        };
+
+        // Listen for scroll, click, or mouse movement
+        window.addEventListener('scroll', handleUserInteraction, { once: true });
+        window.addEventListener('click', handleUserInteraction, { once: true });
+        window.addEventListener('mousemove', handleUserInteraction, { once: true });
+
+        // Set timer for 10 seconds
+        const timer = setTimeout(() => {
+            // Only show popup if user hasn't seen it yet and has interacted with page
+            if (!hasShownPopup && userInteracted) {
+                openPopup('Get A Free Consultation!');
+                setHasShownPopup(true);
+            }
+        }, 5000); // 10 seconds
+
+        // Cleanup
+        return () => {
+            clearTimeout(timer);
+            window.removeEventListener('scroll', handleUserInteraction);
+            window.removeEventListener('click', handleUserInteraction);
+            window.removeEventListener('mousemove', handleUserInteraction);
+        };
+    }, [openPopup, hasShownPopup, userInteracted]);
+
+    return null; // This component doesn't render anything
+};
 
 const WebDev = () => {
     return (
@@ -54,13 +93,18 @@ const WebDev = () => {
             </Head>
 
             <PopupProvider>
+                <SmartAutoPopup />
                 <Navbar />
                 <HeroSection />
+                <div id='services' className='-translate-y-20'></div>
                 <ServicesSection />
+                <div id='projects' className='-translate-y-20'></div>
                 <ProjectsSection />
+                <div id='process' className='-translate-y-20'></div>
                 <ProcessSection />
                 {/* <PricingSection /> */}
                 <CTASection />
+                <div id='contact' className='-translate-y-10'></div>
                 <ContactSection />
             </PopupProvider>
         </>

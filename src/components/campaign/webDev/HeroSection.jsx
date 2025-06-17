@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 
 const HeroSection = () => {
     const router = useRouter();
-    const [buttonText, setButtonText] = useState('Book My Free Consultation');
+    const [buttonText, setButtonText] = useState('Book Free Consultation');
     const [isSending, setIsSending] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
@@ -86,10 +86,10 @@ const HeroSection = () => {
                             Explore Services
                         </a>
                         <a
-                            href="#portfolio"
+                            href="#projects"
                             className=" px-4 sm:px-8 py-4 font-medium text-center border border-primary/20 transition-all duration-300 bg-bgColor hover:shadow-lg text-textColor hover:transform hover:-translate-y-1 text-sm sm:text-base"
                         >
-                            View Portfolio
+                            View Projects
                         </a>
                     </div>
                 </div>

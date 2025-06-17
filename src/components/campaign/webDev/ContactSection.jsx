@@ -45,7 +45,7 @@ const ContactSection = () => {
     };
 
     return (
-        <section className="" id="contact">
+        <section className="">
             <div className="container">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left Content */}
@@ -133,7 +133,7 @@ const ContactSection = () => {
 
                     {/* Right Form */}
                     <div>
-                        <div className="bg-bgColor border border-primary/10 p-8 shadow-lg">
+                        <div className="bg-bgColor border border-primary/10 p-4 md:p-8 shadow-lg">
                             <h3 className="text-2xl font-semibold mb-6 text-textColor">
                                 Let's Discuss Your Project
                             </h3>
@@ -193,9 +193,8 @@ const ContactSection = () => {
                                         <option value="cms">CMS Development</option>
                                         <option value="ecommerce">eCommerce Website</option>
                                         <option value="custom">Custom Web Application</option>
-                                        <option value="responsive">Responsive Web Design</option>
-                                        <option value="seo">SEO Services</option>
-                                        <option value="maintenance">Website Maintenance</option>
+                                        <option value="custom">Landing Page Design</option>
+                                        <option value="maintenance">Website Maintenance & SEO</option>
                                     </select>
                                 </div>
 
