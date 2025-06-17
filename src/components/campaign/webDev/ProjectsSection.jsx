@@ -65,7 +65,7 @@ const ProjectsSection = () => {
     const displayedProjects = showAll ? projects : projects.slice(0, 3);
 
     return (
-        <section className="" id='portfolio'>
+        <section className="">
             <div className="container px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12 lg:mb-16">
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-textColor">

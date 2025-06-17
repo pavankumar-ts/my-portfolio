@@ -32,22 +32,3 @@ export const PopupProvider = ({ children }) => {
         </PopupContext.Provider>
     );
 };
-
-
-// Example usage in any component:
-/*
-import { usePopup } from '@/contexts/PopupContext';
-
-const AnyComponent = () => {
-    const { openPopup } = usePopup();
-
-    return (
-        <button 
-            onClick={() => openPopup('Get Your Free Quote')}
-            className="bg-logoColor text-white px-6 py-3 rounded-lg"
-        >
-            Get Quote
-        </button>
-    );
-};
-*/
