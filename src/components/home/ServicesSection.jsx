@@ -68,7 +68,7 @@ const ServicesSection = () => {
                 {/* Floating image that follows cursor */}
                 {hoveredService && (
                     <div
-                        className="fixed hidden md:flex pointer-events-none z-30 transition-opacity duration-200"
+                        className="fixed hidden md:flex pointer-events-none -z-10 transition-opacity duration-200"
                         style={{
                             left: mousePosition.x - 320, // Move image to left side of cursor
                             top: mousePosition.y - 100
@@ -79,7 +79,7 @@ const ServicesSection = () => {
                             alt={services.find(s => s.id === hoveredService)?.title}
                             width={300}
                             height={200}
-                            className="w-[300px] h-[200px] object-center object-cover rounded-lg shadow-lg opacity-80"
+                            className="w-[300px] h-[200px] object-center object-cover rounded-lg shadow-lg opacity-90"
                         />
                     </div>
                 )}
