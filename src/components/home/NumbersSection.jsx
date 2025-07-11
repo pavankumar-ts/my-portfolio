@@ -4,7 +4,7 @@ import AnimatedSection from '@/components/common/AnimatedSection';
 const NumbersSection = () => {
   const statistics = [
     {
-      number: '25+',
+      number: '35+',
       label: 'Projects Completed',
       description: 'Successfully delivered web applications across various industries'
     },
