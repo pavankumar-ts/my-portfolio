@@ -24,7 +24,7 @@ const LeadPopup = () => {
             .then((result) => {
                 console.log(result.text);
                 setButtonText('Sent');
-                router.push('/thank-you');
+                router.push('/thank-you?form=popup');
                 // Close popup after successful submission
                 setTimeout(() => {
                     closePopup();

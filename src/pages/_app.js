@@ -1,4 +1,3 @@
-import PopupForm from "@/components/common/PopupForm";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import FloatingButton from "@/components/pricing/FloatingButton";
@@ -18,7 +17,6 @@ export default function App({ Component, pageProps }) {
   const handleThemeToggle = (isDark) => {
     setIsDarkMode(isDark);
   };
-  console.log("router", router);
 
   return (
     <div className="min-h-screen flex flex-col transition-colors duration-200">
@@ -32,7 +30,6 @@ export default function App({ Component, pageProps }) {
       }
       <main className="flex-grow">
         {!router.pathname.startsWith("/campaign") && <FloatingButton />}
-        {/* <PopupForm /> */}
         <Component {...pageProps} isDarkMode={isDarkMode} />
       </main>
       {
