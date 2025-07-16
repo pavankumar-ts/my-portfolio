@@ -13,10 +13,14 @@ const ProjectsSection = () => {
 
   const homeProjects = getProjectsForHome();
   const [stackOffset, setStackOffset] = useState(30);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      
+      if (mobile) {
         setStackOffset(30); // More spacing for mobile
       } else {
         setStackOffset(20); // Less spacing for desktop
@@ -34,11 +38,9 @@ const ProjectsSection = () => {
     return description.substring(0, limit) + '...';
   };
 
-
-
   // Function to calculate top position with special case for 4th card
   const calculateTopPosition = (index) => {
-    if (index === 3 && window.innerWidth < 768) { // 4th card (0-indexed)
+    if (index === 3 && isMobile) { // 4th card (0-indexed) on mobile only
       return `${index * stackOffset - (stackOffset * 0.5)}px`; // Reduce by half spacing
     }
     return `${index * stackOffset}px`;
@@ -47,18 +49,18 @@ const ProjectsSection = () => {
   return (
     <div className="container relative bg-bgColor">
       {/* Header */}
-      <div ref={ref} className="mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div ref={ref} className="mx-auto px-4 sm:px-6 lg:px-8 text-center mb-4 sm:mb-8">
         <h2 className="heading-xl text-textColor dark:text-white">
           PROJECTS
         </h2>
       </div>
 
       {/* Stacking Cards */}
-      <div className="relative">
+      <div className="relative -mt-20 sm:-mt-14">
         {homeProjects.map((project, index) => (
           <div
             key={project.id}
-            className="sticky h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8"
+            className="sticky h-[90vh] flex items-center justify-center px-0 sm:px-6 lg:px-8"
             style={{
               zIndex: index + 1,
               top: calculateTopPosition(index),
@@ -101,11 +103,11 @@ const ProjectsSection = () => {
                   <p className="text-base lg:text-lg leading-relaxed mb-6 lg:mb-8 text-textColor/70 dark:text-gray-300">
                     {truncateDescription(project.description, 150)}
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-3 lg:gap-4">
+                  <div className="flex flex-col sm:flex-row items-start gap-3 lg:gap-4">
                     <a
                       href={`projects/${project.slug}`}
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center px-6 lg:px-5 py-3 lg:py-3 bg-logoColor hover:bg-logoColor/90 text-bgColor dark:text-white font-medium transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg"
+                      className="inline-flex items-center justify-center px-4 lg:px-4 py-2 lg:py-3 bg-logoColor hover:bg-logoColor/90 text-bgColor dark:text-white font-medium transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg"
                     >
                       View Project
                       <svg
@@ -126,7 +128,7 @@ const ProjectsSection = () => {
       </div>
 
       {/* View All Projects Button */}
-      <div className="flex justify-center">
+      <div className="flex justify-center md:mt-0 -mt-8">
         <Button href="/projects">
           View All Projects
         </Button>
