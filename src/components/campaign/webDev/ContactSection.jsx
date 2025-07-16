@@ -31,7 +31,7 @@ const ContactSection = () => {
             .then((result) => {
                 console.log(result.text);
                 setButtonText('Sent');
-                router.push('/thank-you?form=contactSection');
+                window.location.href = '/thank-you?form=contactSection';
                 e.target.reset(); // Clear the input fields
                 setFormData({ name: '', phone: '', service: '', message: '' }); // Reset state
             }, (error) => {
@@ -216,11 +216,10 @@ const ContactSection = () => {
                                 <button
                                     type="submit"
                                     disabled={isSending}
-                                    className={`w-full p-4 font-medium transition-all duration-300 ${
-                                        isSending 
-                                            ? 'bg-gray-400 cursor-not-allowed' 
+                                    className={`w-full p-4 font-medium transition-all duration-300 ${isSending
+                                            ? 'bg-gray-400 cursor-not-allowed'
                                             : 'bg-logoColor hover:bg-logoColor/90 hover:transform hover:-translate-y-1 hover:shadow-lg'
-                                    } text-white`}
+                                        } text-white`}
                                 >
                                     {buttonText}
                                 </button>

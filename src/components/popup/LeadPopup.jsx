@@ -24,7 +24,7 @@ const LeadPopup = () => {
             .then((result) => {
                 console.log(result.text);
                 setButtonText('Sent');
-                router.push('/thank-you?form=popup');
+                window.location.href = '/thank-you?form=popup';
                 // Close popup after successful submission
                 setTimeout(() => {
                     closePopup();
@@ -32,7 +32,7 @@ const LeadPopup = () => {
                     setFormData({ name: '', phone: '' });
                     setButtonText('Request Callback');
                 }, 0);
-                
+
                 e.target.reset(); // Clear the input fields
             }, (error) => {
                 console.log(error.text);
@@ -56,11 +56,11 @@ const LeadPopup = () => {
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
             {/* Backdrop */}
-            <div 
+            <div
                 className="absolute inset-0 bg-black/50 backdrop-blur-sm"
                 onClick={closePopup}
             ></div>
-            
+
             {/* Popup Content */}
             <div className="relative bg-bgColor  p-8 shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 scale-100">
                 {/* Close Button */}
@@ -97,7 +97,7 @@ const LeadPopup = () => {
                             placeholder="Enter your full name"
                         />
                     </div>
-                    
+
                     <div>
                         <label className="block text-sm font-medium text-textColor mb-2">
                             Phone Number*
@@ -116,11 +116,10 @@ const LeadPopup = () => {
                     <button
                         type="submit"
                         disabled={isSending}
-                        className={`w-full p-4  font-medium transition-all duration-300 ${
-                            isSending 
-                                ? 'bg-gray-400 cursor-not-allowed' 
+                        className={`w-full p-4  font-medium transition-all duration-300 ${isSending
+                                ? 'bg-gray-400 cursor-not-allowed'
                                 : 'bg-logoColor hover:bg-logoColor/90 hover:transform hover:-translate-y-1 hover:shadow-lg'
-                        } text-white`}
+                            } text-white`}
                     >
                         {buttonText}
                     </button>
@@ -128,7 +127,7 @@ const LeadPopup = () => {
 
                 {/* Trust Message */}
                 <p className="text-xs text-textColor/60 text-center mt-4">
-                   Your privacy is respected. All information remains secure and confidential.
+                    Your privacy is respected. All information remains secure and confidential.
                 </p>
             </div>
         </div>

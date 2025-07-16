@@ -29,7 +29,7 @@ const HeroSection = () => {
             .then((result) => {
                 console.log(result.text);
                 setButtonText('Sent');
-                router.push('/thank-you?form=hero');
+                window.location.href = '/thank-you?form=hero';
                 e.target.reset(); // Clear the input fields
                 setFormData({ name: '', phone: '', message: '' }); // Reset state
             }, (error) => {
