@@ -34,9 +34,14 @@ const ProjectsSection = () => {
     return description.substring(0, limit) + '...';
   };
 
-  const getCategoryName = (categoryId) => {
-    const category = projectCategories.find(cat => cat.id === categoryId);
-    return category ? category.name : '';
+
+
+  // Function to calculate top position with special case for 4th card
+  const calculateTopPosition = (index) => {
+    if (index === 3 && window.innerWidth < 768) { // 4th card (0-indexed)
+      return `${index * stackOffset - (stackOffset * 0.5)}px`; // Reduce by half spacing
+    }
+    return `${index * stackOffset}px`;
   };
 
   return (
@@ -56,7 +61,7 @@ const ProjectsSection = () => {
             className="sticky h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8"
             style={{
               zIndex: index + 1,
-              top: `${index * stackOffset}px`,
+              top: calculateTopPosition(index),
             }}
           >
             <div className="w-full max-w-6xl mx-auto rounded-2xl overflow-hidden shadow-sm bg-bgColor border-2 border-[#7a7a7a27] dark:border-gray-700">
