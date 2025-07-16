@@ -65,9 +65,11 @@ const PopupForm = () => {
           name: '',
           phone: '',
         });
+        
+        // Redirect to thank-you page after successful submission
         setTimeout(() => {
-          handleClose();
-        }, 3000);
+          router.push('/thank-you?campaign=web-dev&form=popup');
+        }, 1500);
       }
     } catch (error) {
       console.error('Error sending email:', error);
@@ -141,11 +143,29 @@ const PopupForm = () => {
 
         {submitStatus === 'success' ? (
           <div className="text-green-500 text-center py-8">
-            Message sent successfully! Thank you for reaching out.
+            <div className="mb-4">
+              <svg className="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <p className="text-lg font-semibold">Message sent successfully!</p>
+            <p className="text-sm mt-2">Redirecting to thank you page...</p>
           </div>
         ) : submitStatus === 'error' ? (
           <div className="text-red-500 text-center py-8">
-            Failed to send message. Please try again later.
+            <div className="mb-4">
+              <svg className="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </div>
+            <p className="text-lg font-semibold">Failed to send message</p>
+            <p className="text-sm mt-2">Please try again later.</p>
+            <button
+              onClick={() => setSubmitStatus(null)}
+              className="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
+            >
+              Try Again
+            </button>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">

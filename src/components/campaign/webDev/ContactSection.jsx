@@ -31,7 +31,7 @@ const ContactSection = () => {
             .then((result) => {
                 console.log(result.text);
                 setButtonText('Sent');
-                router.push('/thank-you');
+                router.push('/thank-you?campaign=web-dev&form=contactSection');
                 e.target.reset(); // Clear the input fields
                 setFormData({ name: '', phone: '', service: '', message: '' }); // Reset state
             }, (error) => {
