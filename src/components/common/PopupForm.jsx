@@ -65,11 +65,8 @@ const PopupForm = () => {
           name: '',
           phone: '',
         });
-        
         // Redirect to thank-you page after successful submission
-        setTimeout(() => {
-          router.push('/thank-you?campaign=web-dev&form=popup');
-        }, 1500);
+        router.push('/thank-you?form=popup');
       }
     } catch (error) {
       console.error('Error sending email:', error);
@@ -131,7 +128,7 @@ const PopupForm = () => {
           className="text-4xl font-bold mb-4"
           style={{ color: 'var(--primary-color)' }}
         >
-          Confused Where to Start?          
+          Confused Where to Start?
         </h2>
 
         <p
@@ -172,7 +169,7 @@ const PopupForm = () => {
             {['name', 'phone'].map((field) => (
               <input
                 key={field}
-                type={ field === 'phone' ? 'tel' : 'text'}
+                type={field === 'phone' ? 'tel' : 'text'}
                 name={field}
                 placeholder={`What is your ${field === 'phone' ? 'phone number' : 'name'}?`}
                 required
@@ -187,7 +184,7 @@ const PopupForm = () => {
               />
             ))}
 
-            
+
             <div className="flex items-center space-x-2">
               <button
                 type="submit"
