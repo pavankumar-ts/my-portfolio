@@ -68,11 +68,11 @@ const ProjectsSection = () => {
     return (
         <div className="relative bg-bgColor">
             {/* Header */}
-            <div className="mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 text-center">
-                <div className="inline-block px-4 py-2 bg-logoColor/10 text-logoColor text-sm font-medium rounded-full mb-6">
+            <div className="mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-1 mb-0 md:mb-8 text-center">
+                <div className="inline-block px-4 py-2 bg-logoColor/10 text-logoColor text-sm font-medium rounded-full mb-2">
                     Featured Work
                 </div>
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-textColor">
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-textColor">
                     Selected Projects
                 </h2>
                 <p className="text-lg sm:text-xl text-textColor/70 max-w-2xl mx-auto leading-relaxed">
@@ -85,7 +85,7 @@ const ProjectsSection = () => {
                 {projects.map((project, index) => (
                     <div
                         key={project.id}
-                        className="sticky h-[100vh] flex items-center justify-center px-4 sm:px-6 lg:px-8"
+                        className="sticky h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8"
                         style={{
                             zIndex: index + 1,
                             top: `${index * 20}px`, // Each card is offset by 30px from the previous
