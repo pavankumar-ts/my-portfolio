@@ -99,7 +99,7 @@ export default function ProjectPage({ project, relatedProjects }) {
                         >
                             <Image
                                 src={screenshot.url}
-                                alt={screenshot.caption}
+                                alt={`${project.title} Pavan Kumar`}
                                 layout="responsive"
                                 width={2000}
                                 height={7000}
