@@ -1,5 +1,5 @@
 // pages/projects/[slug].jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 import { projects, getRelatedProjects, getTechnologyById } from '@/data/projects';
@@ -9,13 +9,119 @@ import ContactCTA from '@/components/common/ContactCTA';
 import ProjectCard from '@/components/common/ProjectCard';
 import ProjectEmbed from '@/components/projects/ProjectEmbed';
 
+// Website Preview Modal Component
+const WebsitePreviewModal = ({ isOpen, onClose, url, title }) => {
+    const [isAnimating, setIsAnimating] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+
+    useEffect(() => {
+        if (isOpen) {
+            setIsAnimating(true);
+            // Use requestAnimationFrame to ensure DOM is painted before animation
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    setShowModal(true);
+                });
+            });
+        } else {
+            setShowModal(false);
+            // Delay removal to allow exit animation
+            const timer = setTimeout(() => setIsAnimating(false), 300);
+            return () => clearTimeout(timer);
+        }
+    }, [isOpen]);
+
+    if (!isAnimating && !isOpen) return null;
+
+    return (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4">
+            {/* Backdrop */}
+            <div 
+                className={`absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity duration-300 ${
+                    showModal ? 'opacity-100' : 'opacity-0'
+                }`}
+                onClick={onClose}
+            />
+            
+            {/* Modal Container */}
+            <div className={`relative w-full max-w-7xl h-[90vh] sm:h-[85vh] bg-bgColor shadow-2xl overflow-hidden border border-primary/10 transition-all duration-300 ease-out ${
+                showModal ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'
+            }`}>
+                {/* Header */}
+                <div className="flex items-center justify-between p-3 sm:p-4 bg-primary/5 border-b border-primary/10">
+                    <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+                        <div className="flex gap-1.5">
+                            <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                            <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                        </div>
+                        <div className="text-xs sm:text-sm text-textColor bg-secondary px-2 sm:px-3 py-1 rounded border border-primary/10 truncate flex-1 max-w-xs sm:max-w-md">
+                            {url}
+                        </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-2 ml-2">
+                        <a
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hidden sm:inline-flex px-3 py-1 text-sm bg-logoColor hover:-translate-y-[1px] duration-300 text-white  transition-colors"
+                        >
+                            Open in New Tab
+                        </a>
+                        <a
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="sm:hidden p-2 text-blue-600 bg-secondary hover:bg-primary rounded-full transition-colors"
+                            aria-label="Open in new tab"
+                        >
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                        <button
+                            onClick={onClose}
+                            className="p-2 text-textColor bg-secondary hover:bg-primary hover:text-secondary duration-300 rounded-full transition-colors"
+                            aria-label="Close preview"
+                        >
+                            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                {/* iframe Container */}
+                <div className="w-full h-[calc(100%-52px)] sm:h-[calc(100%-60px)]">
+                    <iframe
+                        src={url}
+                        title={`Preview of ${title}`}
+                        className="w-full h-full border-0"
+                        loading="lazy"
+                        sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
+                    />
+                </div>
+            </div>
+        </div>
+    );
+};
+
 export default function ProjectPage({ project, relatedProjects }) {
+    // State for preview modal
+    const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+
     // Multiple refs for different sections
     const { ref: heroRef, inView: heroInView } = useInView({ triggerOnce: true, threshold: 0.1 });
     const { ref: screenshotsRef, inView: screenshotsInView } = useInView({ triggerOnce: true, threshold: 0.1 });
     const { ref: infoRef, inView: infoInView } = useInView({ triggerOnce: true, threshold: 0.1 });
     const { ref: contentRef, inView: contentInView } = useInView({ triggerOnce: true, threshold: 0.1 });
     const { ref: relatedRef, inView: relatedInView } = useInView({ triggerOnce: true, threshold: 0.1 });
+
+    const handlePreviewClick = (e) => {
+        e.preventDefault();
+        setIsPreviewOpen(true);
+    };
 
     return (
         <>
@@ -68,15 +174,13 @@ export default function ProjectPage({ project, relatedProjects }) {
 
                     <div className={`mt-8 transition-all duration-1000 delay-300 transform ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                         }`}>
-                        <Link
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <button
+                            onClick={handlePreviewClick}
                             className="group px-4 md:px-6 py-2 md:py-3 bg-primary text-secondary font-medium inline-flex items-center gap-2 hover:bg-primary/90 transition-all hover:translate-x-1"
                         >
-                            {project.btnText ? project.btnText : 'Visit Website'}
+                            {project.btnText ? project.btnText : 'Preview Website'}
                             <span className="arrow">→</span>
-                        </Link>
+                        </button>
                     </div>
                 </div>
 
@@ -109,7 +213,6 @@ export default function ProjectPage({ project, relatedProjects }) {
                         </div>
                     ))}
                 </div>
-
 
                 {/* Project Content */}
                 <div className="flex flex-col lg:flex-row gap-12 md:gap-20">
@@ -220,11 +323,17 @@ export default function ProjectPage({ project, relatedProjects }) {
                     ))}
                 </div>
             </div>
+
+            {/* Website Preview Modal */}
+            <WebsitePreviewModal
+                isOpen={isPreviewOpen}
+                onClose={() => setIsPreviewOpen(false)}
+                url={project.link}
+                title={project.title}
+            />
         </>
     );
 }
-
-
 
 export async function getStaticPaths() {
     const paths = projects.map((project) => ({
