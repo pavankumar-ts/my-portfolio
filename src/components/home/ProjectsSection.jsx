@@ -16,7 +16,7 @@ const ProjectsSection = () => {
 
   return (
     <div ref={ref} className="container">
-      <h2 className="heading-xl mb-20">
+      <h2 className="heading-xl mb-10">
         PROJECTS
       </h2>
 
