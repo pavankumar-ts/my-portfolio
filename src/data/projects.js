@@ -81,7 +81,7 @@ export const technologyLogos = [
 
 export const projectCategories = [
     { id: 1, name: 'All Projects' },
-    { id: 2, name: 'Website' },
+    { id: 2, name: 'Business Websites' },
     { id: 3, name: 'Web Application' },
     { id: 4, name: 'Mobile App' },
 ];
@@ -253,56 +253,60 @@ export const projects = [
         }
     },
     {
-        id: 15,
-        slug: 'iconhomz',
-        title: 'IconHomz',
-        description: 'A modern and visually appealing website for IconHomz, a renowned builder in Bangalore, showcasing their residential projects and commitment to quality living spaces.',
+        id: 16,
+        slug: 'samagra-interiors',
+        title: 'Samagra Interiors',
+        description: 'A comprehensive web platform for Samagra Interiors, a premium interior design firm specializing in residential and commercial spaces across Bangalore and Kerala. The website showcases their design philosophy of creating aesthetically pleasing environments with affordable, package-based solutions.',
         category: [2],
-        technologies: [5, 9, 14],
-        link: 'https://iconhomz.com/',
+        technologies: [1, 6, 7],
+        link: 'https://www.samagrainteriors.com/',
         year: '2025',
-        client: 'IconHomz',
-        mainImg: '/assets/projects/iconhomz.webp',
+        client: 'Samagra Interiors',
+        mainImg: '/assets/projects/samagra_interiors_phone.webp',
         features: [
-            'Custom design using Elementor for flexible and user-friendly layouts',
-            'Advanced SEO optimization with Yoast SEO for better visibility',
-            'Responsive design ensuring seamless browsing across devices',
-            'Integrated contact and inquiry forms for lead generation',
-            'Performance optimizations for faster loading times'
+            'Interactive design portfolio showcasing residential and commercial projects',
+            'Package-based service offerings with transparent pricing',
+            'Custom inquiry forms for personalized design consultations',
+            'Design philosophy and process showcase',
+            'Before-and-after project galleries',
+            'Service area mapping and local expertise highlighting'
         ],
-        overview: 'IconHomz required a high-performance website to showcase their residential projects and enhance their online presence. The project aimed to provide an engaging user experience, highlight their commitment to quality, and facilitate easy navigation and inquiries.',
+        overview: 'Samagra Interiors required a sophisticated web platform to showcase their expertise in transforming interior spaces across Bangalore and Kerala. The website emphasizes their core philosophy that "designing is an art of transforming building interiors to aesthetically pleasing environments" while highlighting their affordable, package-based approach to interior design.',
         challenge: `The main challenges included:
-            • Creating a visually appealing and dynamic showcase for residential projects using Elementor
-            • Ensuring on-page SEO optimization for better search engine rankings
-            • Designing forms for seamless client interaction and lead generation
-            • Achieving optimal performance and responsiveness across devices
-            • Implementing structured navigation for easy access to information`,
-        solution: `The solution was crafted using WordPress with Elementor for a custom design experience, focusing on:
-            • Developing intuitive, visually appealing layouts with Elementor
-            • Enhancing SEO visibility using Yoast SEO for optimized meta tags and structured content
-            • Building custom contact and inquiry forms using Contact Form 7
-            • Leveraging performance plugins to improve page speed and user experience`,
+        • Creating a platform that effectively communicates their design philosophy and artistic approach
+        • Showcasing diverse projects across two major regions (Bangalore and Kerala)
+        • Implementing a clear package-based service structure for easy client understanding
+        • Balancing aesthetic appeal with functional information presentation
+        • Highlighting their expertise in both residential and commercial interior spaces
+        • Creating seamless inquiry and consultation booking systems`,
+        solution: `The solution was developed using WordPress with Elementor for flexible design capabilities, focusing on:
+        • Custom portfolio layouts showcasing the harmony and balance in their design projects
+        • Package presentation system with clear pricing and service inclusions
+        • Regional service area highlighting with location-specific project showcases
+        • Streamlined consultation booking system with personalized inquiry forms
+        • SEO optimization for regional searches in Bangalore and Kerala markets`,
         screenshots: [
             {
-                url: '/assets/projects/iconhomz.webp',
-                caption: 'Homepage showcasing IconHomz’s residential projects and quality living spaces'
+                url: '/assets/projects/samagra_interiors.webp',
+                caption: 'Homepage featuring design philosophy and premium interior transformation showcases'
             },
             {
-                url: '/assets/projects/iconhomz_phone.webp',
-                caption: 'Project gallery with interactive elements and virtual tours'
+                url: '/assets/projects/samagra_interiors_phone.webp',
+                caption: 'Mobile view of service packages and consultation booking system'
             },
         ],
         results: [
-            'Improved SEO rankings and increased organic traffic by 50%',
-            'Enhanced user engagement with optimized navigation and interactive galleries',
-            'Increased inquiries through well-designed contact forms',
-            'Achieved a responsive design with consistent performance across devices',
-            'Positive feedback from the client on the site\'s visual appeal and usability'
+            'Enhanced online presence across Bangalore and Kerala markets',
+            'Streamlined client inquiry process through package-based service presentation',
+            'Increased consultation bookings with clear service offerings',
+            'Improved project showcase leading to higher client engagement',
+            'Better regional SEO performance for interior design searches',
+            'Positive client feedback on the clarity of design process and pricing'
         ],
         testimonial: {
-            text: 'The website perfectly showcases our residential projects and has significantly improved our online presence. The interactive galleries and virtual tours have been particularly successful in attracting potential buyers.',
-            author: 'Rajesh Kumar',
-            role: 'Marketing Director, IconHomz'
+            text: 'The new website perfectly captures our design philosophy and has made it much easier for clients to understand our services. The package-based presentation has significantly improved our consultation booking rate.',
+            author: 'Design Team',
+            role: 'Samagra Interiors'
         }
     },
     {
@@ -651,6 +655,59 @@ export const projects = [
             text: "Socialize was a great learning experience and a significant milestone in my journey as a developer. It gave me hands-on experience with Android development and Firebase integration.",
             author: "Pavan",
             role: "Developer, College Project"
+        }
+    },
+    {
+        id: 15,
+        slug: 'iconhomz',
+        title: 'IconHomz',
+        description: 'A modern and visually appealing website for IconHomz, a renowned builder in Bangalore, showcasing their residential projects and commitment to quality living spaces.',
+        category: [2],
+        technologies: [5, 9, 14],
+        link: 'https://iconhomz.com/',
+        year: '2025',
+        client: 'IconHomz',
+        mainImg: '/assets/projects/iconhomz.webp',
+        features: [
+            'Custom design using Elementor for flexible and user-friendly layouts',
+            'Advanced SEO optimization with Yoast SEO for better visibility',
+            'Responsive design ensuring seamless browsing across devices',
+            'Integrated contact and inquiry forms for lead generation',
+            'Performance optimizations for faster loading times'
+        ],
+        overview: 'IconHomz required a high-performance website to showcase their residential projects and enhance their online presence. The project aimed to provide an engaging user experience, highlight their commitment to quality, and facilitate easy navigation and inquiries.',
+        challenge: `The main challenges included:
+            • Creating a visually appealing and dynamic showcase for residential projects using Elementor
+            • Ensuring on-page SEO optimization for better search engine rankings
+            • Designing forms for seamless client interaction and lead generation
+            • Achieving optimal performance and responsiveness across devices
+            • Implementing structured navigation for easy access to information`,
+        solution: `The solution was crafted using WordPress with Elementor for a custom design experience, focusing on:
+            • Developing intuitive, visually appealing layouts with Elementor
+            • Enhancing SEO visibility using Yoast SEO for optimized meta tags and structured content
+            • Building custom contact and inquiry forms using Contact Form 7
+            • Leveraging performance plugins to improve page speed and user experience`,
+        screenshots: [
+            {
+                url: '/assets/projects/iconhomz.webp',
+                caption: 'Homepage showcasing IconHomz’s residential projects and quality living spaces'
+            },
+            {
+                url: '/assets/projects/iconhomz_phone.webp',
+                caption: 'Project gallery with interactive elements and virtual tours'
+            },
+        ],
+        results: [
+            'Improved SEO rankings and increased organic traffic by 50%',
+            'Enhanced user engagement with optimized navigation and interactive galleries',
+            'Increased inquiries through well-designed contact forms',
+            'Achieved a responsive design with consistent performance across devices',
+            'Positive feedback from the client on the site\'s visual appeal and usability'
+        ],
+        testimonial: {
+            text: 'The website perfectly showcases our residential projects and has significantly improved our online presence. The interactive galleries and virtual tours have been particularly successful in attracting potential buyers.',
+            author: 'Rajesh Kumar',
+            role: 'Marketing Director, IconHomz'
         }
     },
     {
