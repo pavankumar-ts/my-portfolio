@@ -73,7 +73,7 @@ const WebsitePreviewModal = ({ isOpen, onClose, url, title }) => {
                             href={url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="sm:hidden p-2 text-blue-600 bg-secondary hover:bg-primary rounded-full transition-colors"
+                            className="sm:hidden p-2 text-logoColor bg-secondary"
                             aria-label="Open in new tab"
                         >
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
