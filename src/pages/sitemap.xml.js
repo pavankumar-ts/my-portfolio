@@ -71,17 +71,20 @@ function generateSiteMap() {
 }
 
 export default function SiteMap() {
-    // getServerSideProps will do the heavy lifting
+    return null;
 }
 
-export async function getServerSideProps({ res }) {
+export async function getStaticProps() {
     const sitemap = generateSiteMap();
-
-    res.setHeader('Content-Type', 'text/xml');
-    // Cache for 1 hour
-    res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate');
-    res.write(sitemap);
-    res.end();
+    
+    // For static export, we'll write the sitemap to public directory
+    const fs = require('fs');
+    const path = require('path');
+    
+    fs.writeFileSync(
+        path.join(process.cwd(), 'public', 'sitemap.xml'),
+        sitemap
+    );
 
     return {
         props: {},
