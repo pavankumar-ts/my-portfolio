@@ -89,59 +89,60 @@ export const projectCategories = [
 export const projects = [
     {
         id: 1,
+        slug: 'bangalore-gastro-centre',
         home: true,
-        slug: 'bricstal-tech',
-        title: 'Bricstal Tech',
-        description: 'A comprehensive web application for an IT consulting firm, showcasing industry-specific solutions and innovative technology services.',
-        category: [2],
-        technologies: [1, 6, 14],
-        link: 'https://www.bricstaltech.com/',
-        year: '2023',
-        client: 'Bricstal Tech',
-        mainImg: '/assets/projects/bricstal_tech.webp',
+        title: 'Bangalore Gastro Centre',
+        description: 'A comprehensive website for the Bangalore Gastro Centre, featuring information about the center, specialities, doctors, appointment booking, blogs, courses, media & events, awards, outreach programs, careers, and research. The team has access to edit the content via Drupal CMS, which reflects on the website.',
+        category: [3],
+        technologies: [1, 6, 12, 14],
+        link: 'https://bangaloregastrocentre.com/',
+        year: '2024',
+        client: 'Bangalore Gastro Centre',
+        mainImg: '/assets/projects/bgc_phone.webp',
         features: [
-            'Server-side rendering with Next.js',
-            'Responsive design implementation',
-            'Image optimization for performance',
-            'SEO optimization',
-            'Modular CSS architecture',
-            'Cross-browser compatibility'
+            'Comprehensive content management using Drupal CMS',
+            'Information about specialities and list of doctors',
+            'Appointment booking system',
+            'Blogs and courses',
+            'Media & events updates',
+            'Awards and outreach programs',
+            'Careers and research information',
+            'API call integration for dynamic content updates'
         ],
-        overview: 'Bricstal Tech required a modern web application to showcase their diverse range of IT consulting services. The project emphasizes innovation, efficiency, and industry-specific solutions while providing an engaging and informative user experience.',
+        overview: 'The Bangalore Gastro Centre website provides detailed information about the center, its specialities, doctors, and various services. The project focuses on delivering a user-friendly experience with dynamic content management through Drupal CMS.',
         challenge: `The main challenges included:
-            • Creating a fast, responsive website that effectively communicates complex services
-            • Implementing a modular, maintainable codebase
-            • Ensuring optimal performance across all devices
-            • Developing reusable components for various industry solutions
-            • Optimizing for search engines and user engagement`,
-        solution: `The solution involved building a comprehensive web application using Next.js and React, with a focus on:
-            • Implementing server-side rendering for improved performance
-            • Creating modular, reusable components for different sections
-            • Using CSS Modules for maintainable styling
-            • Optimizing images and assets for faster load times
-            • Developing industry-specific solution pages with detailed insights`,
+            • Implementing a comprehensive content management system
+            • Ensuring user-friendly navigation for various sections
+            • Integrating an appointment booking system
+            • Providing dynamic updates for blogs, media, and events
+            • Maintaining a scalable and secure platform`,
+        solution: `The solution was developed using Drupal CMS for content management, combined with React.js for the front-end, focusing on:
+            • Creating a modular and scalable content management system
+            • Building intuitive navigation for easy access to information
+            • Integrating an appointment booking system with real-time updates
+            • Developing sections for blogs, courses, media, and events
+            • Ensuring secure and efficient API call integration for dynamic content`,
         screenshots: [
             {
-                url: '/assets/projects/bricstal_tech.webp',
-                caption: 'Industry-specific solutions with interactive components'
+                url: '/assets/projects/bgc.webp',
+                caption: 'Dashboard for managing content and updates'
             },
             {
-                url: '/assets/projects/bricstal_tech_phone.webp',
-                caption: 'About page with company insights and expertise'
-            },
+                url: '/assets/projects/bgc_phone.webp',
+                caption: 'User-friendly interface for accessing information and booking appointments'
+            }
         ],
         results: [
-            'Improved website loading speed by 40% through optimized assets and SSR',
-            'Increased mobile user engagement with responsive design',
-            'Enhanced SEO rankings through proper meta tags and semantic HTML',
-            'Streamlined user experience with intuitive navigation',
-            'Implemented reusable components reducing development time',
-            'Achieved 95+ Google Lighthouse scores'
+            'Efficient content management achieved with Drupal CMS, enabling faster updates',
+            'Improved user experience with intuitive navigation and dynamic content',
+            'Increased engagement through blogs, courses, and media updates',
+            'Streamlined appointment booking process',
+            'Positive feedback from clients on the platform’s usability and scalability'
         ],
         testimonial: {
-            text: 'Working with this team was a fantastic experience. They delivered beyond our expectations and were always available for support.',
-            author: 'John Doe',
-            role: 'CEO, Bricstal Tech'
+            text: 'The platform has exceeded our expectations in managing content dynamically and ensuring a user-friendly experience. The use of Drupal CMS has made updates seamless and efficient.',
+            author: 'Dr. Rahul Mehta',
+            role: 'Director, Bangalore Gastro Centre'
         }
     },
     {
@@ -310,61 +311,60 @@ export const projects = [
         }
     },
     {
-        id: 4,
-        slug: 'bangalore-gastro-centre',
+        id: 1,
         home: true,
-        title: 'Bangalore Gastro Centre',
-        description: 'A comprehensive website for the Bangalore Gastro Centre, featuring information about the center, specialities, doctors, appointment booking, blogs, courses, media & events, awards, outreach programs, careers, and research. The team has access to edit the content via Drupal CMS, which reflects on the website.',
-        category: [3],
-        technologies: [1, 6, 12, 14],
-        link: 'https://bangaloregastrocentre.com/',
-        year: '2024',
-        client: 'Bangalore Gastro Centre',
-        mainImg: '/assets/projects/bgc_phone.webp',
+        slug: 'bricstal-tech',
+        title: 'Bricstal Tech',
+        description: 'A comprehensive web application for an IT consulting firm, showcasing industry-specific solutions and innovative technology services.',
+        category: [2],
+        technologies: [1, 6, 14],
+        link: 'https://www.bricstaltech.com/',
+        year: '2023',
+        client: 'Bricstal Tech',
+        mainImg: '/assets/projects/bricstal_tech.webp',
         features: [
-            'Comprehensive content management using Drupal CMS',
-            'Information about specialities and list of doctors',
-            'Appointment booking system',
-            'Blogs and courses',
-            'Media & events updates',
-            'Awards and outreach programs',
-            'Careers and research information',
-            'API call integration for dynamic content updates'
+            'Server-side rendering with Next.js',
+            'Responsive design implementation',
+            'Image optimization for performance',
+            'SEO optimization',
+            'Modular CSS architecture',
+            'Cross-browser compatibility'
         ],
-        overview: 'The Bangalore Gastro Centre website provides detailed information about the center, its specialities, doctors, and various services. The project focuses on delivering a user-friendly experience with dynamic content management through Drupal CMS.',
+        overview: 'Bricstal Tech required a modern web application to showcase their diverse range of IT consulting services. The project emphasizes innovation, efficiency, and industry-specific solutions while providing an engaging and informative user experience.',
         challenge: `The main challenges included:
-            • Implementing a comprehensive content management system
-            • Ensuring user-friendly navigation for various sections
-            • Integrating an appointment booking system
-            • Providing dynamic updates for blogs, media, and events
-            • Maintaining a scalable and secure platform`,
-        solution: `The solution was developed using Drupal CMS for content management, combined with React.js for the front-end, focusing on:
-            • Creating a modular and scalable content management system
-            • Building intuitive navigation for easy access to information
-            • Integrating an appointment booking system with real-time updates
-            • Developing sections for blogs, courses, media, and events
-            • Ensuring secure and efficient API call integration for dynamic content`,
+            • Creating a fast, responsive website that effectively communicates complex services
+            • Implementing a modular, maintainable codebase
+            • Ensuring optimal performance across all devices
+            • Developing reusable components for various industry solutions
+            • Optimizing for search engines and user engagement`,
+        solution: `The solution involved building a comprehensive web application using Next.js and React, with a focus on:
+            • Implementing server-side rendering for improved performance
+            • Creating modular, reusable components for different sections
+            • Using CSS Modules for maintainable styling
+            • Optimizing images and assets for faster load times
+            • Developing industry-specific solution pages with detailed insights`,
         screenshots: [
             {
-                url: '/assets/projects/bgc.webp',
-                caption: 'Dashboard for managing content and updates'
+                url: '/assets/projects/bricstal_tech.webp',
+                caption: 'Industry-specific solutions with interactive components'
             },
             {
-                url: '/assets/projects/bgc_phone.webp',
-                caption: 'User-friendly interface for accessing information and booking appointments'
-            }
+                url: '/assets/projects/bricstal_tech_phone.webp',
+                caption: 'About page with company insights and expertise'
+            },
         ],
         results: [
-            'Efficient content management achieved with Drupal CMS, enabling faster updates',
-            'Improved user experience with intuitive navigation and dynamic content',
-            'Increased engagement through blogs, courses, and media updates',
-            'Streamlined appointment booking process',
-            'Positive feedback from clients on the platform’s usability and scalability'
+            'Improved website loading speed by 40% through optimized assets and SSR',
+            'Increased mobile user engagement with responsive design',
+            'Enhanced SEO rankings through proper meta tags and semantic HTML',
+            'Streamlined user experience with intuitive navigation',
+            'Implemented reusable components reducing development time',
+            'Achieved 95+ Google Lighthouse scores'
         ],
         testimonial: {
-            text: 'The platform has exceeded our expectations in managing content dynamically and ensuring a user-friendly experience. The use of Drupal CMS has made updates seamless and efficient.',
-            author: 'Dr. Rahul Mehta',
-            role: 'Director, Bangalore Gastro Centre'
+            text: 'Working with this team was a fantastic experience. They delivered beyond our expectations and were always available for support.',
+            author: 'John Doe',
+            role: 'CEO, Bricstal Tech'
         }
     },
     {
