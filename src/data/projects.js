@@ -109,7 +109,7 @@ export const projects = [
             'Careers and research information',
             'API call integration for dynamic content updates'
         ],
-        overview: 'The Bangalore Gastro Centre website provides detailed information about the center, its specialities, doctors, and various services. The project focuses on delivering a user-friendly experience with dynamic content management through Drupal CMS.',
+        overview: 'The Bangalore Gastro Centre website provides detailed information about the center, its specialities, doctors, and various services. The project focuses on delivering a user-friendly experience with dynamic content management through Drupal CMS',
         challenge: `The main challenges included:
             • Implementing a comprehensive content management system
             • Ensuring user-friendly navigation for various sections
