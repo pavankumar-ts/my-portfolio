@@ -87,61 +87,313 @@ export const projectCategories = [
 ];
 
 export const projects = [
-    {
-        id: 1,
-        home: true,
-        slug: 'bricstal-tech',
-        title: 'Bricstal Tech',
-        description: 'A comprehensive web application for an IT consulting firm, showcasing industry-specific solutions and innovative technology services.',
+     {
+        id: 18,
+        slug: 'pelure-clinic',
+        title: 'Pelure Skin & Cosmetic Clinic',
+        description: 'A modern, comprehensive dermatology and aesthetic clinic website showcasing advanced medical treatments, expert practitioners, and a patient-centric approach to skincare and wellness. Built with Next.js, React, and TailwindCSS for optimal performance and user experience.',
         category: [2],
-        technologies: [1, 6, 14],
-        link: 'https://www.bricstaltech.com/',
-        year: '2023',
-        client: 'Bricstal Tech',
-        mainImg: '/assets/projects/bricstal_tech.webp',
+        technologies: [1, 6, 7],
+        link: 'https://www.pelureclinic.com/',
+        year: '2025',
+        client: 'Pelure Skin & Cosmetic Clinic',
+        mainImg: '/assets/projects/pelure_clinic.webp',
         features: [
-            'Server-side rendering with Next.js',
-            'Responsive design implementation',
-            'Image optimization for performance',
-            'SEO optimization',
-            'Modular CSS architecture',
-            'Cross-browser compatibility'
+            'Comprehensive showcase of dermatology and aesthetic treatments',
+            'Expert practitioner profiles with specializations',
+            'Online appointment booking system',
+            'Treatment information and before-after galleries',
+            'Patient testimonials and success stories',
+            'Educational resources on skincare and wellness',
+            'Responsive design for seamless browsing across devices'
         ],
-        overview: 'Bricstal Tech required a modern web application to showcase their diverse range of IT consulting services. The project emphasizes innovation, efficiency, and industry-specific solutions while providing an engaging and informative user experience.',
+        overview: 'Pelure Skin & Cosmetic Clinic required a sophisticated digital platform to showcase their advanced dermatology and aesthetic treatments. The website emphasizes their patient-centric approach, expert practitioners, and commitment to delivering exceptional skincare and wellness solutions.',
         challenge: `The main challenges included:
-            • Creating a fast, responsive website that effectively communicates complex services
-            • Implementing a modular, maintainable codebase
-            • Ensuring optimal performance across all devices
-            • Developing reusable components for various industry solutions
-            • Optimizing for search engines and user engagement`,
-        solution: `The solution involved building a comprehensive web application using Next.js and React, with a focus on:
-            • Implementing server-side rendering for improved performance
-            • Creating modular, reusable components for different sections
-            • Using CSS Modules for maintainable styling
-            • Optimizing images and assets for faster load times
-            • Developing industry-specific solution pages with detailed insights`,
+            • Creating a professional and trustworthy platform for medical services
+            • Showcasing diverse treatment options with detailed information
+            • Implementing a seamless appointment booking system
+            • Building before-after galleries that respect patient privacy
+            • Ensuring medical accuracy in treatment descriptions
+            • Designing an elegant interface that reflects the clinic's premium positioning`,
+        solution: `The solution was developed using Next.js, React, and TailwindCSS, focusing on:
+            • Creating clean, professional layouts for treatment showcases
+            • Implementing secure appointment booking with form validation
+            • Building interactive galleries for treatment results
+            • Developing detailed practitioner profiles highlighting expertise
+            • Ensuring HIPAA-compliant handling of patient information
+            • Optimizing performance and SEO for local search visibility`,
         screenshots: [
             {
-                url: '/assets/projects/bricstal_tech.webp',
-                caption: 'Industry-specific solutions with interactive components'
+                url: '/assets/projects/pelure_clinic.webp',
+                caption: 'Homepage showcasing clinic expertise and treatment offerings'
             },
             {
-                url: '/assets/projects/bricstal_tech_phone.webp',
-                caption: 'About page with company insights and expertise'
-            },
+                url: '/assets/projects/pelure_clinic_mobile.webp',
+                caption: 'Mobile view of treatment details and appointment booking'
+            }
         ],
         results: [
-            'Improved website loading speed by 40% through optimized assets and SSR',
-            'Increased mobile user engagement with responsive design',
-            'Enhanced SEO rankings through proper meta tags and semantic HTML',
-            'Streamlined user experience with intuitive navigation',
-            'Implemented reusable components reducing development time',
-            'Achieved 95+ Google Lighthouse scores'
+            'Enhanced online presence for the clinic in competitive market',
+            'Increased appointment bookings through user-friendly system',
+            'Improved patient engagement with educational content',
+            'Better showcase of expertise and treatment outcomes',
+            'Positive feedback on website professionalism and usability',
+            'Improved local SEO rankings for dermatology services'
         ],
         testimonial: {
-            text: 'Working with this team was a fantastic experience. They delivered beyond our expectations and were always available for support.',
-            author: 'John Doe',
-            role: 'CEO, Bricstal Tech'
+            text: 'The website perfectly captures our commitment to excellence in dermatology and aesthetic care. The appointment booking system has streamlined our operations, and patients love the detailed treatment information.',
+            author: 'Dr. Medical Director',
+            role: 'Pelure Skin & Cosmetic Clinic'
+        }
+    },
+    {
+        id: 21,
+        slug: 'playgram-app',
+        home: true,
+        title: 'Playgram - Sports Coaching Academy',
+        description: 'A comprehensive web platform for Playgram,a professional sports coaching academy specializing in youth training. Offering expert-led football and basketball coaching for children aged 4-16. Built with Next.js, React, TailwindCSS, and Supabase for seamless booking and session management.',
+        category: [3],
+        technologies: [1, 13, 6, 7,],
+        link: 'https://www.playgram.app/',
+        year: '2025',
+        client: 'Playgram',
+        mainImg: '/assets/projects/playgram_mobile.webp',
+        features: [
+            'Comprehensive admin panel with revenue dashboard and transaction management',
+            'Location management and attendance tracking system',
+            'Enrollment management and batch organization',
+            'Sports program management across multiple locations',
+            'E-commerce integration with products, orders management, and store page',
+            'Banners, coupons, and referral management system',
+            'Advanced analytics and reporting for all operations',
+            'Real-time notifications system',
+            'WhatsApp and email automation using edge functions for order confirmations and marketing',
+            'Profile management for parents, coaches, and administrators',
+            'Secure payment integration and transaction processing'
+        ],
+        overview: 'Playgram is a professional sports coaching academy dedicated to youth development through structured athletic training. The platform was built to connect young athletes with expert coaches, providing structured, age-appropriate training programs in football and basketball while offering parents a seamless way to book sessions and track their children\'s progress.',
+        challenge: `The main challenges included:
+            • Building a robust booking system that handles multiple sports and locations
+            • Implementing real-time session management and scheduling across franchises
+            • Creating an intuitive interface for parents, coaches, and administrators
+            • Ensuring secure payment processing and transaction management
+            • Designing comprehensive systems for admin, franchise, location, attendance, enrollment, batch, and sports program management
+            • Integrating e-commerce functionality with product catalog, orders, and store management
+            • Building marketing automation tools including banners, coupons, referrals, and messaging
+            • Implementing analytics across all modules for data-driven insights
+            • Optimizing performance for a seamless user experience across all integrated systems`,
+        solution: `The solution was developed using Next.js, React, TailwindCSS, and Supabase, focusing on:
+            • Building a comprehensive admin panel with revenue analytics and transaction dashboards
+            • Implementing franchise and location management systems for multi-location operations
+            • Creating attendance tracking, enrollment, and batch management modules
+            • Developing sports program management across multiple locations
+            • Integrating full e-commerce functionality with products, orders, and store management
+            • Building marketing tools including banners, coupons, and referral systems
+            • Implementing advanced analytics for data-driven decision making
+            • Developing real-time notifications and automated messaging systems
+            • Creating WhatsApp and email automation using Supabase edge functions
+            • Ensuring secure payment processing and comprehensive transaction management`,
+        screenshots: [
+            {
+                url: '/assets/projects/playgram.webp',
+                caption: 'Platform showcasing sports coaching programs and booking system'
+            },
+            {
+                url: '/assets/projects/playgram_mobile.webp',
+                caption: 'Mobile view of coaching session management and progress tracking'
+            }
+        ],
+        results: [
+            'Successfully launched comprehensive multi-location sports coaching management platform',
+            'Streamlined operations across multiple franchises with centralized admin control',
+            'Enhanced revenue tracking and analytics enabling data-driven business decisions',
+            'Automated marketing and communication reducing manual administrative work',
+            'Improved enrollment and attendance management across all locations',
+            'Increased revenue through integrated e-commerce and referral systems',
+            'Scalable architecture supporting expansion to additional locations and sports programs'
+        ],
+        testimonial: {
+            text: 'The platform has completely transformed our operations across all locations. From managing enrollments and attendance to tracking revenue and automating marketing, everything is seamlessly integrated. The franchise dashboard and analytics have been game-changers for scaling our academy.',
+            author: 'Management Team',
+            role: 'Playgram'
+        }
+    },
+    {
+        id: 20,
+        slug: 'amogha-design-portfolio',
+        title: 'Designer Portfolio',
+        description: 'A modern, comprehensive portfolio website for a UI/UX designer showcasing professional work, design philosophy, and creative process. Built with Next.js, React, and TailwindCSS to create an exceptional digital experience that reflects the designer\'s expertise.',
+        category: [2],
+        technologies: [1, 6, 7],
+        link: 'https://www.amogha.design/',
+        year: '2025',
+        client: 'Amogha',
+        mainImg: '/assets/projects/designer_portfolio.webp',
+        features: [
+            'Interactive portfolio showcasing UI/UX design projects',
+            'Case study presentations with detailed process breakdowns',
+            'Design philosophy and approach showcase',
+            'Project filtering by category and skills',
+            'Responsive design optimized for all devices',
+            'Smooth animations and transitions for enhanced user experience',
+            'Contact and collaboration inquiry system'
+        ],
+        overview: 'Amogha required a sophisticated portfolio website to showcase their expertise in UI/UX design. The platform needed to not only display completed projects but also communicate their design philosophy, creative process, and attention to detail that defines their work.',
+        challenge: `The main challenges included:
+            • Creating a visually stunning portfolio that reflects design expertise
+            • Showcasing diverse projects with detailed case studies
+            • Implementing smooth animations without compromising performance
+            • Building an intuitive navigation system for project exploration
+            • Ensuring the website itself demonstrates UI/UX best practices
+            • Creating a memorable brand experience through digital presence`,
+        solution: `The solution was developed using Next.js, React, and TailwindCSS, focusing on:
+            • Designing a clean, modern interface that puts projects center stage
+            • Creating detailed case study templates with process documentation
+            • Implementing performance-optimized animations and transitions
+            • Building flexible project filtering and categorization system
+            • Ensuring responsive design that works flawlessly across devices
+            • Optimizing load times while maintaining visual richness`,
+        screenshots: [
+            {
+                url: '/assets/projects/designer_portfolio.webp',
+                caption: 'Homepage showcasing design work and creative philosophy'
+            },
+            {
+                url: '/assets/projects/designer_portfolio_mobile.webp',
+                caption: 'Mobile view of project case studies and design process'
+            }
+        ],
+        results: [
+            'Successfully launched comprehensive designer portfolio platform',
+            'Enhanced professional visibility in the design community',
+            'Increased client inquiries through impressive project showcase',
+            'Improved presentation of design process and methodology',
+            'Positive feedback on website aesthetics and user experience',
+            'Established strong personal brand presence online'
+        ],
+        testimonial: {
+            text: 'The portfolio website perfectly captures my design philosophy and showcases my work in a way that resonates with clients. The platform has significantly improved my ability to communicate my creative process and expertise.',
+            author: 'Amogha',
+            role: 'UI/UX Designer'
+        }
+    },
+    {
+        id: 17,
+        slug: 'antara-studios',
+        home: true,
+        title: 'Antara Studios',
+        description: 'A comprehensive interior design and architectural firm website showcasing turnkey interiors, architecture, construction, renovation, and landscaping services. Built with WordPress and Elementor to create a dynamic platform highlighting their portfolio and design expertise.',
+        category: [2],
+        technologies: [5, 9],
+        link: 'https://antarastudios.com/',
+        year: '2025',
+        client: 'Antara Studios',
+        mainImg: '/assets/projects/antara_studios.webp',
+        features: [
+            'Comprehensive showcase of turnkey interior design solutions',
+            'Architectural services and construction project portfolios',
+            'Renovation and remodeling project galleries',
+            'Landscaping design showcase with before-after comparisons',
+            'Custom inquiry forms for different service categories',
+            'Responsive design optimized for project visualization',
+            'Detailed service breakdowns and process explanations'
+        ],
+        overview: 'Antara Studios required a comprehensive digital platform to showcase their full range of services including interior design, architecture, construction, renovation, and landscaping. The website needed to effectively communicate their design expertise while providing detailed information about their turnkey solutions.',
+        challenge: `The main challenges included:
+            • Creating distinct presentations for five different service categories
+            • Showcasing diverse project portfolios across multiple disciplines
+            • Implementing effective visual galleries for design work
+            • Developing service-specific inquiry and consultation systems
+            • Ensuring cohesive brand presentation across varied services
+            • Building an intuitive navigation structure for multiple service lines`,
+        solution: `The solution was developed using WordPress and Elementor, focusing on:
+            • Creating dedicated sections for each service category
+            • Building rich project galleries with before-after comparisons
+            • Implementing flexible content management for portfolio updates
+            • Developing custom consultation booking forms for each service
+            • Ensuring responsive design for optimal project visualization
+            • Optimizing performance for image-heavy content`,
+        screenshots: [
+            {
+                url: '/assets/projects/antara_studios.webp',
+                caption: 'Homepage showcasing turnkey interior design and architectural services'
+            },
+            {
+                url: '/assets/projects/antara_studios_mobile.webp',
+                caption: 'Project portfolio featuring diverse interior and architectural work'
+            }
+        ],
+        results: [
+            'Enhanced online visibility across multiple service categories',
+            'Increased consultation inquiries for various services',
+            'Improved project showcase leading to higher client engagement',
+            'Better communication of turnkey solution offerings',
+            'Positive client feedback on portfolio presentation',
+            'Streamlined inquiry process for different service types'
+        ],
+        testimonial: {
+            text: 'The website beautifully showcases our diverse capabilities in interior design, architecture, and construction. It has become a powerful tool for client engagement and project acquisition.',
+            author: 'Design Team',
+            role: 'Antara Studios'
+        }
+    },
+    
+    {
+        id: 1,
+        slug: 'bangalore-gastro-centre',
+        home: true,
+        title: 'Bangalore Gastro Centre',
+        description: 'A comprehensive website for the Bangalore Gastro Centre, featuring information about the center, specialities, doctors, appointment booking, blogs, courses, media & events, awards, outreach programs, careers, and research. The team has access to edit the content via Drupal CMS, which reflects on the website.',
+        category: [3],
+        technologies: [1, 6, 12, 14],
+        link: 'https://bangaloregastrocentre.com/',
+        year: '2024',
+        client: 'Bangalore Gastro Centre',
+        mainImg: '/assets/projects/bgc_phone.webp',
+        features: [
+            'Comprehensive content management using Drupal CMS',
+            'Information about specialities and list of doctors',
+            'Appointment booking system',
+            'Blogs and courses',
+            'Media & events updates',
+            'Awards and outreach programs',
+            'Careers and research information',
+            'API call integration for dynamic content updates'
+        ],
+        overview: 'The Bangalore Gastro Centre website provides detailed information about the center, its specialities, doctors, and various services. The project focuses on delivering a user-friendly experience with dynamic content management through Drupal CMS',
+        challenge: `The main challenges included:
+            • Implementing a comprehensive content management system
+            • Ensuring user-friendly navigation for various sections
+            • Integrating an appointment booking system
+            • Providing dynamic updates for blogs, media, and events
+            • Maintaining a scalable and secure platform`,
+        solution: `The solution was developed using Drupal CMS for content management, combined with React.js for the front-end, focusing on:
+            • Creating a modular and scalable content management system
+            • Building intuitive navigation for easy access to information
+            • Integrating an appointment booking system with real-time updates
+            • Developing sections for blogs, courses, media, and events
+            • Ensuring secure and efficient API call integration for dynamic content`,
+        screenshots: [
+            {
+                url: '/assets/projects/bgc.webp',
+                caption: 'Dashboard for managing content and updates'
+            },
+            {
+                url: '/assets/projects/bgc_phone.webp',
+                caption: 'User-friendly interface for accessing information and booking appointments'
+            }
+        ],
+        results: [
+            'Efficient content management achieved with Drupal CMS, enabling faster updates',
+            'Improved user experience with intuitive navigation and dynamic content',
+            'Increased engagement through blogs, courses, and media updates',
+            'Streamlined appointment booking process',
+            'Positive feedback from clients on the platform’s usability and scalability'
+        ],
+        testimonial: {
+            text: 'The platform has exceeded our expectations in managing content dynamically and ensuring a user-friendly experience. The use of Drupal CMS has made updates seamless and efficient.',
+            author: 'Dr. Rahul Mehta',
+            role: 'Director, Bangalore Gastro Centre'
         }
     },
     {
@@ -310,61 +562,60 @@ export const projects = [
         }
     },
     {
-        id: 4,
-        slug: 'bangalore-gastro-centre',
+        id: 1,
         home: true,
-        title: 'Bangalore Gastro Centre',
-        description: 'A comprehensive website for the Bangalore Gastro Centre, featuring information about the center, specialities, doctors, appointment booking, blogs, courses, media & events, awards, outreach programs, careers, and research. The team has access to edit the content via Drupal CMS, which reflects on the website.',
-        category: [3],
-        technologies: [1, 6, 12, 14],
-        link: 'https://bangaloregastrocentre.com/',
-        year: '2024',
-        client: 'Bangalore Gastro Centre',
-        mainImg: '/assets/projects/bgc_phone.webp',
+        slug: 'bricstal-tech',
+        title: 'Bricstal Tech',
+        description: 'A comprehensive web application for an IT consulting firm, showcasing industry-specific solutions and innovative technology services.',
+        category: [2],
+        technologies: [1, 6, 14],
+        link: 'https://www.bricstaltech.com/',
+        year: '2023',
+        client: 'Bricstal Tech',
+        mainImg: '/assets/projects/bricstal_tech.webp',
         features: [
-            'Comprehensive content management using Drupal CMS',
-            'Information about specialities and list of doctors',
-            'Appointment booking system',
-            'Blogs and courses',
-            'Media & events updates',
-            'Awards and outreach programs',
-            'Careers and research information',
-            'API call integration for dynamic content updates'
+            'Server-side rendering with Next.js',
+            'Responsive design implementation',
+            'Image optimization for performance',
+            'SEO optimization',
+            'Modular CSS architecture',
+            'Cross-browser compatibility'
         ],
-        overview: 'The Bangalore Gastro Centre website provides detailed information about the center, its specialities, doctors, and various services. The project focuses on delivering a user-friendly experience with dynamic content management through Drupal CMS.',
+        overview: 'Bricstal Tech required a modern web application to showcase their diverse range of IT consulting services. The project emphasizes innovation, efficiency, and industry-specific solutions while providing an engaging and informative user experience.',
         challenge: `The main challenges included:
-            • Implementing a comprehensive content management system
-            • Ensuring user-friendly navigation for various sections
-            • Integrating an appointment booking system
-            • Providing dynamic updates for blogs, media, and events
-            • Maintaining a scalable and secure platform`,
-        solution: `The solution was developed using Drupal CMS for content management, combined with React.js for the front-end, focusing on:
-            • Creating a modular and scalable content management system
-            • Building intuitive navigation for easy access to information
-            • Integrating an appointment booking system with real-time updates
-            • Developing sections for blogs, courses, media, and events
-            • Ensuring secure and efficient API call integration for dynamic content`,
+            • Creating a fast, responsive website that effectively communicates complex services
+            • Implementing a modular, maintainable codebase
+            • Ensuring optimal performance across all devices
+            • Developing reusable components for various industry solutions
+            • Optimizing for search engines and user engagement`,
+        solution: `The solution involved building a comprehensive web application using Next.js and React, with a focus on:
+            • Implementing server-side rendering for improved performance
+            • Creating modular, reusable components for different sections
+            • Using CSS Modules for maintainable styling
+            • Optimizing images and assets for faster load times
+            • Developing industry-specific solution pages with detailed insights`,
         screenshots: [
             {
-                url: '/assets/projects/bgc.webp',
-                caption: 'Dashboard for managing content and updates'
+                url: '/assets/projects/bricstal_tech.webp',
+                caption: 'Industry-specific solutions with interactive components'
             },
             {
-                url: '/assets/projects/bgc_phone.webp',
-                caption: 'User-friendly interface for accessing information and booking appointments'
-            }
+                url: '/assets/projects/bricstal_tech_phone.webp',
+                caption: 'About page with company insights and expertise'
+            },
         ],
         results: [
-            'Efficient content management achieved with Drupal CMS, enabling faster updates',
-            'Improved user experience with intuitive navigation and dynamic content',
-            'Increased engagement through blogs, courses, and media updates',
-            'Streamlined appointment booking process',
-            'Positive feedback from clients on the platform’s usability and scalability'
+            'Improved website loading speed by 40% through optimized assets and SSR',
+            'Increased mobile user engagement with responsive design',
+            'Enhanced SEO rankings through proper meta tags and semantic HTML',
+            'Streamlined user experience with intuitive navigation',
+            'Implemented reusable components reducing development time',
+            'Achieved 95+ Google Lighthouse scores'
         ],
         testimonial: {
-            text: 'The platform has exceeded our expectations in managing content dynamically and ensuring a user-friendly experience. The use of Drupal CMS has made updates seamless and efficient.',
-            author: 'Dr. Rahul Mehta',
-            role: 'Director, Bangalore Gastro Centre'
+            text: 'Working with this team was a fantastic experience. They delivered beyond our expectations and were always available for support.',
+            author: 'John Doe',
+            role: 'CEO, Bricstal Tech'
         }
     },
     {
@@ -917,7 +1168,69 @@ export const projects = [
             role: "Turbo Tints"
         }
     },
+    {
+        id: 19,
+        slug: 'bgc-foundation',
+        title: 'BGC Foundation',
+        description: 'A comprehensive website for BGC Foundation, showcasing their humanitarian initiatives, community programs, and social impact work. Built with Next.js, React, and TailwindCSS to create an engaging platform that highlights their mission and encourages community involvement.',
+        category: [2],
+        technologies: [1, 6, 7],
+        link: 'https://bgcfoundation.org/',
+        year: '2025',
+        client: 'BGC Foundation',
+        mainImg: '/assets/projects/bgc_foundation.webp',
+        features: [
+            'Comprehensive showcase of foundation initiatives and programs',
+            'Impact stories and testimonials from beneficiaries',
+            'Donation and volunteer management system',
+            'Event calendar and community engagement features',
+            'News and updates section for foundation activities',
+            'Transparent reporting of foundation activities and finances',
+            'Responsive design for accessibility across devices'
+        ],
+        overview: 'BGC Foundation required a compelling digital platform to showcase their humanitarian work, community programs, and social impact initiatives. The website needed to effectively communicate their mission, engage potential donors and volunteers, and provide transparency in their operations.',
+        challenge: `The main challenges included:
+            • Creating an emotional connection through storytelling and impact visualization
+            • Building a secure donation processing system
+            • Implementing volunteer management and registration features
+            • Showcasing diverse programs and initiatives effectively
+            • Ensuring transparency in operations and fund utilization
+            • Designing an accessible platform that reaches diverse audiences`,
+        solution: `The solution was developed using Next.js, React, and TailwindCSS, focusing on:
+            • Creating compelling narrative sections for impact stories
+            • Implementing secure donation processing with multiple payment options
+            • Building volunteer registration and management system
+            • Developing comprehensive program showcases with metrics
+            • Ensuring accessibility standards for inclusive reach
+            • Optimizing performance for users with varying internet speeds`,
+        screenshots: [
+            {
+                url: '/assets/projects/bgc_foundation.webp',
+                caption: 'Homepage showcasing foundation mission and impact initiatives'
+            },
+            {
+                url: '/assets/projects/bgc_foundation_mobile.webp',
+                caption: 'Mobile view of programs, donation system, and impact stories'
+            }
+        ],
+        results: [
+            'Enhanced online presence for foundation initiatives',
+            'Increased donation participation through streamlined system',
+            'Improved volunteer registration and engagement',
+            'Better communication of social impact and program outcomes',
+            'Positive feedback on website accessibility and user experience',
+            'Strengthened community connection and awareness'
+        ],
+        testimonial: {
+            text: 'The website has transformed how we connect with our community and share our impact. The donation system has streamlined our fundraising efforts, and the impact stories section effectively communicates the importance of our work.',
+            author: 'Foundation Director',
+            role: 'BGC Foundation'
+        }
+    },
 ];
+
+// Total number of projects
+export const totalProjects = projects.length;
 
 export const getProjectsByCategory = (category) => {
     if (category === 'All Projects') return projects;
