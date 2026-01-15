@@ -151,7 +151,7 @@ export const projects = [
         slug: 'playgram-app',
         home: true,
         title: 'Playgram - Sports Coaching Academy',
-        description: 'A comprehensive web platform for Playgram, a professional sports coaching academy specializing in youth training. Offering expert-led football and basketball coaching for children aged 4-16. Built with Next.js, React, TailwindCSS, and Supabase for seamless booking and session management.',
+        description: 'A comprehensive web platform for Playgram,a professional sports coaching academy specializing in youth training. Offering expert-led football and basketball coaching for children aged 4-16. Built with Next.js, React, TailwindCSS, and Supabase for seamless booking and session management.',
         category: [3],
         technologies: [1, 13, 6, 7,],
         link: 'https://www.playgram.app/',
